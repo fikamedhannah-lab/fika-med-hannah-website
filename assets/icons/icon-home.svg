@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-labelledby="iconHomeTitle">
-  <!-- PLACEHOLDER ICON: swap for your own illustrated icon if you like, same 80x80 viewBox keeps sizing consistent. -->
   <title id="iconHomeTitle">House and heart icon representing home and family vocabulary</title>
   <circle cx="40" cy="40" r="40" fill="#eceafc"/>
-  <path d="M24 40l16-14 16 14v16c0 2-2 4-4 4H28c-2 0-4-2-4-4V40z" fill="#fffaf7" stroke="#8f6b60" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M24 40l16-14 16 14v16c0 2-2 4-4 4H28c-2 0-4-2-4-4V40z" fill="#fffaf7" stroke="#21395c" stroke-width="3" stroke-linejoin="round"/>
   <path d="M40 52c-4-4-10-1-10 4 0 3 6 6 10 9 4-3 10-6 10-9 0-5-6-8-10-4z" fill="#b58b7f"/>
 </svg>

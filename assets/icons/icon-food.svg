@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-labelledby="iconFoodTitle">
-  <!-- PLACEHOLDER ICON: swap for your own illustrated icon if you like, same 80x80 viewBox keeps sizing consistent. -->
   <title id="iconFoodTitle">Cup and pastry icon representing food and kitchen vocabulary</title>
   <circle cx="40" cy="40" r="40" fill="#e3ebd9"/>
   <path d="M24 38h24v8c0 7-5 12-12 12s-12-5-12-12v-8z" fill="#fffaf7" stroke="#5c6b4d" stroke-width="3"/>
