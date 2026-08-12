@@ -48,6 +48,7 @@ const els = {
   emailInput: document.getElementById('ltEmailInput'),
   marketingConsent: document.getElementById('ltMarketingConsent'),
   emailMessage: document.getElementById('ltEmailMessage'),
+  plannerDownloadBtn: document.getElementById('ltPlannerDownloadBtn'),
   progressFill: document.getElementById('lt-progress-fill'),
   categoryTag: document.getElementById('lt-category-tag'),
   passage: document.getElementById('lt-passage'),
@@ -274,6 +275,7 @@ async function handleEmailSubmit(event) {
 
     if (claim && claim.is_free) {
       els.emailMessage.textContent = `🎉 Du är person #${claim.claim_number} av de första ${FREE_CLAIM_LIMIT} — plannern är gratis för dig! Vi skickar ditt resultat, dina rekommendationer och plannern till din inkorg.`;
+      els.plannerDownloadBtn.classList.remove('is-hidden');
     } else if (claim) {
       els.emailMessage.textContent = `Tack! De första ${FREE_CLAIM_LIMIT} gratisplatserna är redan tagna (du är #${claim.claim_number}), men du kan fortfarande köpa plannern för 69 kr. Vi skickar ditt resultat och dina rekommendationer till din inkorg.`;
     } else {
