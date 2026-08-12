@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupNavToggle();
   setupLatestVideo();
   setupSignupForm();
-  setupPlannerForm();
   document.getElementById("year").textContent = new Date().getFullYear();
 });
 
@@ -84,30 +83,6 @@ function setupSignupForm() {
     if (!email) return;
 
     message.textContent = "Tack! You're on the list — welcome to Fika-brevet.";
-    form.reset();
-  });
-}
-
-/* ---------- PLANNER DOWNLOAD GATE (frontend-only placeholder) ----------
-   119 kr normally, free for the first 100 downloads. Since this is a static
-   site there's no real way to count "first 100" or verify payment — connect
-   a real email provider + payment link (Stripe Payment Link / Gumroad) here
-   to actually enforce that, and to collect the emails for real. */
-function setupPlannerForm() {
-  const form = document.getElementById("plannerForm");
-  const message = document.getElementById("plannerMessage");
-  const downloadLink = document.getElementById("plannerDownloadLink");
-  if (!form || !message || !downloadLink) return;
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const email = document.getElementById("plannerEmail").value.trim();
-    if (!email) return;
-
-    message.textContent = "Tack! Your planner is ready to download below.";
-    downloadLink.classList.remove("is-hidden");
-    downloadLink.focus();
     form.reset();
   });
 }

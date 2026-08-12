@@ -179,7 +179,7 @@
           </div>
         </div>
         <div class="planner-copy">
-          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-mug"/></svg>Free for the first 100</p>
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-mug"/></svg>119 kr &middot; free for the first 100</p>
           <h2>The Fika med Hannah Study Planner</h2>
           <p>Plan your Swedish, track your vocabulary, build better habits, and stay motivated.</p>
           <ul class="planner-points">
@@ -187,21 +187,12 @@
             <li>Weekly spreads for goals, vocabulary and reflection</li>
             <li>Printable, cosy and Fika-med-Hannah themed</li>
           </ul>
-          <p class="planner-offer">🎁 Normally <strong>119 kr</strong> — completely free for the first 100 downloads. Pop in your email to claim your copy.</p>
+          <p class="planner-offer">🎁 Normally <strong>119 kr</strong> — free for the first 100 people once it launches.</p>
 
-          <!--
-            FRONTEND-ONLY GATE. The download link only appears after the form is submitted.
-            To actually enforce "first 100 free" and collect emails for real, connect a provider
-            (MailerLite / Brevo / ConvertKit) in script.js — search for "PLANNER DOWNLOAD GATE".
-          -->
-          <form class="planner-form" id="plannerForm" novalidate>
-            <label class="sr-only" for="plannerEmail">Email address</label>
-            <input class="signup-input" type="email" id="plannerEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
-            <button class="btn btn-primary btn-large" type="submit">Get the Planner</button>
-          </form>
-          <p class="signup-message" id="plannerMessage" role="status" aria-live="polite"></p>
-          <!-- Placeholder file — replace downloads/fika-med-hannah-study-planner.pdf with your latest PDF export (same filename keeps this link working) -->
-          <a class="btn btn-primary btn-large planner-download is-hidden" id="plannerDownloadLink" href="downloads/fika-med-hannah-study-planner.pdf" download>Download Your Planner</a>
+          <div class="center planner-cta">
+            <a class="btn btn-secondary" href="#signup" aria-describedby="plannerSoon">Get Notified</a>
+            <p class="soon-badge" id="plannerSoon">Coming soon</p>
+          </div>
         </div>
       </div>
     </section>
