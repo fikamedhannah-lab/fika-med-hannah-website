@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Hitta Din Svenska Nivå | Fika med Hannah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ett 60-frågortest i svenska - grammatik, läsförståelse, hörförståelse och skriftlig förmåga - fördelat på nivåerna A1-C2.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  /* Palette sampled from style/logo.png, style/background style.png, style/youtube banner.png */
+  :root{
+    --ink:#3a2c28;
+    --paper:#fffaf7;
+    --rose:#b58b7f;
+    --rose-dark:#8f6b60;
+    --rose-light:#dec5bb;
+    --blush:#fdeeec;
+    --lavender:#eceafc;
+    --line:#e6d3c9;
+    --soft:#f6ece7;
+    /* aliases so the rest of the stylesheet maps onto the brand palette above */
+    --teal:var(--rose);
+    --teal-dark:var(--rose-dark);
+    --coral:var(--rose-dark);
+    --gold:var(--rose-light);
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    background:var(--blush);
+    font-family:'Poppins', sans-serif;
+    color:var(--ink);
+    line-height:1.5;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    margin:0 0 8px;
+    color:var(--rose-dark);
+  }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 20px 80px;
+  }
+
+  /* ---------- BRAND HEADER / LOGO ---------- */
+  .brand-bar{
+    background:var(--lavender);
+    border-bottom:1.5px solid var(--rose-light);
+    padding:10px 20px;
+    display:flex;
+    justify-content:center;
+    text-decoration:none;
+  }
+  .brand-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .brand-logo .mark{
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    object-fit:cover;
+    flex-shrink:0;
+    box-shadow:0 0 0 2px #fff, 0 0 0 3px var(--rose-light);
+  }
+  .brand-logo .word{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:19px;
+    color:var(--rose-dark);
+    line-height:1.1;
+  }
+  .brand-logo .tagline{
+    font-family:'Caveat', cursive;
+    font-size:14px;
+    color:var(--rose);
+    display:block;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--rose-dark);
+    color:#fff;
+    padding:48px 20px 70px;
+    text-align:center;
+  }
+  .hero .eyebrow{
+    font-family:'Caveat', cursive;
+    font-size:22px;
+    color:var(--lavender);
+    letter-spacing:.5px;
+  }
+  .hero h1{ color:#fff; font-size:36px; margin-bottom:14px; }
+  .hero p{ max-width:540px; margin:0 auto; opacity:.9; font-size:15.5px; }
+  .hero .meta-row{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:18px;
+  }
+  .hero .meta-row span{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.3);
+    padding:5px 12px;
+    border-radius:30px;
+    font-size:12.5px;
+  }
+  .hero .cta{
+    display:inline-block;
+    margin-top:26px;
+    background:var(--paper);
+    color:var(--rose-dark);
+    font-weight:600;
+    padding:14px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
+  }
+
+  /* ---------- CARD ---------- */
+  .card{
+    background:var(--paper);
+    border:1.5px solid var(--teal);
+    border-radius:14px;
+    padding:28px 26px;
+    margin-top:-40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+  }
+
+  /* ---------- LEVEL STEPPER ---------- */
+  .level-stepper{
+    display:flex;
+    justify-content:space-between;
+    gap:6px;
+    margin-bottom:18px;
+  }
+  .level-stepper .step{
+    flex:1;
+    text-align:center;
+    font-size:11.5px;
+    font-weight:700;
+    color:#a79b89;
+    padding:6px 2px;
+    border-radius:8px;
+    background:var(--soft);
+  }
+  .level-stepper .step.done{ color:#fff; background:var(--teal); }
+  .level-stepper .step.active{ color:#fff; background:var(--coral); }
+
+  /* ---------- QUIZ ---------- */
+  #quiz-section .card{ margin-top:-40px; }
+  .section-title{ font-size:20px; margin-bottom:2px; }
+  .section-sub{ font-size:13px; color:#7a7268; margin-bottom:16px; }
+
+  .question{
+    padding:18px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .question:last-of-type{ border-bottom:none; }
+  .question .skill-tag{
+    display:inline-block;
+    font-size:10.5px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--teal-dark);
+    background:var(--soft);
+    padding:2px 8px;
+    border-radius:20px;
+    margin-bottom:8px;
+  }
+  .question .passage{
+    background:var(--soft);
+    border-left:3px solid var(--gold);
+    padding:10px 12px;
+    font-size:13.5px;
+    font-style:italic;
+    margin-bottom:10px;
+    border-radius:0 6px 6px 0;
+  }
+  .question p.q{ font-weight:600; margin:0 0 10px; font-size:15px; }
+  .options{ display:grid; gap:8px; }
+  label.opt{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    background:var(--soft);
+    border:1px solid transparent;
+    border-radius:8px;
+    padding:10px 12px;
+    font-size:14px;
+    cursor:pointer;
+    transition:border-color .15s;
+  }
+  label.opt:hover{ border-color:var(--teal); }
+  label.opt input{ margin-top:3px; accent-color:var(--teal); }
+  label.opt.selected{ border-color:var(--teal); background:#e6f1ef; }
+
+  .listen-row{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .listen-btn{
+    background:var(--teal);
+    color:#fff;
+    border:none;
+    border-radius:20px;
+    padding:8px 16px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .listen-btn:hover{ background:var(--teal-dark); }
+  .transcript-toggle{
+    font-size:12px;
+    color:var(--coral);
+    background:none;
+    border:none;
+    text-decoration:underline;
+    cursor:pointer;
+    padding:0;
+  }
+  .transcript-text{
+    display:none;
+    font-size:13px;
+    font-style:italic;
+    color:#7a7268;
+    margin:0 0 10px;
+  }
+  .no-tts-note{ font-size:11.5px; color:#a79b89; }
+
+  .progress-track{
+    height:8px;
+    background:var(--soft);
+    border-radius:6px;
+    overflow:hidden;
+    margin:6px 0 22px;
+  }
+  .progress-fill{
+    height:100%;
+    width:0%;
+    background:var(--gold);
+    transition:width .2s ease;
+  }
+  .progress-label{ font-size:12.5px; color:var(--teal-dark); font-weight:600; }
+
+  .submit-btn{
+    width:100%;
+    margin-top:20px;
+    background:var(--teal);
+    color:#fff;
+    font-family:'Poppins';
+    font-weight:600;
+    font-size:16px;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    cursor:pointer;
+  }
+  .submit-btn:disabled{ background:#b7c9c7; cursor:not-allowed; }
+  .submit-btn:not(:disabled):hover{ background:var(--teal-dark); }
+
+  .hint{ font-size:12.5px; color:#7a7268; text-align:center; margin-top:10px; }
+
+  /* ---------- RESULT ---------- */
+  #result-section{ display:none; }
+  .level-badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--teal-dark);
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:15px;
+    padding:6px 16px;
+    border-radius:30px;
+    margin-bottom:10px;
+  }
+  .result-desc{ font-size:15px; margin-bottom:18px; }
+
+  table.score-table{ width:100%; border-collapse:collapse; margin-bottom:22px; font-size:13.5px; }
+  table.score-table th, table.score-table td{ padding:8px 10px; text-align:left; border-bottom:1px solid var(--line); }
+  table.score-table th{ color:var(--teal-dark); font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; }
+  table.score-table tr.pass td:last-child{ color:var(--teal-dark); font-weight:700; }
+  table.score-table tr.fail td:last-child{ color:var(--coral); font-weight:700; }
+  table.score-table tr.achieved{ background:var(--soft); }
+
+  .rec-videos{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+  .rec-videos a{
+    display:block;
+    background:var(--soft);
+    border-radius:8px;
+    padding:12px 14px;
+    text-decoration:none;
+    color:var(--ink);
+    font-size:14px;
+    font-weight:500;
+    border-left:4px solid var(--coral);
+  }
+  .rec-videos a:hover{ background:#e6dfd0; }
+
+  /* ---------- SIGNUP ---------- */
+  #signup-section{
+    margin-top:34px;
+    text-align:center;
+  }
+  #signup-section .card{ margin-top:0; }
+  .badge-100{
+    background:var(--coral);
+    color:#fff;
+    font-weight:600;
+    font-size:13px;
+    display:inline-block;
+    padding:5px 14px;
+    border-radius:30px;
+    margin-bottom:12px;
+  }
+  .signup-embed{ margin-top:18px; }
+  .signup-embed iframe{ border:none; width:100%; min-height:480px; }
+  .signup-fallback{ font-size:13px; color:#7a7268; margin-top:10px; }
+
+  footer{
+    text-align:center;
+    font-size:12.5px;
+    color:#7a7268;
+    padding:30px 20px 0;
+  }
+</style>
+</head>
+<body>
+
+  <a class="brand-bar" href="index.html">
+    <div class="brand-logo">
+      <img class="mark" src="assets/logo.png" alt="Fika med Hannah">
+      <div>
+        <div class="word">Fika med Hannah</div>
+        <span class="tagline">fika. prata. lär dig. ☕🇸🇪</span>
+      </div>
+    </div>
+  </a>
+
+  <div class="hero">
+    <div class="eyebrow">Fika med Hannah 🇸🇪</div>
+    <h1>Hitta Din Svenska Nivå</h1>
+    <p>Gör vårt fullständiga språktest med 60 frågor - grammatik, läsförståelse, hörförståelse och skriftlig förmåga - fördelat på nivåerna A1 till C2. Du klarar en nivå om du svarar rätt på minst 8 av 10 frågor.</p>
+    <div class="meta-row">
+      <span>60 frågor</span>
+      <span>6 nivåer: A1-C2</span>
+      <span>Godkänt: 8/10 per nivå</span>
+    </div>
+    <a class="cta" href="#quiz-section">Starta testet ↓</a>
+  </div>
+
+  <div class="wrap">
+
+    <section id="quiz-section">
+      <div class="card">
+        <div class="level-stepper" id="level-stepper"></div>
+
+        <h2 class="section-title" id="section-title">Nivå 1 av 6 - A1</h2>
+        <p class="section-sub" id="section-sub">Svara på alla 10 frågor för att gå vidare till nästa nivå.</p>
+
+        <div class="progress-label"><span id="progress-count">0</span> / 10 besvarade i denna nivå · <span id="progress-total">0</span> / 60 totalt</div>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+
+        <form id="quiz-form">
+          <!-- Frågor injiceras av JS nedan -->
+          <div id="questions-container"></div>
+          <button type="submit" class="submit-btn" id="submit-btn" disabled>Nästa nivå</button>
+          <p class="hint">Ingen registrering krävs för att se din nivå – bara om du vill hämta studieplaneraren (119 kr, gratis för de första 100).</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="level-result-section" style="display:none;">
+      <div class="card">
+        <div class="level-badge" id="lr-badge">A1 · Nybörjare</div>
+        <h2 id="lr-title">Resultat för nivå A1</h2>
+        <p class="result-desc" id="lr-desc"></p>
+        <button type="button" class="submit-btn" id="lr-continue-btn">Fortsätt till nästa nivå</button>
+      </div>
+    </section>
+
+    <section id="result-section">
+      <div class="card">
+        <div class="level-badge" id="level-badge">A1 · Nybörjare</div>
+        <h2 id="level-title">Precis kommit igång</h2>
+        <p class="result-desc" id="level-desc"></p>
+
+        <h3 style="font-size:15px; margin-bottom:10px;">Dina resultat per nivå</h3>
+        <table class="score-table" id="score-table">
+          <thead><tr><th>Nivå</th><th>Poäng</th><th>Resultat</th></tr></thead>
+          <tbody id="score-table-body"></tbody>
+        </table>
+
+        <h3 style="font-size:15px; margin-bottom:10px;">Titta på dessa härnäst</h3>
+        <ul class="rec-videos" id="rec-videos"></ul>
+      </div>
+    </section>
+
+    <section id="signup-section">
+      <div class="card">
+        <div class="badge-100">🎁 Gratis för de första 100 nedladdningarna</div>
+        <h2>Skaffa studieplaneraren</h2>
+        <p style="font-size:14.5px;">En utskrivbar veckoplanerare, daglig övningslogg och månadsöversikt som håller din svenska på rätt spår. Ordinarie pris <strong>119 kr</strong> – helt gratis för de första 100 som hämtar den.</p>
+        <a class="submit-btn" href="index.html#planner" style="display:block; text-align:center; text-decoration:none; box-sizing:border-box;">Hämta planeraren →</a>
+        <p class="signup-fallback">Frågor? Maila <strong>hannah@fikamedhannah.com</strong>.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>© Fika med Hannah — svenska, en fika i taget.</footer>
+
+<script>
+  // Skill labels shown as tags above each question.
+  const SKILL_LABELS = { grammatik: 'Grammatik', lasa: 'Läsförståelse', lyssna: 'Hörförståelse', skriva: 'Skriftlig förmåga' };
+  const PASS_THRESHOLD = 8; // correct answers needed out of 10 to pass a level
+
+  // 6 levels x 10 questions (3 grammatik, 3 läsförståelse, 2 hörförståelse, 2 skriva) = 60 total.
+  const LEVELS = [
+    {
+      code: 'A1', name: 'Nybörjare',
+      desc: 'Du bygger grunden - hälsningsfraser, enkla meningar och vardagsord. Fortsätt öva lite varje dag!',
+      videos: [
+        ["Om jag skulle lära mig svenska 2026", "https://www.youtube.com/watch?v=ivm1vIlut5U"],
+        ["How I Became Fluent in Swedish", "https://www.youtube.com/watch?v=THS-wmwGFpc"]
+      ],
+      questions: [
+        { skill:'grammatik', question:"Jag ___ Anna och jag kommer från Sverige.", options:["heter","är","har","gör"], correct:0 },
+        { skill:'grammatik', question:"Vi ___ två katter hemma.", options:["har","är","heter","kan"], correct:0 },
+        { skill:'grammatik', question:"Hon ___ lärare på en skola i Lund.", options:["är","har","heter","gör"], correct:0 },
+        { skill:'lasa', passage:"Jag heter Maria. Jag är 30 år och bor i Göteborg. Jag jobbar som lärare.", question:"Vad jobbar Maria som?", options:["Lärare","Läkare","Student","Kock"], correct:0 },
+        { skill:'lasa', passage:"Klockan är åtta på morgonen. Jag dricker kaffe och äter en smörgås.", question:"Vad äter personen till frukost?", options:["En smörgås","En sallad","En kaka","En soppa"], correct:0 },
+        { skill:'lasa', passage:"ÖPPET 9–18, MÅNDAG–FREDAG", question:"Vad visar skylten?", options:["Öppettider","En prislista","En karta","En meny"], correct:0 },
+        { skill:'lyssna', audio:"Hej! Jag heter Erik och jag bor i Malmö.", audioFile:"assets/audio/quiz/a1_1.mp3", question:"Var bor Erik?", options:["Malmö","Lund","Uppsala","Umeå"], correct:0 },
+        { skill:'lyssna', audio:"Klockan är tre.", audioFile:"assets/audio/quiz/a1_2.mp3", question:"Vad är klockan?", options:["Tre","Fem","Åtta","Tolv"], correct:0 },
+        { skill:'skriva', question:"Välj den mening som bäst presenterar dig själv.", options:["Jag heter Sara och jag kommer från Sverige.","Jag är Sara och kommer Sverige.","Sara jag heter.","Kommer jag Sverige."], correct:0 },
+        { skill:'skriva', question:"Välj rätt fråga om någons namn.", options:["Vad heter du?","Vad har du?","Vem gör du?","Var är du namn?"], correct:0 }
+      ]
+    },
+    {
+      code: 'A2', name: 'Grundläggande',
+      desc: 'Du klarar vardagssituationer - handla, fråga om vägen och prata om enkla rutiner.',
+      videos: [
+        ["Att förstå svensk sjukvård | Understanding Swedish Healthcare", "https://www.youtube.com/watch?v=bhqqiXrg3T4"],
+        ["Learn Swedish with Life with Kids in Sweden", "https://www.youtube.com/watch?v=L1LDKSrY-7Q"]
+      ],
+      questions: [
+        { skill:'grammatik', question:"Igår ___ jag till affären för att handla mat.", options:["gick","går","ska gå","har gått"], correct:0 },
+        { skill:'grammatik', question:"Hon ___ en bra bok förra veckan.", options:["läste","läser","ska läsa","läs"], correct:0 },
+        { skill:'grammatik', question:"Vi ___ till Stockholm nästa sommar.", options:["ska åka","åkte","åker inte","har åkt"], correct:0 },
+        { skill:'lasa', passage:"Bussen till centrum går var 20:e minut. Nästa buss kommer klockan 14:40.", question:"När kommer nästa buss?", options:["14:40","14:20","15:00","13:40"], correct:0 },
+        { skill:'lasa', passage:"Jag handlade mjölk, bröd och ägg på ICA igår.", question:"Var handlade personen?", options:["ICA","Systembolaget","Apoteket","Posten"], correct:0 },
+        { skill:'lasa', passage:"Koka potatisen i 20 minuter, tillsätt sedan smör och salt.", question:"Hur länge ska potatisen koka?", options:["20 minuter","10 minuter","2 timmar","5 minuter"], correct:0 },
+        { skill:'lyssna', audio:"Kan jag få en kaffe och en kanelbulle, tack?", audioFile:"assets/audio/quiz/a2_1.mp3", question:"Vad beställer personen?", options:["Kaffe och kanelbulle","Te och kaka","Öl och smörgås","Bara vatten"], correct:0 },
+        { skill:'lyssna', audio:"Ursäkta, var ligger toaletten?", audioFile:"assets/audio/quiz/a2_2.mp3", question:"Vad frågar personen efter?", options:["Toaletten","Bussen","Stationen","Affären"], correct:0 },
+        { skill:'skriva', question:"Välj den mest artiga formuleringen.", options:["Skulle du kunna hjälpa mig, tack?","Hjälp mig nu!","Du hjälper mig.","Hjälpa mig?"], correct:0 },
+        { skill:'skriva', question:"Böj adjektivet rätt: 'ett ___ hus' (stor)", options:["stort","stor","stora","större"], correct:0 }
+      ]
+    },
+    {
+      code: 'B1', name: 'Mellannivå',
+      desc: 'Du klarar de flesta samtal, även om du ibland pausar för att hitta rätt ord.',
+      videos: [
+        ["Master HÅLLA in Swedish – All Forms, Prefixes & Examples", "https://www.youtube.com/watch?v=HuU762BnwT8"],
+        ["Learn Swedish with ONE Word: KÄNNA", "https://www.youtube.com/watch?v=LtQV5-AxBsY"]
+      ],
+      questions: [
+        { skill:'grammatik', question:"Om jag ___ mer tid, skulle jag resa oftare.", options:["hade","har","hadde","skulle ha"], correct:0 },
+        { skill:'grammatik', question:"Han sa att han ___ trött efter jobbet.", options:["var","är","ska vara","varit"], correct:0 },
+        { skill:'grammatik', question:"Boken ___ av många elever i skolan.", options:["läses","läser","läst","läsa"], correct:0 },
+        { skill:'lasa', passage:"I Sverige ringer man ofta 1177 för att boka tid hos vårdcentralen eller få medicinsk rådgivning.", question:"Vilket nummer ringer man för vårdrådgivning?", options:["1177","112","90000","020"], correct:0 },
+        { skill:'lasa', passage:"Trots det kalla vädret väljer många svenskar att fika utomhus, gärna med en filt över axlarna.", question:"Vad gör svenskarna trots kylan?", options:["Fikar utomhus","Stannar inomhus","Slutar dricka kaffe","Reser bort"], correct:0 },
+        { skill:'lasa', passage:"Annonsen söker en barnskötare till en förskola i centrala Malmö, deltid, start i augusti.", question:"Vilken tjänst söks?", options:["Barnskötare","Sjuksköterska","Lärare","Kock"], correct:0 },
+        { skill:'lyssna', audio:"Jag mår inte bra, jag har ont i magen sedan igår.", audioFile:"assets/audio/quiz/b1_1.mp3", question:"Vad är problemet?", options:["Ont i magen","Ont i huvudet","Feber","Ont i benet"], correct:0 },
+        { skill:'lyssna', audio:"Trots regnet gick vi en lång promenad i parken igår kväll.", audioFile:"assets/audio/quiz/b1_2.mp3", question:"Vad gjorde de trots regnet?", options:["Gick en promenad","Stannade hemma","Åkte bil","Sov hela dagen"], correct:0 },
+        { skill:'skriva', question:"Välj meningen som uttrycker en åsikt.", options:["Jag tycker att svenska är ett vackert språk.","Klockan är tre.","Det regnar idag.","Hej då."], correct:0 },
+        { skill:'skriva', question:"Komplettera: 'Jag stannade hemma ___ det regnade hela dagen.'", options:["eftersom","men","eller","att"], correct:0 }
+      ]
+    },
+    {
+      code: 'B2', name: 'Övre mellannivå',
+      desc: 'Du är bekväm i de flesta situationer - kvar är oftast nyanser och snabbare återkallning, inte kunskap.',
+      videos: [
+        ["Why You Understand Swedish but Can't Speak It (And How To Fix It!)", "https://www.youtube.com/watch?v=A_HC0BsdWEA"],
+        ["Glömmer du svenska ord? 10 enkla tips som hjälper dig att prata flytande!", "https://www.youtube.com/watch?v=R2MUF9MsUOE"]
+      ],
+      questions: [
+        { skill:'grammatik', question:"Hon frågade om jag ___ komma imorgon istället.", options:["kunde","kan","ska kunna","kunnat"], correct:0 },
+        { skill:'grammatik', question:"Problemet måste ___ innan mötet på fredag.", options:["lösas","lösa","löses","lösning"], correct:0 },
+        { skill:'grammatik', question:"Ju mer man övar, desto ___ blir man på svenska.", options:["bättre","bäst","bra","godare"], correct:0 },
+        { skill:'lasa', passage:"Många svenskar byter automatiskt till engelska så fort de märker en brytning, även om personen egentligen vill öva svenska.", question:"Varför byter svenskar ofta till engelska?", options:["De märker en brytning","De pratar inte engelska","De vill inte prata","De är blyga"], correct:0 },
+        { skill:'lasa', passage:"Enligt rapporten har antalet nyanlända som klarar SFI-provet inom två år ökat med 12 procent sedan förra året.", question:"Vad har ökat enligt rapporten?", options:["Andelen godkända på SFI-provet","Antalet nyanlända totalt","Antalet skolor","Kostnaden för SFI"], correct:0 },
+        { skill:'lasa', passage:"Att 'hålla tummarna' betyder att hoppas på tur åt någon, till exempel inför en tenta eller en intervju.", question:"Vad betyder 'hålla tummarna'?", options:["Hoppas på tur åt någon","Vara arg på någon","Ge upp","Fira något"], correct:0 },
+        { skill:'lyssna', audio:"Även om mötet drog ut på tiden tyckte jag att diskussionen var givande.", audioFile:"assets/audio/quiz/b2_1.mp3", question:"Vad tyckte personen om mötet, trots att det drog ut på tiden?", options:["Att diskussionen var givande","Att det var bortkastad tid","Att mötet var för kort","Att ingen sa något viktigt"], correct:0 },
+        { skill:'lyssna', audio:"Enligt vädret ska regnet hålla i sig hela helgen, men klarna upp på måndag.", audioFile:"assets/audio/quiz/b2_2.mp3", question:"Vad händer med vädret på måndag?", options:["Det klarnar upp","Det regnar mer","Det snöar","Det blir stormigt"], correct:0 },
+        { skill:'skriva', question:"Välj den mest formella omskrivningen av: 'Kan du fixa det här snabbt?'", options:["Skulle du kunna åtgärda detta så snart som möjligt?","Fixa det nu!","Gör det snabbt, tack.","Kan du snabba på?"], correct:0 },
+        { skill:'skriva', question:"Välj rätt betydelse: 'Vädret ska ___ i sig imorgon.' (fortsätta likadant)", options:["hålla","hålla på","hålla med","hålla ut"], correct:0 }
+      ]
+    },
+    {
+      code: 'C1', name: 'Avancerad',
+      desc: 'Grammatik och vokabulär är sällan hindret längre - det är idiom, register och kulturella nyanser som återstår.',
+      videos: [
+        ["Why Swedes Switch to English | Varför svenskar alltid byter till engelska", "https://www.youtube.com/watch?v=zMLFTGAkq58"],
+        ["Christmas in Sweden 🎄 Traditions You Never Knew", "https://www.youtube.com/watch?v=BsLSEOzAsdU"]
+      ],
+      questions: [
+        { skill:'grammatik', question:"Hade jag vetat det tidigare, ___ jag annorlunda.", options:["hade jag agerat","har jag agerat","agerar jag","ska jag agera"], correct:0 },
+        { skill:'grammatik', question:"Det är inte ovanligt att man ___ ordval beroende på sammanhang.", options:["anpassar","anpassa","anpassats","anpassning"], correct:0 },
+        { skill:'grammatik', question:"Trots att förhandlingarna ___ i flera timmar nåddes ingen överenskommelse.", options:["pågick","pågår","ska pågå","pågått"], correct:0 },
+        { skill:'lasa', passage:"Debattören menar att integrationsdebatten alltför ofta reduceras till en fråga om språkkunskaper, medan strukturella faktorer förbises.", question:"Vad kritiserar debattören?", options:["Att debatten fokuserar för mycket på språk och för lite på struktur","Att för många lär sig svenska","Att integrationen går för snabbt","Att strukturella faktorer överdrivs"], correct:0 },
+        { skill:'lasa', passage:"Uttrycket 'det ligger en hund begraven' används när man misstänker att något inte stämmer, utan att veta exakt vad.", question:"Vad antyder uttrycket?", options:["Att något verkar misstänkt","Att någon har en hund","Att något är begravt bokstavligen","Att allt är som det ska"], correct:0 },
+        { skill:'lasa', passage:"Kolumnen argumenterar för att den svenska 'lagom'-kulturen både kan upplevas som balanserad och som en broms för entreprenörskap.", question:"Vilken dubbelhet lyfter kolumnen fram kring 'lagom'?", options:["Balans kontra hämmad entreprenörsanda","Rikedom kontra fattigdom","Stad kontra landsbygd","Ung kontra gammal"], correct:0 },
+        { skill:'lyssna', audio:"Jag ska inte sticka under stol med att förslaget mötte visst motstånd internt.", audioFile:"assets/audio/quiz/c1_1.mp3", question:"Vad antyder talaren om förslaget?", options:["Det mötte motstånd","Alla var positiva","Förslaget drogs tillbaka direkt","Ingen hade en åsikt"], correct:0 },
+        { skill:'lyssna', audio:"Även fast hen växte upp i Skåne hörs knappt någon dialekt längre.", audioFile:"assets/audio/quiz/c1_2.mp3", question:"Vad sägs om personens dialekt?", options:["Den hörs knappt längre","Den är väldigt tydlig","Personen pratar bara skånska","Personen har ingen dialekt alls ursprungligen"], correct:0 },
+        { skill:'skriva', question:"Välj den mest nyanserade formuleringen för att uttrycka oenighet artigt.", options:["Jag ser det lite annorlunda, om jag får säga min syn.","Du har fel.","Nej, det stämmer inte.","Jag håller inte alls med."], correct:0 },
+        { skill:'skriva', question:"Vilken mening har korrekt formellt register i ett arbetsmejl?", options:["Jag återkommer med besked senast på fredag.","Hojta till senast fredag typ.","Fredag typ, hör av mig.","Ska fixa nåt till fredag."], correct:0 }
+      ]
+    },
+    {
+      code: 'C2', name: 'Mycket avancerad',
+      desc: 'Din svenska ligger nära infödd nivå - stilistisk finess, idiomatik och dialektala nyanser är det som skiljer.',
+      videos: [
+        ["Why Swedes Switch to English | Varför svenskar alltid byter till engelska", "https://www.youtube.com/watch?v=zMLFTGAkq58"],
+        ["Christmas in Sweden 🎄 Traditions You Never Knew", "https://www.youtube.com/watch?v=BsLSEOzAsdU"]
+      ],
+      questions: [
+        { skill:'grammatik', question:"Föga anade han att beslutet skulle ___ så pass omfattande konsekvenser.", options:["få","ha","ta","ge"], correct:0 },
+        { skill:'grammatik', question:"Vore det inte för hennes envishet, ___ projektet ha lagts ner för länge sedan.", options:["skulle","hade","kunde","ska"], correct:0 },
+        { skill:'grammatik', question:"Det förhåller sig så, ___ man brukar säga, att övning ger färdighet.", options:["som","att","vilket","då"], correct:0 },
+        { skill:'lasa', passage:"Essän problematiserar föreställningen om att en 'perfekt' brytningsfri svenska skulle vara måttet på lyckad integration, och pekar istället på kommunikativ förmåga som avgörande.", question:"Vad förespråkar essän som viktigare mått?", options:["Kommunikativ förmåga","Perfekt uttal","Antal år i landet","Skolbetyg"], correct:0 },
+        { skill:'lasa', passage:"Uttrycket 'att gå över ån efter vatten' syftar på att göra saker onödigt krångliga när en enklare lösning finns nära till hands.", question:"Vad betyder uttrycket i praktiken?", options:["Att välja en onödigt krånglig lösning","Att alltid ta den enklaste vägen","Att bokstavligen hämta vatten","Att undvika allt arbete"], correct:0 },
+        { skill:'lasa', passage:"Recensenten menar att romanens största styrka paradoxalt nog också är dess svaghet: den fragmentariska strukturen som både skapar närvarokänsla och försvårar orienteringen för läsaren.", question:"Vilken paradox lyfter recensenten fram?", options:["Strukturen är både styrka och svaghet","Boken är för kort och för lång","Språket är för enkelt och för svårt","Handlingen är rolig och tråkig"], correct:0 },
+        { skill:'lyssna', audio:"Man ska inte sälja skinnet förrän björnen är skjuten, så vi håller krutet torrt tills avtalet är påskrivet.", audioFile:"assets/audio/quiz/c2_1.mp3", question:"Vad är talarens hållning inför avtalet?", options:["Avvaktande tills det är klart","Redan säker på framgång","Ointresserad av utfallet","Övertygad om misslyckande"], correct:0 },
+        { skill:'lyssna', audio:"Det där är inget annat än sur-sötma, typiskt för den där bittra glädjen man känner när något både är slut och en lättnad.", audioFile:"assets/audio/quiz/c2_2.mp3", question:"Vilken känsla beskrivs?", options:["En blandning av sorg och lättnad","Ren glädje","Ren ilska","Total likgiltighet"], correct:0 },
+        { skill:'skriva', question:"Vilken formulering visar högst grad av stilistisk finess i skriftlig svenska?", options:["Ehuru resultatet uteblev, kvarstår insatsens värde.","Det gick inte bra men vi försökte.","Misslyckades men bra ändå.","Trist men okej liksom."], correct:0 },
+        { skill:'skriva', question:"Identifiera meningen med korrekt bruk av artighetsform i en formell begäran.", options:["Vore jag tacksam om ni kunde återkomma senast på onsdag.","Hör av dig onsdag typ.","Fixa svar till onsdag.","Onsdag är sista dagen, kom igen nu."], correct:0 }
+      ]
+    }
+  ];
+
+  const UNDER_A1 = {
+    badge: "Under A1", title: "Fortsätt öva grunderna",
+    desc: "Du är precis i början av din svenska resa. Börja med de mest grundläggande orden och fraserna - varje fika-stund är en chans att lära dig något nytt.",
+    videos: LEVELS[0].videos
+  };
+
+  // Deterministic seeded shuffle so the correct answer isn't always option 1.
+  function mulberry32(seed){
+    return function(){
+      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+      let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  LEVELS.forEach((level, li) => {
+    level.questions.forEach((q, qi) => {
+      const rng = mulberry32(li * 97 + qi * 13 + 7);
+      const order = [0, 1, 2, 3];
+      for (let i = order.length - 1; i > 0; i--){
+        const j = Math.floor(rng() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      q.correct = order.indexOf(q.correct);
+      q.options = order.map(i => q.options[i]);
+    });
+  });
+
+  let currentLevelIndex = 0;
+  const levelAnswers = LEVELS.map(l => new Array(l.questions.length).fill(null));
+  const levelScores = new Array(LEVELS.length).fill(null);
+
+  const questionsContainer = document.getElementById('questions-container');
+  const submitBtn = document.getElementById('submit-btn');
+  const stepperEl = document.getElementById('level-stepper');
+
+  function speak(text){
+    if (!('speechSynthesis' in window)) {
+      alert('Din webbläsare stöder tyvärr inte uppläsning. Använd "Visa text" istället.');
+      return;
+    }
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'sv-SE';
+    const voices = window.speechSynthesis.getVoices();
+    const svVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('sv'));
+    if (svVoice) utter.voice = svVoice;
+    utter.rate = 0.95;
+    window.speechSynthesis.speak(utter);
+  }
+
+  // Plays the pre-generated ElevenLabs clip; falls back to browser TTS if the file hasn't been generated yet.
+  function playListening(q, audioEl){
+    if (q.audioFile){
+      audioEl.currentTime = 0;
+      const playPromise = audioEl.play();
+      if (playPromise && playPromise.catch) playPromise.catch(() => speak(q.audio));
+      return;
+    }
+    speak(q.audio);
+  }
+
+  function renderStepper(){
+    stepperEl.innerHTML = '';
+    LEVELS.forEach((lvl, i) => {
+      const step = document.createElement('div');
+      step.className = 'step' + (i < currentLevelIndex ? ' done' : i === currentLevelIndex ? ' active' : '');
+      step.textContent = lvl.code;
+      stepperEl.appendChild(step);
+    });
+  }
+
+  function renderLevel(){
+    const level = LEVELS[currentLevelIndex];
+    const answers = levelAnswers[currentLevelIndex];
+
+    document.getElementById('section-title').textContent = `Nivå ${currentLevelIndex + 1} av ${LEVELS.length} - ${level.code} (${level.name})`;
+    document.getElementById('section-sub').textContent = 'Svara på alla 10 frågor för att gå vidare. Minst 8 rätt krävs för att klara nivån.';
+    submitBtn.textContent = 'Se nivåresultat';
+
+    renderStepper();
+    questionsContainer.innerHTML = '';
+
+    level.questions.forEach((q, qi) => {
+      const div = document.createElement('div');
+      div.className = 'question';
+
+      const tag = document.createElement('span');
+      tag.className = 'skill-tag';
+      tag.textContent = SKILL_LABELS[q.skill];
+      div.appendChild(tag);
+
+      if (q.skill === 'lasa' && q.passage) {
+        const passageEl = document.createElement('div');
+        passageEl.className = 'passage';
+        passageEl.textContent = q.passage;
+        div.appendChild(passageEl);
+      }
+
+      if (q.skill === 'lyssna' && q.audio) {
+        const row = document.createElement('div');
+        row.className = 'listen-row';
+
+        const audioEl = document.createElement('audio');
+        audioEl.preload = 'none';
+        if (q.audioFile) audioEl.src = q.audioFile;
+        audioEl.addEventListener('error', () => { audioEl.dataset.failed = 'true'; });
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'listen-btn';
+        btn.textContent = '🔊 Lyssna';
+        btn.addEventListener('click', () => {
+          if (audioEl.dataset.failed === 'true') { speak(q.audio); return; }
+          playListening(q, audioEl);
+        });
+        row.appendChild(btn);
+
+        const toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'transcript-toggle';
+        toggle.textContent = 'Visa text';
+        row.appendChild(toggle);
+        div.appendChild(row);
+
+        const transcriptEl = document.createElement('p');
+        transcriptEl.className = 'transcript-text';
+        transcriptEl.textContent = q.audio;
+        div.appendChild(transcriptEl);
+
+        toggle.addEventListener('click', () => {
+          const visible = transcriptEl.style.display === 'block';
+          transcriptEl.style.display = visible ? 'none' : 'block';
+          toggle.textContent = visible ? 'Visa text' : 'Dölj text';
+        });
+      }
+
+      const p = document.createElement('p');
+      p.className = 'q';
+      p.textContent = q.question;
+      div.appendChild(p);
+
+      const opts = document.createElement('div');
+      opts.className = 'options';
+      q.options.forEach((text, oi) => {
+        const label = document.createElement('label');
+        label.className = 'opt';
+        if (answers[qi] === oi) label.classList.add('selected');
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = `q${qi}`;
+        input.value = oi;
+        input.checked = answers[qi] === oi;
+        input.addEventListener('change', () => {
+          answers[qi] = oi;
+          opts.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+          label.classList.add('selected');
+          updateProgress();
+        });
+        label.appendChild(input);
+        const span = document.createElement('span');
+        span.textContent = text;
+        label.appendChild(span);
+        opts.appendChild(label);
+      });
+      div.appendChild(opts);
+      questionsContainer.appendChild(div);
+    });
+
+    updateProgress();
+  }
+
+  function updateProgress(){
+    const answers = levelAnswers[currentLevelIndex];
+    const answered = answers.filter(a => a !== null).length;
+    const totalAnswered = levelAnswers.reduce((sum, a, i) => sum + (i < currentLevelIndex ? a.length : a.filter(x => x !== null).length), 0);
+    document.getElementById('progress-count').textContent = answered;
+    document.getElementById('progress-total').textContent = totalAnswered;
+    document.getElementById('progress-fill').style.width = `${(answered / LEVELS[currentLevelIndex].questions.length) * 100}%`;
+    submitBtn.disabled = answered < LEVELS[currentLevelIndex].questions.length;
+  }
+
+  function scoreLevel(index){
+    const level = LEVELS[index];
+    const answers = levelAnswers[index];
+    let correct = 0;
+    level.questions.forEach((q, qi) => { if (answers[qi] === q.correct) correct++; });
+    return correct;
+  }
+
+  function showResults(){
+    let achievedIndex = -1;
+    for (let i = 0; i < LEVELS.length; i++){
+      if (levelScores[i] >= PASS_THRESHOLD) achievedIndex = i;
+      else break;
+    }
+
+    const achieved = achievedIndex >= 0 ? LEVELS[achievedIndex] : UNDER_A1;
+    document.getElementById('level-badge').textContent = achievedIndex >= 0 ? `${achieved.code} · ${achieved.name}` : achieved.badge;
+    document.getElementById('level-title').textContent = achievedIndex >= 0 ? achieved.name : achieved.title;
+    document.getElementById('level-desc').textContent = achieved.desc;
+
+    const tbody = document.getElementById('score-table-body');
+    tbody.innerHTML = '';
+    LEVELS.forEach((lvl, i) => {
+      const tr = document.createElement('tr');
+      const passed = levelScores[i] >= PASS_THRESHOLD;
+      tr.className = passed ? 'pass' : 'fail';
+      if (i === achievedIndex) tr.classList.add('achieved');
+      tr.innerHTML = `<td>${lvl.code} - ${lvl.name}</td><td>${levelScores[i]} / 10</td><td>${passed ? 'Godkänd ✓' : 'Ej godkänd ✗'}</td>`;
+      tbody.appendChild(tr);
+    });
+
+    const list = document.getElementById('rec-videos');
+    list.innerHTML = '';
+    achieved.videos.forEach(([title, url]) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = `▶ ${title}`;
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+
+    document.getElementById('quiz-section').style.display = 'none';
+    document.getElementById('result-section').style.display = 'block';
+    document.getElementById('result-section').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Shows a pass/fail recap for the level just completed before continuing.
+  function showLevelResult(index){
+    const level = LEVELS[index];
+    const score = levelScores[index];
+    const passed = score >= PASS_THRESHOLD;
+    const isLast = index === LEVELS.length - 1;
+
+    document.getElementById('lr-badge').textContent = `${level.code} · ${level.name}`;
+    document.getElementById('lr-title').textContent = passed ? `Godkänd! Du klarade nivå ${level.code}` : `Nivå ${level.code} - inte godkänd än`;
+    document.getElementById('lr-desc').textContent = `Du fick ${score} av 10 rätt (minst 8/10 krävs för godkänt). ` +
+      (passed ? 'Bra jobbat, fortsätt så!' : 'Ingen fara - du fortsätter till nästa nivå ändå och får en fullständig sammanfattning på slutet.');
+
+    const continueBtn = document.getElementById('lr-continue-btn');
+    continueBtn.textContent = isLast ? 'Se min sammanfattning' : `Fortsätt till nivå ${LEVELS[index + 1].code}`;
+    continueBtn.onclick = () => {
+      document.getElementById('level-result-section').style.display = 'none';
+      if (isLast){
+        showResults();
+      } else {
+        currentLevelIndex++;
+        renderLevel();
+        document.getElementById('quiz-section').style.display = 'block';
+        document.getElementById('quiz-section').scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    document.getElementById('quiz-section').style.display = 'none';
+    document.getElementById('level-result-section').style.display = 'block';
+    document.getElementById('level-result-section').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  document.getElementById('quiz-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    levelScores[currentLevelIndex] = scoreLevel(currentLevelIndex);
+    showLevelResult(currentLevelIndex);
+  });
+
+  renderLevel();
+</script>
+</body>
+</html>

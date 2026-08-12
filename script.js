@@ -8,10 +8,6 @@ const CONFIG = {
   // Your YouTube channel — used by every "YouTube" button/link on the site.
   youtubeChannelUrl: "https://www.youtube.com/@fikamedhannah",
 
-  // Placeholder URL for the "Take the Swedish Level Challenge" button.
-  // Point this at your real level-test video (or quiz page) when it's ready.
-  levelTestVideoUrl: "https://www.youtube.com/@fikamedhannah",
-
   // Set this to a real YouTube video ID (the part after "v=" in the URL,
   // e.g. "dQw4w9WgXcQ") to embed your latest lesson in the "Latest Lesson"
   // section. Leave it as an empty string to keep showing the placeholder.
@@ -23,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupNavToggle();
   setupLatestVideo();
   setupSignupForm();
+  setupPlannerForm();
   document.getElementById("year").textContent = new Date().getFullYear();
 });
 
@@ -87,6 +84,30 @@ function setupSignupForm() {
     if (!email) return;
 
     message.textContent = "Tack! You're on the list — welcome to Fika-brevet.";
+    form.reset();
+  });
+}
+
+/* ---------- PLANNER DOWNLOAD GATE (frontend-only placeholder) ----------
+   119 kr normally, free for the first 100 downloads. Since this is a static
+   site there's no real way to count "first 100" or verify payment — connect
+   a real email provider + payment link (Stripe Payment Link / Gumroad) here
+   to actually enforce that, and to collect the emails for real. */
+function setupPlannerForm() {
+  const form = document.getElementById("plannerForm");
+  const message = document.getElementById("plannerMessage");
+  const downloadLink = document.getElementById("plannerDownloadLink");
+  if (!form || !message || !downloadLink) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById("plannerEmail").value.trim();
+    if (!email) return;
+
+    message.textContent = "Tack! Your planner is ready to download below.";
+    downloadLink.classList.remove("is-hidden");
+    downloadLink.focus();
     form.reset();
   });
 }
