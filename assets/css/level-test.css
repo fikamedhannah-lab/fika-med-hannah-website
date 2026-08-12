@@ -1,0 +1,187 @@
+/* =========================================================
+   Fika med Hannah — Swedish Level Test (adaptive): styles
+   ---------------------------------------------------------
+   Loaded after styles.css and reuses its design tokens
+   (--rose-dark, --paper, --radius-lg, --shadow-soft, etc.).
+   Only test-specific layout lives here.
+   ========================================================= */
+
+.level-test-page {
+  min-height: 100vh;
+  padding: 48px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lt-card {
+  width: 100%;
+  max-width: 620px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 36px 32px;
+}
+
+.lt-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.lt-logo img { height: 48px; width: auto; }
+
+/* ---------- Intro screen ---------- */
+.lt-intro { text-align: center; }
+.lt-intro h1 { margin-bottom: 10px; }
+.lt-intro p { color: var(--ink); opacity: 0.85; }
+.lt-intro-facts {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+  font-size: 0.92rem;
+}
+.lt-intro-facts span { display: block; color: var(--rose); font-family: var(--font-script); font-size: 1.2rem; }
+
+/* ---------- Buttons ---------- */
+.lt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+.lt-btn:hover { transform: translateY(-1px); }
+.lt-btn-primary { background: var(--rose-dark); color: #fff; box-shadow: var(--shadow-softer); }
+.lt-btn-secondary { background: var(--blush); color: var(--rose-dark); }
+.lt-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+.lt-btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+
+/* ---------- Progress ---------- */
+.lt-progress-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--blush);
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+.lt-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--rose) 0%, var(--rose-dark) 100%);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+.lt-progress-label {
+  font-size: 0.82rem;
+  color: var(--ink);
+  opacity: 0.65;
+  text-align: center;
+  margin: -14px 0 20px;
+}
+
+/* ---------- Question screen ---------- */
+.lt-category-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--rose-dark);
+  background: var(--lavender);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.lt-passage, .lt-audio {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  font-size: 0.96rem;
+}
+.lt-audio { display: flex; align-items: center; gap: 12px; }
+.lt-audio button {
+  background: var(--rose-dark);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  width: 42px; height: 42px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.lt-question-prompt { font-family: var(--font-heading); font-size: 1.25rem; color: var(--rose-dark); margin-bottom: 18px; }
+
+.lt-options { display: grid; gap: 10px; margin-bottom: 8px; }
+.lt-option {
+  text-align: left;
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--line);
+  background: var(--paper);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.lt-option:hover { border-color: var(--rose-light); }
+.lt-option[aria-pressed="true"] {
+  border-color: var(--rose-dark);
+  background: var(--lavender);
+  font-weight: 600;
+}
+
+/* ---------- Results screen ---------- */
+.lt-results-headline { text-align: center; margin-bottom: 4px; }
+.lt-results-sub { text-align: center; opacity: 0.8; margin-bottom: 26px; }
+
+.lt-skill-grid { display: grid; gap: 12px; margin-bottom: 26px; }
+.lt-skill-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+}
+.lt-skill-emoji { font-size: 1.4rem; }
+.lt-skill-info { flex: 1; }
+.lt-skill-info strong { display: block; font-size: 0.95rem; }
+.lt-skill-bar-track {
+  width: 100%; height: 6px; border-radius: 999px; background: var(--blush); margin-top: 6px; overflow: hidden;
+}
+.lt-skill-bar-fill { height: 100%; background: var(--rose-dark); border-radius: 999px; }
+.lt-skill-level { font-family: var(--font-heading); font-weight: 700; color: var(--rose-dark); min-width: 34px; text-align: right; }
+
+.lt-recommendation {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--sage);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 22px;
+}
+.lt-recommendation .lt-skill-emoji { font-size: 1.8rem; }
+.lt-recommendation h3 { color: var(--sage-ink); margin-bottom: 4px; }
+.lt-recommendation a { color: var(--rose-dark); font-weight: 600; text-decoration: underline; }
+
+.lt-disclaimer { font-size: 0.78rem; opacity: 0.6; text-align: center; margin-top: 8px; }
+
+@media (max-width: 480px) {
+  .lt-card { padding: 26px 20px; }
+}

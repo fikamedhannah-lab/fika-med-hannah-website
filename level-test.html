@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Hitta Din Svenska Nivå | Fika med Hannah</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ett 60-frågortest i svenska - grammatik, läsförståelse, hörförståelse och skriftlig förmåga - fördelat på nivåerna A1-C2.">
+<meta name="description" content="Ett 120-frågortest i svenska - grammatik, läsförståelse, hörförståelse och skriftlig förmåga - fördelat på nivåerna A1-C2.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
@@ -347,11 +347,11 @@
   <div class="hero">
     <div class="eyebrow">Fika med Hannah 🇸🇪</div>
     <h1>Hitta Din Svenska Nivå</h1>
-    <p>Gör vårt fullständiga språktest med 60 frågor - grammatik, läsförståelse, hörförståelse och skriftlig förmåga - fördelat på nivåerna A1 till C2. Du klarar en nivå om du svarar rätt på minst 8 av 10 frågor.</p>
+    <p>Gör vårt fullständiga språktest med 120 frågor - grammatik, läsförståelse, hörförståelse och skriftlig förmåga - fördelat på nivåerna A1 till C2. Du klarar en nivå om du svarar rätt på minst 16 av 20 frågor.</p>
     <div class="meta-row">
-      <span>60 frågor</span>
+      <span>120 frågor</span>
       <span>6 nivåer: A1-C2</span>
-      <span>Godkänt: 8/10 per nivå</span>
+      <span>Godkänt: 16/20 per nivå</span>
     </div>
     <a class="cta" href="#quiz-section">Starta testet ↓</a>
   </div>
@@ -363,9 +363,9 @@
         <div class="level-stepper" id="level-stepper"></div>
 
         <h2 class="section-title" id="section-title">Nivå 1 av 6 - A1</h2>
-        <p class="section-sub" id="section-sub">Svara på alla 10 frågor för att gå vidare till nästa nivå.</p>
+        <p class="section-sub" id="section-sub">Svara på alla 20 frågor för att gå vidare till nästa nivå.</p>
 
-        <div class="progress-label"><span id="progress-count">0</span> / 10 besvarade i denna nivå · <span id="progress-total">0</span> / 60 totalt</div>
+        <div class="progress-label"><span id="progress-count">0</span> / 20 besvarade i denna nivå · <span id="progress-total">0</span> / 120 totalt</div>
         <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
 
         <form id="quiz-form">
@@ -403,16 +403,6 @@
       </div>
     </section>
 
-    <section id="signup-section">
-      <div class="card">
-        <div class="badge-100">🎁 Kommer snart – gratis för de första 100</div>
-        <h2>Studieplaneraren</h2>
-        <p style="font-size:14.5px;">En utskrivbar veckoplanerare, daglig övningslogg och månadsöversikt som håller din svenska på rätt spår. Ordinarie pris <strong>119 kr</strong> – gratis för de första 100 när den lanseras.</p>
-        <a class="submit-btn" href="index.html#planner" style="display:block; text-align:center; text-decoration:none; box-sizing:border-box;">Läs mer →</a>
-        <p class="signup-fallback">Frågor? Maila <strong>hannah@fikamedhannah.com</strong>.</p>
-      </div>
-    </section>
-
   </div>
 
   <footer>© Fika med Hannah — svenska, en fika i taget.</footer>
@@ -420,9 +410,9 @@
 <script>
   // Skill labels shown as tags above each question.
   const SKILL_LABELS = { grammatik: 'Grammatik', lasa: 'Läsförståelse', lyssna: 'Hörförståelse', skriva: 'Skriftlig förmåga' };
-  const PASS_THRESHOLD = 8; // correct answers needed out of 10 to pass a level
+  const PASS_THRESHOLD = 16; // correct answers needed out of 20 to pass a level
 
-  // 6 levels x 10 questions (3 grammatik, 3 läsförståelse, 2 hörförståelse, 2 skriva) = 60 total.
+  // 6 levels x 20 questions (5 grammatik, 5 läsförståelse, 5 hörförståelse, 5 skriva) = 120 total.
   const LEVELS = [
     {
       code: 'A1', name: 'Nybörjare',
@@ -435,13 +425,23 @@
         { skill:'grammatik', question:"Jag ___ Anna och jag kommer från Sverige.", options:["heter","är","har","gör"], correct:0 },
         { skill:'grammatik', question:"Vi ___ två katter hemma.", options:["har","är","heter","kan"], correct:0 },
         { skill:'grammatik', question:"Hon ___ lärare på en skola i Lund.", options:["är","har","heter","gör"], correct:0 },
+        { skill:'grammatik', question:"Han ___ 25 år gammal.", options:["är","har","heter","gör"], correct:0 },
+        { skill:'grammatik', question:"Vi ___ svenska i skolan.", options:["läser","läsa","läste","läst"], correct:0 },
         { skill:'lasa', passage:"Jag heter Maria. Jag är 30 år och bor i Göteborg. Jag jobbar som lärare.", question:"Vad jobbar Maria som?", options:["Lärare","Läkare","Student","Kock"], correct:0 },
         { skill:'lasa', passage:"Klockan är åtta på morgonen. Jag dricker kaffe och äter en smörgås.", question:"Vad äter personen till frukost?", options:["En smörgås","En sallad","En kaka","En soppa"], correct:0 },
         { skill:'lasa', passage:"ÖPPET 9–18, MÅNDAG–FREDAG", question:"Vad visar skylten?", options:["Öppettider","En prislista","En karta","En meny"], correct:0 },
+        { skill:'lasa', passage:"Affären öppnar klockan nio och stänger klockan sju.", question:"När stänger affären?", options:["Klockan sju","Klockan nio","Klockan åtta","Klockan sex"], correct:0 },
+        { skill:'lasa', passage:"Mitt namn är Peter. Jag har en bror och en syster. Vi bor i Uppsala.", question:"Var bor Peter?", options:["Uppsala","Lund","Malmö","Umeå"], correct:0 },
         { skill:'lyssna', audio:"Hej! Jag heter Erik och jag bor i Malmö.", audioFile:"assets/audio/quiz/a1_1.mp3", question:"Var bor Erik?", options:["Malmö","Lund","Uppsala","Umeå"], correct:0 },
         { skill:'lyssna', audio:"Klockan är tre.", audioFile:"assets/audio/quiz/a1_2.mp3", question:"Vad är klockan?", options:["Tre","Fem","Åtta","Tolv"], correct:0 },
+        { skill:'lyssna', audio:"God morgon! Vill du ha kaffe eller te?", audioFile:"assets/audio/quiz/a1_3.mp3", question:"Vad frågar personen om?", options:["Om man vill ha kaffe eller te","Om man vill sova","Om man är trött","Om man vill ha mat"], correct:0 },
+        { skill:'lyssna', audio:"Jag har två barn, en pojke och en flicka.", audioFile:"assets/audio/quiz/a1_4.mp3", question:"Hur många barn har personen?", options:["Två","Ett","Tre","Inga"], correct:0 },
+        { skill:'lyssna', audio:"Vi ses på fredag klockan sex.", audioFile:"assets/audio/quiz/a1_5.mp3", question:"När ses de?", options:["På fredag klockan sex","På måndag klockan sex","På fredag klockan åtta","På söndag"], correct:0 },
         { skill:'skriva', question:"Välj den mening som bäst presenterar dig själv.", options:["Jag heter Sara och jag kommer från Sverige.","Jag är Sara och kommer Sverige.","Sara jag heter.","Kommer jag Sverige."], correct:0 },
-        { skill:'skriva', question:"Välj rätt fråga om någons namn.", options:["Vad heter du?","Vad har du?","Vem gör du?","Var är du namn?"], correct:0 }
+        { skill:'skriva', question:"Välj rätt fråga om någons namn.", options:["Vad heter du?","Vad har du?","Vem gör du?","Var är du namn?"], correct:0 },
+        { skill:'skriva', question:"Välj rätt hälsningsfras på morgonen.", options:["God morgon!","God natt!","Hej då!","Tack så mycket!"], correct:0 },
+        { skill:'skriva', question:"Välj den korrekta meningen.", options:["Jag bor i Stockholm.","Jag bo i Stockholm.","Jag bor Stockholm.","Bor jag i Stockholm."], correct:0 },
+        { skill:'skriva', question:"Välj rätt sätt att tacka någon.", options:["Tack så mycket!","Förlåt!","Hej då!","Var så god!"], correct:0 }
       ]
     },
     {
@@ -455,13 +455,23 @@
         { skill:'grammatik', question:"Igår ___ jag till affären för att handla mat.", options:["gick","går","ska gå","har gått"], correct:0 },
         { skill:'grammatik', question:"Hon ___ en bra bok förra veckan.", options:["läste","läser","ska läsa","läs"], correct:0 },
         { skill:'grammatik', question:"Vi ___ till Stockholm nästa sommar.", options:["ska åka","åkte","åker inte","har åkt"], correct:0 },
+        { skill:'grammatik', question:"Hon ___ inte hemma just nu, hon är på jobbet.", options:["är","har","gör","kan"], correct:0 },
+        { skill:'grammatik', question:"Jag ___ läsa boken imorgon.", options:["ska","gjorde","har","är"], correct:0 },
         { skill:'lasa', passage:"Bussen till centrum går var 20:e minut. Nästa buss kommer klockan 14:40.", question:"När kommer nästa buss?", options:["14:40","14:20","15:00","13:40"], correct:0 },
         { skill:'lasa', passage:"Jag handlade mjölk, bröd och ägg på ICA igår.", question:"Var handlade personen?", options:["ICA","Systembolaget","Apoteket","Posten"], correct:0 },
         { skill:'lasa', passage:"Koka potatisen i 20 minuter, tillsätt sedan smör och salt.", question:"Hur länge ska potatisen koka?", options:["20 minuter","10 minuter","2 timmar","5 minuter"], correct:0 },
+        { skill:'lasa', passage:"Tåget till Malmö avgår klockan 08:15 från spår 4.", question:"Från vilket spår avgår tåget?", options:["Spår 4","Spår 8","Spår 15","Spår 1"], correct:0 },
+        { skill:'lasa', passage:"Vi behöver mjölk, smör och ost. Kan du handla på vägen hem?", question:"Vad ska personen handla?", options:["Mjölk, smör och ost","Bröd och ägg","Kött och fisk","Frukt och grönsaker"], correct:0 },
         { skill:'lyssna', audio:"Kan jag få en kaffe och en kanelbulle, tack?", audioFile:"assets/audio/quiz/a2_1.mp3", question:"Vad beställer personen?", options:["Kaffe och kanelbulle","Te och kaka","Öl och smörgås","Bara vatten"], correct:0 },
         { skill:'lyssna', audio:"Ursäkta, var ligger toaletten?", audioFile:"assets/audio/quiz/a2_2.mp3", question:"Vad frågar personen efter?", options:["Toaletten","Bussen","Stationen","Affären"], correct:0 },
+        { skill:'lyssna', audio:"Jag skulle vilja boka bord för fyra personer klockan sju.", audioFile:"assets/audio/quiz/a2_3.mp3", question:"Hur många personer är bordet för?", options:["Fyra","Två","Sju","Tre"], correct:0 },
+        { skill:'lyssna', audio:"Bussen är försenad, den kommer om tio minuter.", audioFile:"assets/audio/quiz/a2_4.mp3", question:"Vad är fel med bussen?", options:["Den är försenad","Den är full","Den är trasig","Den kommer inte alls"], correct:0 },
+        { skill:'lyssna', audio:"Kan du visa mig vägen till stationen?", audioFile:"assets/audio/quiz/a2_5.mp3", question:"Vad frågar personen efter?", options:["Vägen till stationen","Vägen till affären","Klockan","Priset på biljetten"], correct:0 },
         { skill:'skriva', question:"Välj den mest artiga formuleringen.", options:["Skulle du kunna hjälpa mig, tack?","Hjälp mig nu!","Du hjälper mig.","Hjälpa mig?"], correct:0 },
-        { skill:'skriva', question:"Böj adjektivet rätt: 'ett ___ hus' (stor)", options:["stort","stor","stora","större"], correct:0 }
+        { skill:'skriva', question:"Böj adjektivet rätt: 'ett ___ hus' (stor)", options:["stort","stor","stora","större"], correct:0 },
+        { skill:'skriva', question:"Böj verbet rätt: 'Igår ___ vi pizza.' (äta)", options:["åt","äter","ätit","äta"], correct:0 },
+        { skill:'skriva', question:"Välj den mest artiga frasen för att be om ursäkt.", options:["Förlåt, jag är sen.","Jag bryr mig inte.","Du är sen.","Vem bryr sig."], correct:0 },
+        { skill:'skriva', question:"Sätt in rätt preposition: 'Jag väntar ___ bussen.'", options:["på","i","till","med"], correct:0 }
       ]
     },
     {
@@ -475,13 +485,23 @@
         { skill:'grammatik', question:"Om jag ___ mer tid, skulle jag resa oftare.", options:["hade","har","hadde","skulle ha"], correct:0 },
         { skill:'grammatik', question:"Han sa att han ___ trött efter jobbet.", options:["var","är","ska vara","varit"], correct:0 },
         { skill:'grammatik', question:"Boken ___ av många elever i skolan.", options:["läses","läser","läst","läsa"], correct:0 },
+        { skill:'grammatik', question:"Hon undrade om han ___ komma till festen.", options:["skulle","ska","har","hade"], correct:0 },
+        { skill:'grammatik', question:"Trots att det regnade ___ vi ut och sprang.", options:["gick","går","ska gå","har gått"], correct:0 },
         { skill:'lasa', passage:"I Sverige ringer man ofta 1177 för att boka tid hos vårdcentralen eller få medicinsk rådgivning.", question:"Vilket nummer ringer man för vårdrådgivning?", options:["1177","112","90000","020"], correct:0 },
         { skill:'lasa', passage:"Trots det kalla vädret väljer många svenskar att fika utomhus, gärna med en filt över axlarna.", question:"Vad gör svenskarna trots kylan?", options:["Fikar utomhus","Stannar inomhus","Slutar dricka kaffe","Reser bort"], correct:0 },
         { skill:'lasa', passage:"Annonsen söker en barnskötare till en förskola i centrala Malmö, deltid, start i augusti.", question:"Vilken tjänst söks?", options:["Barnskötare","Sjuksköterska","Lärare","Kock"], correct:0 },
+        { skill:'lasa', passage:"På många svenska arbetsplatser är 'fika' en viktig del av dagen - en paus för kaffe och samtal med kollegor.", question:"Vad är fika enligt texten?", options:["En paus för kaffe och samtal","Ett möte om budget","En lunchrestaurang","En semesterform"], correct:0 },
+        { skill:'lasa', passage:"Hyreskontraktet gäller i tolv månader och kan förlängas om båda parter är överens.", question:"Hur länge gäller kontraktet från början?", options:["Tolv månader","Sex månader","Tre månader","Tjugofyra månader"], correct:0 },
         { skill:'lyssna', audio:"Jag mår inte bra, jag har ont i magen sedan igår.", audioFile:"assets/audio/quiz/b1_1.mp3", question:"Vad är problemet?", options:["Ont i magen","Ont i huvudet","Feber","Ont i benet"], correct:0 },
         { skill:'lyssna', audio:"Trots regnet gick vi en lång promenad i parken igår kväll.", audioFile:"assets/audio/quiz/b1_2.mp3", question:"Vad gjorde de trots regnet?", options:["Gick en promenad","Stannade hemma","Åkte bil","Sov hela dagen"], correct:0 },
+        { skill:'lyssna', audio:"Jag skulle behöva boka en tid hos tandläkaren så snart som möjligt.", audioFile:"assets/audio/quiz/b1_3.mp3", question:"Vad vill personen boka?", options:["En tid hos tandläkaren","En tid hos frisören","Ett bord på restaurang","En biljett till tåget"], correct:0 },
+        { skill:'lyssna', audio:"Även om jag var trött stannade jag uppe för att plugga till provet.", audioFile:"assets/audio/quiz/b1_4.mp3", question:"Varför stannade personen uppe?", options:["För att plugga till provet","För att titta på tv","För att laga mat","För att träna"], correct:0 },
+        { skill:'lyssna', audio:"Vi flyttar till en större lägenhet i slutet av månaden.", audioFile:"assets/audio/quiz/b1_5.mp3", question:"Vad ska personen göra i slutet av månaden?", options:["Flytta till en större lägenhet","Sälja sin bil","Börja ett nytt jobb","Resa utomlands"], correct:0 },
         { skill:'skriva', question:"Välj meningen som uttrycker en åsikt.", options:["Jag tycker att svenska är ett vackert språk.","Klockan är tre.","Det regnar idag.","Hej då."], correct:0 },
-        { skill:'skriva', question:"Komplettera: 'Jag stannade hemma ___ det regnade hela dagen.'", options:["eftersom","men","eller","att"], correct:0 }
+        { skill:'skriva', question:"Komplettera: 'Jag stannade hemma ___ det regnade hela dagen.'", options:["eftersom","men","eller","att"], correct:0 },
+        { skill:'skriva', question:"Välj den mening som är skriven i dåtid (imperfekt).", options:["Hon läste en bok igår.","Hon läser en bok nu.","Hon ska läsa en bok.","Hon har läst en bok."], correct:0 },
+        { skill:'skriva', question:"Vilket ord uttrycker komparativ (jämförelse) form?", options:["bättre","bra","bäst","godast"], correct:0 },
+        { skill:'skriva', question:"Skriv om meningen i passiv form: 'Kocken lagar maten.'", options:["Maten lagas av kocken.","Maten lagar kocken.","Kocken lagas av maten.","Maten har lagat kocken."], correct:0 }
       ]
     },
     {
@@ -495,13 +515,23 @@
         { skill:'grammatik', question:"Hon frågade om jag ___ komma imorgon istället.", options:["kunde","kan","ska kunna","kunnat"], correct:0 },
         { skill:'grammatik', question:"Problemet måste ___ innan mötet på fredag.", options:["lösas","lösa","löses","lösning"], correct:0 },
         { skill:'grammatik', question:"Ju mer man övar, desto ___ blir man på svenska.", options:["bättre","bäst","bra","godare"], correct:0 },
+        { skill:'grammatik', question:"Inte förrän igår ___ jag sanningen.", options:["fick jag veta","jag fick veta","jag vet","har jag vetat"], correct:0 },
+        { skill:'grammatik', question:"Vore jag på din plats ___ jag tackat ja direkt.", options:["hade","har","skulle","ska"], correct:0 },
         { skill:'lasa', passage:"Många svenskar byter automatiskt till engelska så fort de märker en brytning, även om personen egentligen vill öva svenska.", question:"Varför byter svenskar ofta till engelska?", options:["De märker en brytning","De pratar inte engelska","De vill inte prata","De är blyga"], correct:0 },
         { skill:'lasa', passage:"Enligt rapporten har antalet nyanlända som klarar SFI-provet inom två år ökat med 12 procent sedan förra året.", question:"Vad har ökat enligt rapporten?", options:["Andelen godkända på SFI-provet","Antalet nyanlända totalt","Antalet skolor","Kostnaden för SFI"], correct:0 },
         { skill:'lasa', passage:"Att 'hålla tummarna' betyder att hoppas på tur åt någon, till exempel inför en tenta eller en intervju.", question:"Vad betyder 'hålla tummarna'?", options:["Hoppas på tur åt någon","Vara arg på någon","Ge upp","Fira något"], correct:0 },
+        { skill:'lasa', passage:"En undersökning visar att andelen svenskar som arbetar hemifrån minst en dag i veckan har stabiliserats efter pandemins toppar.", question:"Vad visar undersökningen?", options:["Att distansarbetet har stabiliserats","Att distansarbetet har försvunnit helt","Att alla arbetar hemifrån varje dag","Att undersökningen är opålitlig"], correct:0 },
+        { skill:'lasa', passage:"Artikeln beskriver hur unga vuxna alltmer väljer att bo kvar hemma längre på grund av bostadsbristen i storstäderna.", question:"Varför bor unga vuxna kvar hemma längre enligt artikeln?", options:["På grund av bostadsbristen","För att de trivs bäst hemma","För att de studerar utomlands","För att hyrorna sjunker"], correct:0 },
         { skill:'lyssna', audio:"Även om mötet drog ut på tiden tyckte jag att diskussionen var givande.", audioFile:"assets/audio/quiz/b2_1.mp3", question:"Vad tyckte personen om mötet, trots att det drog ut på tiden?", options:["Att diskussionen var givande","Att det var bortkastad tid","Att mötet var för kort","Att ingen sa något viktigt"], correct:0 },
         { skill:'lyssna', audio:"Enligt vädret ska regnet hålla i sig hela helgen, men klarna upp på måndag.", audioFile:"assets/audio/quiz/b2_2.mp3", question:"Vad händer med vädret på måndag?", options:["Det klarnar upp","Det regnar mer","Det snöar","Det blir stormigt"], correct:0 },
+        { skill:'lyssna', audio:"Om inte annat, så lärde vi oss i alla fall något nytt av misstaget.", audioFile:"assets/audio/quiz/b2_3.mp3", question:"Vad säger talaren om misstaget?", options:["Att de lärde sig något av det","Att det var meningslöst","Att de aldrig gör så igen","Att ingen märkte det"], correct:0 },
+        { skill:'lyssna', audio:"Rapporten pekar på att klimatet blir alltmer instabilt, vilket kräver snabbare åtgärder.", audioFile:"assets/audio/quiz/b2_4.mp3", question:"Vad krävs enligt rapporten?", options:["Snabbare åtgärder","Mindre forskning","Fler rapporter","Ingenting alls"], correct:0 },
+        { skill:'lyssna', audio:"Jag hade egentligen tänkt säga upp mig, men chefen övertalade mig att stanna.", audioFile:"assets/audio/quiz/b2_5.mp3", question:"Vad hände till slut?", options:["Personen stannade kvar","Personen slutade","Chefen sa upp personen","Personen bytte avdelning"], correct:0 },
         { skill:'skriva', question:"Välj den mest formella omskrivningen av: 'Kan du fixa det här snabbt?'", options:["Skulle du kunna åtgärda detta så snart som möjligt?","Fixa det nu!","Gör det snabbt, tack.","Kan du snabba på?"], correct:0 },
-        { skill:'skriva', question:"Välj rätt betydelse: 'Vädret ska ___ i sig imorgon.' (fortsätta likadant)", options:["hålla","hålla på","hålla med","hålla ut"], correct:0 }
+        { skill:'skriva', question:"Välj rätt betydelse: 'Vädret ska ___ i sig imorgon.' (fortsätta likadant)", options:["hålla","hålla på","hålla med","hålla ut"], correct:0 },
+        { skill:'skriva', question:"Välj den formulering som bäst uttrycker en försiktig invändning.", options:["Jag förstår din poäng, men jag ser det lite annorlunda.","Det där är helt fel.","Nej, absolut inte.","Du har ingen aning."], correct:0 },
+        { skill:'skriva', question:"Identifiera meningen med korrekt bruk av particip som adjektiv.", options:["Det var en välskriven rapport.","Det var en väl skriva rapport.","Det var en väl skrivit rapport.","Det var en väl skriver rapport."], correct:0 },
+        { skill:'skriva', question:"Vilken mening använder bisats korrekt?", options:["Jag vet inte om hon kommer imorgon.","Jag vet inte om hon kommer imorgon hon.","Om hon kommer imorgon jag vet inte.","Jag vet inte hon kommer om imorgon."], correct:0 }
       ]
     },
     {
@@ -515,13 +545,23 @@
         { skill:'grammatik', question:"Hade jag vetat det tidigare, ___ jag annorlunda.", options:["hade jag agerat","har jag agerat","agerar jag","ska jag agera"], correct:0 },
         { skill:'grammatik', question:"Det är inte ovanligt att man ___ ordval beroende på sammanhang.", options:["anpassar","anpassa","anpassats","anpassning"], correct:0 },
         { skill:'grammatik', question:"Trots att förhandlingarna ___ i flera timmar nåddes ingen överenskommelse.", options:["pågick","pågår","ska pågå","pågått"], correct:0 },
+        { skill:'grammatik', question:"Knappt hade han satt sig ___ telefonen ringde.", options:["förrän","än","som","då"], correct:0 },
+        { skill:'grammatik', question:"Det ___ visa sig att beslutet var förhastat.", options:["skulle","ska","har","hade"], correct:0 },
         { skill:'lasa', passage:"Debattören menar att integrationsdebatten alltför ofta reduceras till en fråga om språkkunskaper, medan strukturella faktorer förbises.", question:"Vad kritiserar debattören?", options:["Att debatten fokuserar för mycket på språk och för lite på struktur","Att för många lär sig svenska","Att integrationen går för snabbt","Att strukturella faktorer överdrivs"], correct:0 },
         { skill:'lasa', passage:"Uttrycket 'det ligger en hund begraven' används när man misstänker att något inte stämmer, utan att veta exakt vad.", question:"Vad antyder uttrycket?", options:["Att något verkar misstänkt","Att någon har en hund","Att något är begravt bokstavligen","Att allt är som det ska"], correct:0 },
         { skill:'lasa', passage:"Kolumnen argumenterar för att den svenska 'lagom'-kulturen både kan upplevas som balanserad och som en broms för entreprenörskap.", question:"Vilken dubbelhet lyfter kolumnen fram kring 'lagom'?", options:["Balans kontra hämmad entreprenörsanda","Rikedom kontra fattigdom","Stad kontra landsbygd","Ung kontra gammal"], correct:0 },
+        { skill:'lasa', passage:"Kritikern menar att regissörens senaste film, trots sin visuella skönhet, saknar den narrativa stringens som utmärkte hens tidigare verk.", question:"Vad kritiserar recensenten filmen för?", options:["Bristande narrativ stringens","För mycket dialog","Dålig ljudkvalitet","För kort speltid"], correct:0 },
+        { skill:'lasa', passage:"Sociolingvisten hävdar att dialektutjämningen i Sverige delvis drivs av ökad rörlighet på arbetsmarknaden snarare än enbart mediepåverkan.", question:"Vad menar sociolingvisten driver dialektutjämningen?", options:["Ökad rörlighet på arbetsmarknaden","Enbart tv och radio","Minskad utbildning","Statliga språklagar"], correct:0 },
         { skill:'lyssna', audio:"Jag ska inte sticka under stol med att förslaget mötte visst motstånd internt.", audioFile:"assets/audio/quiz/c1_1.mp3", question:"Vad antyder talaren om förslaget?", options:["Det mötte motstånd","Alla var positiva","Förslaget drogs tillbaka direkt","Ingen hade en åsikt"], correct:0 },
         { skill:'lyssna', audio:"Även fast hen växte upp i Skåne hörs knappt någon dialekt längre.", audioFile:"assets/audio/quiz/c1_2.mp3", question:"Vad sägs om personens dialekt?", options:["Den hörs knappt längre","Den är väldigt tydlig","Personen pratar bara skånska","Personen har ingen dialekt alls ursprungligen"], correct:0 },
+        { skill:'lyssna', audio:"Det må låta krasst, men siffrorna talar sitt tydliga språk.", audioFile:"assets/audio/quiz/c1_3.mp3", question:"Vad menar talaren med uttrycket?", options:["Att siffrorna visar sanningen tydligt","Att siffrorna är felaktiga","Att ingen bryr sig om siffrorna","Att siffrorna är hemliga"], correct:0 },
+        { skill:'lyssna', audio:"Han la locket på och vägrade kommentera saken vidare.", audioFile:"assets/audio/quiz/c1_4.mp3", question:"Vad gjorde han enligt uttrycket 'lade locket på'?", options:["Slutade prata om saken","Öppnade en burk","Berättade allt","Skrattade åt saken"], correct:0 },
+        { skill:'lyssna', audio:"Trots viss skepsis inledningsvis blev projektet till slut en succé över förväntan.", audioFile:"assets/audio/quiz/c1_5.mp3", question:"Hur gick det för projektet till slut?", options:["Det blev en stor succé","Det misslyckades","Det lades ner","Det blev som förväntat"], correct:0 },
         { skill:'skriva', question:"Välj den mest nyanserade formuleringen för att uttrycka oenighet artigt.", options:["Jag ser det lite annorlunda, om jag får säga min syn.","Du har fel.","Nej, det stämmer inte.","Jag håller inte alls med."], correct:0 },
-        { skill:'skriva', question:"Vilken mening har korrekt formellt register i ett arbetsmejl?", options:["Jag återkommer med besked senast på fredag.","Hojta till senast fredag typ.","Fredag typ, hör av mig.","Ska fixa nåt till fredag."], correct:0 }
+        { skill:'skriva', question:"Vilken mening har korrekt formellt register i ett arbetsmejl?", options:["Jag återkommer med besked senast på fredag.","Hojta till senast fredag typ.","Fredag typ, hör av mig.","Ska fixa nåt till fredag."], correct:0 },
+        { skill:'skriva', question:"Vilken mening uttrycker ironi på ett subtilt sätt?", options:["Ja, det var verkligen ett genialiskt drag, att döma av resultatet.","Det var ett bra beslut.","Jag tycker inte om det.","Beslutet var dåligt."], correct:0 },
+        { skill:'skriva', question:"Välj den mening som använder konjunktiv/artighetsform korrekt i en formell förfrågan.", options:["Jag skulle uppskatta om ni kunde återkomma snarast.","Skriv tillbaka snabbt.","Svara nu direkt.","Fixa svar asap."], correct:0 },
+        { skill:'skriva', question:"Identifiera den mest idiomatiska formuleringen.", options:["Det är ingen ko på isen, vi har gott om tid.","Det finns en ko på is.","Isen har en ko på den.","Kon är på isen fortfarande."], correct:0 }
       ]
     },
     {
@@ -535,13 +575,23 @@
         { skill:'grammatik', question:"Föga anade han att beslutet skulle ___ så pass omfattande konsekvenser.", options:["få","ha","ta","ge"], correct:0 },
         { skill:'grammatik', question:"Vore det inte för hennes envishet, ___ projektet ha lagts ner för länge sedan.", options:["skulle","hade","kunde","ska"], correct:0 },
         { skill:'grammatik', question:"Det förhåller sig så, ___ man brukar säga, att övning ger färdighet.", options:["som","att","vilket","då"], correct:0 },
+        { skill:'grammatik', question:"Icke desto mindre ___ förslaget stöd hos en majoritet.", options:["fick","får","hade fått","skulle få"], correct:0 },
+        { skill:'grammatik', question:"Det torde ___ att slutsatsen är väl underbyggd.", options:["framgå","framgår","framgått","att framgå"], correct:0 },
         { skill:'lasa', passage:"Essän problematiserar föreställningen om att en 'perfekt' brytningsfri svenska skulle vara måttet på lyckad integration, och pekar istället på kommunikativ förmåga som avgörande.", question:"Vad förespråkar essän som viktigare mått?", options:["Kommunikativ förmåga","Perfekt uttal","Antal år i landet","Skolbetyg"], correct:0 },
         { skill:'lasa', passage:"Uttrycket 'att gå över ån efter vatten' syftar på att göra saker onödigt krångliga när en enklare lösning finns nära till hands.", question:"Vad betyder uttrycket i praktiken?", options:["Att välja en onödigt krånglig lösning","Att alltid ta den enklaste vägen","Att bokstavligen hämta vatten","Att undvika allt arbete"], correct:0 },
         { skill:'lasa', passage:"Recensenten menar att romanens största styrka paradoxalt nog också är dess svaghet: den fragmentariska strukturen som både skapar närvarokänsla och försvårar orienteringen för läsaren.", question:"Vilken paradox lyfter recensenten fram?", options:["Strukturen är både styrka och svaghet","Boken är för kort och för lång","Språket är för enkelt och för svårt","Handlingen är rolig och tråkig"], correct:0 },
+        { skill:'lasa', passage:"Kritikerkåren är splittrad: medan somliga hyllar romanens vågade formexperiment, avfärdar andra den som konstruerad självgodhet.", question:"Vad råder det delade meningar om enligt texten?", options:["Om romanens formexperiment är lyckat eller konstruerat","Om boken sålde bra","Om författaren är känd sedan tidigare","Om boken är lång eller kort"], correct:0 },
+        { skill:'lasa', passage:"Att 'läsa mellan raderna' innebär att tolka en outtalad innebörd i det som sägs eller skrivs, snarare än att stanna vid ordens bokstavliga betydelse.", question:"Vad innebär uttrycket 'läsa mellan raderna'?", options:["Att tolka den outtalade innebörden","Att läsa väldigt snabbt","Att läsa bokstavligt","Att hoppa över rader"], correct:0 },
         { skill:'lyssna', audio:"Man ska inte sälja skinnet förrän björnen är skjuten, så vi håller krutet torrt tills avtalet är påskrivet.", audioFile:"assets/audio/quiz/c2_1.mp3", question:"Vad är talarens hållning inför avtalet?", options:["Avvaktande tills det är klart","Redan säker på framgång","Ointresserad av utfallet","Övertygad om misslyckande"], correct:0 },
         { skill:'lyssna', audio:"Det där är inget annat än sur-sötma, typiskt för den där bittra glädjen man känner när något både är slut och en lättnad.", audioFile:"assets/audio/quiz/c2_2.mp3", question:"Vilken känsla beskrivs?", options:["En blandning av sorg och lättnad","Ren glädje","Ren ilska","Total likgiltighet"], correct:0 },
+        { skill:'lyssna', audio:"Han svepte förbi kritiken med en axelryckning, som om den aldrig nått honom.", audioFile:"assets/audio/quiz/c2_3.mp3", question:"Hur reagerade han på kritiken?", options:["Han brydde sig inte alls","Han blev mycket upprörd","Han tackade för den","Han försvarade sig länge"], correct:0 },
+        { skill:'lyssna', audio:"Det är lätt att raljera i efterhand, men beslutet fattades under stor tidspress.", audioFile:"assets/audio/quiz/c2_4.mp3", question:"Vad påpekar talaren om beslutet?", options:["Att det fattades under tidspress","Att det var enkelt att fatta","Att alla var överens om det","Att det togs för länge sedan"], correct:0 },
+        { skill:'lyssna', audio:"Hela resonemanget vilar på ett implicit antagande som sällan görs explicit.", audioFile:"assets/audio/quiz/c2_5.mp3", question:"Vad kritiseras i resonemanget?", options:["Ett antagande som inte redovisas öppet","Att resonemanget är för kort","Att ingen förstår det","Att det är skrivet på engelska"], correct:0 },
         { skill:'skriva', question:"Vilken formulering visar högst grad av stilistisk finess i skriftlig svenska?", options:["Ehuru resultatet uteblev, kvarstår insatsens värde.","Det gick inte bra men vi försökte.","Misslyckades men bra ändå.","Trist men okej liksom."], correct:0 },
-        { skill:'skriva', question:"Identifiera meningen med korrekt bruk av artighetsform i en formell begäran.", options:["Vore jag tacksam om ni kunde återkomma senast på onsdag.","Hör av dig onsdag typ.","Fixa svar till onsdag.","Onsdag är sista dagen, kom igen nu."], correct:0 }
+        { skill:'skriva', question:"Identifiera meningen med korrekt bruk av artighetsform i en formell begäran.", options:["Vore jag tacksam om ni kunde återkomma senast på onsdag.","Hör av dig onsdag typ.","Fixa svar till onsdag.","Onsdag är sista dagen, kom igen nu."], correct:0 },
+        { skill:'skriva', question:"Vilken formulering uppvisar högst grad av stilistisk komplexitet?", options:["Ehuru utgången var oviss, kvarstod ett stillsamt hopp om en lyckosam upplösning.","Vi visste inte hur det skulle gå, men hoppades ändå.","Vi hoppades att allt skulle gå bra.","Det var osäkert men vi hoppades."], correct:0 },
+        { skill:'skriva', question:"Identifiera meningen med mest raffinerat bruk av bildspråk.", options:["Orden föll som frost över det tysta rummet.","Det var tyst i rummet.","Ingen sa något länge.","Rummet var kallt och tyst."], correct:0 },
+        { skill:'skriva', question:"Vilken mening speglar högst grad av idiomatisk säkerhet i akademisk svenska?", options:["Föreliggande studie ämnar belysa fenomenet ur ett nytt perspektiv.","Den här studien kollar på grejen på ett nytt sätt.","Studien typ tittar på detta annorlunda.","Vi ska titta lite på detta här."], correct:0 }
       ]
     }
   ];
@@ -623,7 +673,7 @@
     const answers = levelAnswers[currentLevelIndex];
 
     document.getElementById('section-title').textContent = `Nivå ${currentLevelIndex + 1} av ${LEVELS.length} - ${level.code} (${level.name})`;
-    document.getElementById('section-sub').textContent = 'Svara på alla 10 frågor för att gå vidare. Minst 8 rätt krävs för att klara nivån.';
+    document.getElementById('section-sub').textContent = 'Svara på alla 20 frågor för att gå vidare. Minst 16 rätt krävs för att klara nivån.';
     submitBtn.textContent = 'Se nivåresultat';
 
     renderStepper();
@@ -755,7 +805,7 @@
       const passed = levelScores[i] >= PASS_THRESHOLD;
       tr.className = passed ? 'pass' : 'fail';
       if (i === achievedIndex) tr.classList.add('achieved');
-      tr.innerHTML = `<td>${lvl.code} - ${lvl.name}</td><td>${levelScores[i]} / 10</td><td>${passed ? 'Godkänd ✓' : 'Ej godkänd ✗'}</td>`;
+      tr.innerHTML = `<td>${lvl.code} - ${lvl.name}</td><td>${levelScores[i]} / 20</td><td>${passed ? 'Godkänd ✓' : 'Ej godkänd ✗'}</td>`;
       tbody.appendChild(tr);
     });
 
@@ -786,7 +836,7 @@
 
     document.getElementById('lr-badge').textContent = `${level.code} · ${level.name}`;
     document.getElementById('lr-title').textContent = passed ? `Godkänd! Du klarade nivå ${level.code}` : `Nivå ${level.code} - inte godkänd än`;
-    document.getElementById('lr-desc').textContent = `Du fick ${score} av 10 rätt (minst 8/10 krävs för godkänt). ` +
+    document.getElementById('lr-desc').textContent = `Du fick ${score} av 20 rätt (minst 16/20 krävs för godkänt). ` +
       (passed ? 'Bra jobbat, fortsätt så!' : 'Ingen fara - du fortsätter till nästa nivå ändå och får en fullständig sammanfattning på slutet.');
 
     const continueBtn = document.getElementById('lr-continue-btn');
