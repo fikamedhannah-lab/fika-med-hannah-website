@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 460" role="img" aria-labelledby="heroIllTitle">
+  <!-- PLACEHOLDER ARTWORK: replace this whole file with your real "Fika med Hannah" hero illustration or planner mockup (recommended ~560x460, transparent or cream background). Keep the filename "hero-illustration.svg" to avoid editing index.html, or update the src there if you switch to a .png/.jpg. -->
+  <title id="heroIllTitle">A cosy illustration of a coffee cup, a heart and the Swedish flag, representing learning Swedish over fika</title>
+
+  <!-- soft background blob -->
+  <ellipse cx="280" cy="250" rx="230" ry="190" fill="#fdeeec"/>
+  <ellipse cx="150" cy="120" rx="70" ry="60" fill="#eceafc" opacity="0.8"/>
+  <ellipse cx="420" cy="360" rx="90" ry="70" fill="#e3ebd9" opacity="0.7"/>
+
+  <!-- table shadow -->
+  <ellipse cx="280" cy="390" rx="150" ry="18" fill="#8f6b60" opacity="0.12"/>
+
+  <!-- steam -->
+  <path d="M240 120c-10-16 6-24 0-40M270 108c-10-16 6-24 0-40M300 120c-10-16 6-24 0-40"
+        fill="none" stroke="#b58b7f" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- saucer -->
+  <ellipse cx="270" cy="330" rx="140" ry="22" fill="#fffaf7" stroke="#e6d3c9" stroke-width="4"/>
+
+  <!-- mug -->
+  <path d="M160 200h190v90c0 40-32 66-72 66h-46c-40 0-72-26-72-66v-90z" fill="#fffaf7" stroke="#8f6b60" stroke-width="6"/>
+  <path d="M350 220h18c18 0 32 14 32 32s-14 32-32 32h-18" fill="none" stroke="#8f6b60" stroke-width="6" stroke-linecap="round"/>
+  <!-- coffee + heart latte art -->
+  <path d="M170 208h170c0 14-6 22-18 22H188c-12 0-18-8-18-22z" fill="#b58b7f"/>
+  <path d="M255 214c4-6 14-6 16 2 2-8 12-8 16-2 4 6-2 12-16 20-14-8-20-14-16-20z" fill="#fffaf7"/>
+
+  <!-- swedish flag pennant on a little stick -->
+  <line x1="420" y1="120" x2="420" y2="230" stroke="#8f6b60" stroke-width="5" stroke-linecap="round"/>
+  <path d="M420 122h70l-18 20 18 20h-70z" fill="#dec5bb" stroke="#8f6b60" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M440 122v40M420 138h70" stroke="#fffaf7" stroke-width="5"/>
+
+  <!-- little heart -->
+  <path d="M120 250c-14-16-38-2-30 16 6 14 30 26 30 26s24-12 30-26c8-18-16-32-30-16z" fill="#b58b7f" opacity="0.85"/>
+
+  <!-- hand-drawn swirl accents -->
+  <path d="M90 340c20 10 40-6 30-22" fill="none" stroke="#8f6b60" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  <path d="M460 260c-14 12-14 34 6 40" fill="none" stroke="#8f6b60" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+</svg>

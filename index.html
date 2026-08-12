@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fika med Hannah — Learn Swedish, one fika at a time</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fika med Hannah offers cosy, simple Swedish lessons, a free printable study planner, vocabulary help and study tools — learn Swedish, one fika at a time.">
+  <meta name="theme-color" content="#fdeeec">
+
+  <!-- Open Graph / social preview — replace og:image with a real 1200x630 brand image later -->
+  <meta property="og:title" content="Fika med Hannah — Learn Swedish, one fika at a time">
+  <meta property="og:description" content="Cosy Swedish lessons, a free study planner and vocabulary help from Fika med Hannah.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.png">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Google Fonts: Fraunces (headings) + Poppins (body) + Caveat (hand-written accents) — matches the existing Fika med Hannah brand materials -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Hand-drawn icon sprite used for decorative accents throughout the page -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+      <symbol id="i-flower" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="12" cy="7" rx="2.6" ry="3.6"/>
+          <ellipse cx="12" cy="17" rx="2.6" ry="3.6"/>
+          <ellipse cx="7" cy="12" rx="3.6" ry="2.6"/>
+          <ellipse cx="17" cy="12" rx="3.6" ry="2.6"/>
+          <circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none"/>
+        </g>
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24">
+        <path d="M12 20s-7-4.6-9.5-9C.8 7.8 2.4 4 6 4c2 0 3.4 1.1 4 2.4C10.6 5.1 12 4 14 4c3.6 0 5.2 3.8 3.5 7-2.5 4.4-9.5 9-9.5 9z"
+              fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <path d="M12 2c.6 4.4 1.8 6.6 3 7.8 1.2 1.2 3.4 2.4 7.8 3-4.4.6-6.6 1.8-7.8 3-1.2 1.2-2.4 3.4-3 7.8-.6-4.4-1.8-6.6-3-7.8C7.8 14.6 5.6 13.4 1.2 12.8 5.6 12.2 7.8 11 9 9.8c1.2-1.2 2.4-3.4 3-7.8z"
+              fill="currentColor"/>
+      </symbol>
+      <symbol id="i-mug" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 8h13v6c0 3.3-2.9 6-6.5 6S4 17.3 4 14V8z"/>
+          <path d="M17 9.5h1.5a2.8 2.8 0 0 1 0 5.6H17"/>
+          <path d="M8 4.3c-.6-.7.3-1-.1-2M12 4.3c-.6-.7.3-1-.1-2" stroke-width="1.4"/>
+        </g>
+      </symbol>
+      <symbol id="i-pencil" viewBox="0 0 24 24">
+        <path d="M4 20l1-5 11-11 4 4-11 11-5 1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M14.5 5.5l4 4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      </symbol>
+      <symbol id="i-swirl" viewBox="0 0 180 14">
+        <path d="M2 8c14-10 26 6 40-2 14-8 26 6 40-2 14-8 26 6 40-2 14-8 26 6 40-2"
+              fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home" aria-label="Fika med Hannah — home">
+        <img class="brand-mark" src="assets/logo.png" alt="" width="40" height="40">
+        <span class="brand-name">Fika <em>med</em> Hannah</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#planner">Free Resources</a></li>
+          <li><a href="#vocabulary">Vocabulary</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a class="nav-cta" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-play"/></svg> YouTube</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-flower"/></svg>Välkommen — welcome</p>
+          <h1>Fika med Hannah</h1>
+          <p class="tagline">Learn Swedish, one fika at a time.</p>
+          <svg class="tagline-swirl" aria-hidden="true"><use href="#i-swirl"/></svg>
+          <p class="hero-text">
+            Fika med Hannah offers simple, friendly Swedish lessons, printable resources,
+            vocabulary help and study tools — made to fit into your day the way a real fika does:
+            warm, unhurried and easy to come back to.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="#planner">Get the Free Study Planner</a>
+            <a class="btn btn-secondary" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="false">
+          <!-- Placeholder hero illustration — replace assets/hero-illustration.svg with real Fika med Hannah artwork -->
+          <img src="assets/hero-illustration.svg" alt="Illustration of a coffee cup with heart-shaped latte art next to a small Swedish flag pennant" width="560" height="460">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="wrap about-inner">
+        <div class="about-photo">
+          <img src="assets/logo.png" alt="Fika med Hannah brand mug illustration, held while enjoying a warm fika">
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-heart"/></svg>Hej, I&rsquo;m Hannah</p>
+          <h2>About Fika med Hannah</h2>
+          <p>
+            Fika med Hannah is a cosy corner of the internet for Swedish learners who want lessons
+            that feel like a chat over coffee rather than a classroom lecture. Short videos, gentle
+            vocabulary practice and printable tools help you build a steady, low-pressure study habit —
+            one small fika-sized step at a time.
+          </p>
+          <p class="pull-quote">&ldquo;En fika is never just coffee — it&rsquo;s a little pause worth taking, in Swedish or otherwise.&rdquo;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SWEDISH LEVEL TEST ============ -->
+    <section class="section level-test alt-bg" id="level-test">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-star"/></svg>Var är du i din resa?</p>
+          <h2>What&rsquo;s your Swedish level?</h2>
+          <p>From your very first ord to fluent conversation — here&rsquo;s roughly what each CEFR level looks like.</p>
+        </div>
+
+        <ul class="level-grid" role="list">
+          <li class="level-card"><span class="level-tag">A1</span><p>Beginner. Greetings, basic phrases and simple everyday words.</p></li>
+          <li class="level-card"><span class="level-tag">A2</span><p>Elementary. Short, simple conversations about familiar topics.</p></li>
+          <li class="level-card"><span class="level-tag">B1</span><p>Intermediate. Handling everyday situations and sharing opinions.</p></li>
+          <li class="level-card"><span class="level-tag">B2</span><p>Upper intermediate. Confident, detailed conversation on most topics.</p></li>
+          <li class="level-card"><span class="level-tag">C1</span><p>Advanced. Fluent, flexible use of Swedish in work and daily life.</p></li>
+          <li class="level-card"><span class="level-tag">C2</span><p>Mastery. Near-native understanding and expression.</p></li>
+        </ul>
+
+        <div class="center">
+          <!-- Placeholder link — point this at your real "Find Your Swedish Level" video or quiz -->
+          <a class="btn btn-primary" data-config-href="levelTestVideoUrl" href="#" target="_blank" rel="noopener">Take the Swedish Level Challenge</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FREE STUDY PLANNER (hero section) ============ -->
+    <div class="divider" aria-hidden="true"><span class="divider-medallion"><svg><use href="#i-mug"/></svg></span></div>
+    <section class="section planner-feature" id="planner">
+      <div class="wrap planner-inner">
+        <div class="planner-visual">
+          <!-- Placeholder mockup — replace assets/planner-mockup.svg with a real photo/mockup of the printed planner -->
+          <img src="assets/planner-mockup.svg" alt="Mockup of the printable Fika med Hannah 12-week Swedish study planner cover" width="480" height="560">
+        </div>
+        <div class="planner-copy">
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-mug"/></svg>100% free</p>
+          <h2>Your Free Swedish Study Planner</h2>
+          <p>Plan your Swedish, track your vocabulary, build better habits, and stay motivated.</p>
+          <ul class="planner-points">
+            <li>A guided 12-week study roadmap</li>
+            <li>Weekly spreads for goals, vocabulary and reflection</li>
+            <li>Printable, cosy and Fika-med-Hannah themed</li>
+          </ul>
+          <!-- Placeholder file — replace downloads/fika-med-hannah-study-planner.pdf with your latest PDF export (same filename keeps this link working) -->
+          <a class="btn btn-primary btn-large" href="downloads/fika-med-hannah-study-planner.pdf" download>Download the Planner</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VOCABULARY ============ -->
+    <section class="section vocabulary alt-bg" id="vocabulary">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-pencil"/></svg>Ord för ord</p>
+          <h2>Build your Swedish vocabulary</h2>
+          <p>
+            Fika med Hannah is building a growing library covering thousands of useful Swedish words —
+            organised into cosy, easy-to-browse categories so you always know what to study next.
+          </p>
+        </div>
+
+        <ul class="vocab-grid" role="list">
+          <li class="vocab-card">
+            <img src="assets/icons/icon-everyday.svg" alt="" width="80" height="80">
+            <h3>Everyday Swedish</h3>
+            <p>Greetings, small talk and the phrases you&rsquo;ll reach for every single day.</p>
+          </li>
+          <li class="vocab-card">
+            <img src="assets/icons/icon-food.svg" alt="" width="80" height="80">
+            <h3>Food &amp; Kitchen</h3>
+            <p>Fika favourites, groceries and everything you need to order or cook with confidence.</p>
+          </li>
+          <li class="vocab-card">
+            <img src="assets/icons/icon-home.svg" alt="" width="80" height="80">
+            <h3>Home &amp; Family</h3>
+            <p>Words for the people and places closest to you — home, family and everyday life.</p>
+          </li>
+        </ul>
+
+        <div class="center vocab-cta">
+          <a class="btn btn-secondary" href="#vocabulary" aria-describedby="vocabSoon">Explore Vocabulary</a>
+          <p class="soon-badge" id="vocabSoon">Coming soon</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LATEST LESSON ============ -->
+    <div class="divider" aria-hidden="true"><span class="divider-medallion"><svg><use href="#i-play"/></svg></span></div>
+    <section class="section latest-lesson" id="latest-lesson">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-play"/></svg>Nytt varje vecka</p>
+          <h2>The Latest Lesson</h2>
+          <p>New Swedish lessons land regularly on YouTube — here&rsquo;s the most recent one.</p>
+        </div>
+
+        <!--
+          Responsive YouTube embed placeholder.
+          To activate: set CONFIG.latestVideoId in script.js to your real YouTube video ID
+          (the part after "v=" in the video URL). Until then, a friendly placeholder is shown.
+        -->
+        <div class="video-frame" id="videoFrame">
+          <div class="video-placeholder" id="videoPlaceholder">
+            <p>🎬 Latest lesson video coming soon</p>
+            <p class="video-placeholder-sub">Set <code>latestVideoId</code> in script.js to embed it here.</p>
+          </div>
+        </div>
+
+        <div class="center">
+          <a class="btn btn-primary" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">Visit Fika med Hannah on YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EMAIL SIGNUP ============ -->
+    <section class="section signup alt-bg" id="signup">
+      <div class="wrap signup-inner">
+        <div class="section-head center">
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-heart"/></svg>Håll kontakten</p>
+          <h2>Join Fika-brevet</h2>
+          <p>Get new Swedish lessons, printables and free resources directly in your inbox.</p>
+        </div>
+
+        <!--
+          FRONTEND-ONLY FORM.
+          To connect a real provider (MailerLite, Brevo, ConvertKit, etc.):
+            1. Replace the form "action" attribute below with the endpoint your provider gives you.
+            2. Remove/adjust the JS preventDefault() handler in script.js (search for "EMAIL SIGNUP").
+            3. Give the email <input> the "name" attribute your provider expects (e.g. "email").
+          Until then, submissions just show a friendly thank-you message and go nowhere.
+        -->
+        <form class="signup-form" id="signupForm" action="#" method="post" novalidate>
+          <label class="sr-only" for="signupEmail">Email address</label>
+          <input class="signup-input" type="email" id="signupEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
+          <button class="btn btn-primary" type="submit">Join the Fika</button>
+        </form>
+        <p class="signup-message" id="signupMessage" role="status" aria-live="polite"></p>
+        <p class="privacy-note">We&rsquo;ll only use your email to send Fika med Hannah updates. Unsubscribe anytime. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="divider" aria-hidden="true"><span class="divider-medallion"><svg><use href="#i-flower"/></svg></span></div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <svg class="footer-icon" aria-hidden="true"><use href="#i-flower"/></svg>
+        <span class="footer-name">Fika med Hannah</span>
+        <span class="footer-tagline">Learn Swedish, one fika at a time.</span>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#planner">Free Resources</a></li>
+          <li><a href="#vocabulary">Vocabulary</a></li>
+          <!-- Placeholder contact — replace with a real inbox address -->
+          <li><a href="mailto:hello@fikamedhannah.com">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-legal">
+        <p>&copy; <span id="year"></span> Fika med Hannah. All rights reserved.</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
