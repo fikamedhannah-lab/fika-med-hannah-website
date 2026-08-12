@@ -78,13 +78,6 @@
   border-radius: 999px;
   transition: width 0.4s ease;
 }
-.lt-progress-label {
-  font-family: var(--font-script);
-  font-size: 1.05rem;
-  color: var(--rose);
-  text-align: center;
-  margin: -12px 0 22px;
-}
 
 /* ---------- Question screen ---------- */
 .lt-passage, .lt-audio {
@@ -193,19 +186,20 @@
   .lt-skill-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
 }
 
-/* ---------- Reward / bonus unlock screen ---------- */
-.lt-reward { text-align: center; }
-.lt-reward h2 { margin-bottom: 10px; }
-.lt-sticker-gift { font-size: 1.3rem; line-height: 1.15; padding-top: 4px; }
-.lt-reward-visual { display: flex; justify-content: center; margin: 22px 0; }
-.lt-reward-visual img {
-  width: 160px;
-  height: auto;
-  border-radius: var(--radius-sm);
+/* ---------- Bonus teaser (shown inline on the results screen) ---------- */
+.lt-bonus-teaser {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: var(--blush);
   border: 1.5px dashed var(--rose-light);
-  box-shadow: var(--shadow-softer);
-  transform: rotate(-2deg);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 26px;
+  font-size: 0.95rem;
 }
+.lt-bonus-teaser span { font-size: 1.6rem; flex-shrink: 0; }
+.lt-bonus-teaser p { margin: 0; }
 
 /* ---------- Email capture screen ---------- */
 .lt-email { text-align: center; }

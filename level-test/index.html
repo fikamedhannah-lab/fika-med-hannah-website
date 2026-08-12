@@ -125,7 +125,6 @@
         <!-- ============ QUESTION SCREEN ============ -->
         <div id="lt-screen-question" class="lt-card is-hidden">
           <div class="lt-progress-track"><div id="lt-progress-fill" class="lt-progress-fill" style="width:0%"></div></div>
-          <p id="lt-progress-label" class="lt-progress-label"></p>
 
           <p id="lt-category-tag" class="eyebrow"></p>
 
@@ -155,40 +154,24 @@
 
           <div id="lt-recommendation" class="lt-recommendation"></div>
 
+          <div class="lt-bonus-teaser">
+            <span aria-hidden="true">🎁</span>
+            <p>Lämna din e-post på nästa steg för att få resultatet i din inkorg och se om du är en av de första 100 som får studieplanner helt gratis.</p>
+          </div>
+
           <div class="lt-btn-row">
-            <button id="lt-reward-continue-from-results-btn" class="btn btn-primary btn-large" type="button">Fortsätt &rarr;</button>
-            <button id="lt-share-btn" class="btn btn-secondary" type="button">Dela ditt resultat</button>
+            <button id="lt-results-continue-btn" class="btn btn-primary btn-large" type="button">Fortsätt &rarr;</button>
             <button id="lt-restart-btn" class="btn btn-secondary" type="button">Gör om testet</button>
           </div>
           <p class="lt-disclaimer">Resultatet är en uppskattning av din nivå, inte en officiell certifiering.</p>
         </div>
 
-        <!-- ============ REWARD / PLANNER BONUS (backend for claim-tracking pending — honest placeholder state) ============ -->
-        <div id="lt-screen-reward" class="lt-card lt-reward is-hidden">
-          <span class="lt-sticker lt-sticker-gift" aria-hidden="true">🎁<br>Bonus</span>
-          <p class="eyebrow center"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-mug"/></svg>Bonus upplåst</p>
-          <h2>Du har låst upp en liten fika-bonus!</h2>
-          <p>Som tack för att du gjorde testet får du ett smakprov av vår studieplanner helt gratis, kopplat till din svenska nivå.</p>
-          <div class="lt-reward-visual">
-            <img src="../assets/planner-cover.jpg" alt="Cover of the Min Svenska 12-week Swedish study planner by Fika med Hannah" width="509" height="720">
-          </div>
-          <p class="lt-disclaimer">Vi håller just nu på att koppla ihop bonusen med testresultatet. Lämna din e-post på nästa steg så skickar vi den till dig så fort den är redo.</p>
-          <div class="lt-btn-row">
-            <button id="lt-email-continue-from-reward-btn" class="btn btn-primary btn-large" type="button">Fortsätt &rarr;</button>
-          </div>
-        </div>
-
-        <!-- ============ EMAIL CAPTURE (frontend-only for now — mirrors index.html's signup form) ============ -->
+        <!-- ============ EMAIL CAPTURE (claims a real first-100 spot via Supabase once configured) ============ -->
         <div id="lt-screen-email" class="lt-card lt-email is-hidden">
           <p class="eyebrow center"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-heart"/></svg>Nästan klart</p>
           <h2>Vart ska vi skicka det?</h2>
-          <p>Ange din e-post så skickar vi ditt resultat, dina rekommendationer och fika-bonusen.</p>
+          <p>Ange din e-post så skickar vi ditt resultat, dina rekommendationer och (om du är en av de första 100) plannern gratis.</p>
 
-          <!--
-            FRONTEND-ONLY FORM (same pattern as index.html's newsletter form).
-            Once the Supabase backend is wired up, this should POST to that
-            API instead of just showing a thank-you message.
-          -->
           <form class="lt-email-form" id="ltEmailForm" novalidate>
             <label class="sr-only" for="ltEmailInput">E-postadress</label>
             <input class="signup-input" type="email" id="ltEmailInput" name="email" placeholder="din@epost.se" autocomplete="email" required>
