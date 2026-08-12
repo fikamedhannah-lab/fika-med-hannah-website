@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Testa Din Svenska Nivå (Adaptivt Test) | Fika med Hannah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ett gratis, adaptivt CEFR-test som räknar ut din svenska nivå (A1–C2) utifrån ordförråd, grammatik, läsförståelse och lyssnaförståelse.">
+  <meta name="theme-color" content="#fdeeec">
+
+  <meta property="og:title" content="Testa Din Svenska Nivå | Fika med Hannah">
+  <meta property="og:description" content="Ett gratis, adaptivt test som räknar ut din svenska CEFR-nivå på cirka 15–20 minuter.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/logo.png">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../assets/css/level-test.css">
+</head>
+<body>
+
+  <!-- Hand-drawn icon sprite — same set as index.html, plus i-book/i-headphones for this page's skill categories -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+      <symbol id="i-flower" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="12" cy="7" rx="2.6" ry="3.6"/>
+          <ellipse cx="12" cy="17" rx="2.6" ry="3.6"/>
+          <ellipse cx="7" cy="12" rx="3.6" ry="2.6"/>
+          <ellipse cx="17" cy="12" rx="3.6" ry="2.6"/>
+          <circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none"/>
+        </g>
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24">
+        <path d="M12 20S3 14 3 8.5C3 5.5 5.5 3.5 8 3.5c1.8 0 3.2 1 4 2.4.8-1.4 2.2-2.4 4-2.4 2.5 0 5 2 5 5C21 14 12 20 12 20z"
+              fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <path d="M12 2c.6 4.4 1.8 6.6 3 7.8 1.2 1.2 3.4 2.4 7.8 3-4.4.6-6.6 1.8-7.8 3-1.2 1.2-2.4 3.4-3 7.8-.6-4.4-1.8-6.6-3-7.8C7.8 14.6 5.6 13.4 1.2 12.8 5.6 12.2 7.8 11 9 9.8c1.2-1.2 2.4-3.4 3-7.8z"
+              fill="currentColor"/>
+      </symbol>
+      <symbol id="i-mug" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 8h13v6c0 3.3-2.9 6-6.5 6S4 17.3 4 14V8z"/>
+          <path d="M17 9.5h1.5a2.8 2.8 0 0 1 0 5.6H17"/>
+          <path d="M8 4.3c-.6-.7.3-1-.1-2M12 4.3c-.6-.7.3-1-.1-2" stroke-width="1.4"/>
+        </g>
+      </symbol>
+      <symbol id="i-pencil" viewBox="0 0 24 24">
+        <path d="M4 20l1-5 11-11 4 4-11 11-5 1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M14.5 5.5l4 4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor"/>
+      </symbol>
+      <symbol id="i-book" viewBox="0 0 24 24">
+        <path d="M4 5.5c2.5-1.4 5-1.4 7.5 0v13c-2.5-1.4-5-1.4-7.5 0v-13zM19 5.5c-2.5-1.4-5-1.4-7.5 0v13c2.5-1.4 5-1.4 7.5 0v-13z"
+              fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-headphones" viewBox="0 0 24 24">
+        <path d="M4 14v-2a8 8 0 0 1 16 0v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <rect x="2.5" y="13" width="4" height="6.5" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="17.5" y="13" width="4" height="6.5" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ HEADER / NAV (same as index.html, links point back home) ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="Fika med Hannah — home">
+        <img class="brand-mark" src="../assets/logo.png" alt="" width="40" height="40">
+        <span class="brand-name">Fika <em>med</em> Hannah</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html#home">Hem</a></li>
+          <li><a data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../index.html#vocabulary">Ordförråd</a></li>
+          <li><a href="../index.html#level-test">Resurser</a></li>
+          <li><a href="../index.html#about">Om mig</a></li>
+          <li><a class="nav-cta" href="../index.html#planner">Gratis planner</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section level-test-page alt-bg" id="test">
+      <div class="wrap">
+
+        <!-- ============ INTRO SCREEN ============ -->
+        <div id="lt-screen-intro" class="lt-card lt-intro">
+          <span class="lt-sticker" aria-hidden="true">Gratis<br>test</span>
+          <p class="eyebrow center"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-star"/></svg>Var är du i din resa?</p>
+          <h1>Testa Din Svenska Nivå</h1>
+          <p>Ett gratis, adaptivt test som räknar ut din CEFR-nivå (A1–C2) utifrån ordförråd, grammatik, läsförståelse och lyssnaförståelse. Frågorna anpassar sig efter dina svar, så testet blir kortare och mer träffsäkert än ett vanligt quiz.</p>
+          <div class="lt-intro-facts">
+            <div><span>~15–20 min</span>Tid</div>
+            <div><span>~30–40</span>Frågor</div>
+            <div><span>4</span>Färdigheter</div>
+          </div>
+          <p class="lt-bonus-note">🎁 Gör testet klart så låser du upp en gratis fika-bonus från vår studieplanner.</p>
+          <div class="lt-btn-row">
+            <button id="lt-start-btn" class="btn btn-primary btn-large" type="button">Starta testet</button>
+            <button id="lt-resume-btn" class="btn btn-secondary is-hidden" type="button">Fortsätt där du slutade</button>
+          </div>
+          <p class="lt-disclaimer">Resultatet är en uppskattning av din nivå, inte en officiell certifiering.</p>
+        </div>
+
+        <!-- ============ QUESTION SCREEN ============ -->
+        <div id="lt-screen-question" class="lt-card is-hidden">
+          <div class="lt-progress-track"><div id="lt-progress-fill" class="lt-progress-fill" style="width:0%"></div></div>
+          <p id="lt-progress-label" class="lt-progress-label"></p>
+
+          <p id="lt-category-tag" class="eyebrow"></p>
+
+          <p id="lt-passage" class="lt-passage is-hidden"></p>
+
+          <div id="lt-audio-block" class="lt-audio is-hidden">
+            <button id="lt-audio-btn" type="button" aria-label="Spela upp ljud">▶</button>
+            <span>Lyssna på meningen och svara på frågan.</span>
+          </div>
+          <audio id="lt-audio-el" preload="none"></audio>
+
+          <h2 id="lt-question-prompt" class="lt-question-prompt"></h2>
+          <div id="lt-options" class="lt-options" role="group" aria-label="Svarsalternativ"></div>
+
+          <div class="lt-btn-row">
+            <button id="lt-next-btn" class="btn btn-primary btn-large" type="button" disabled>Nästa</button>
+          </div>
+        </div>
+
+        <!-- ============ RESULTS SCREEN ============ -->
+        <div id="lt-screen-results" class="lt-card is-hidden">
+          <p class="eyebrow center"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-flower"/></svg>Klart!</p>
+          <h1 id="lt-results-headline" class="lt-results-headline"></h1>
+          <p id="lt-results-sub" class="lt-results-sub"></p>
+
+          <ul id="lt-skill-grid" class="lt-skill-grid" role="list"></ul>
+
+          <div id="lt-recommendation" class="lt-recommendation"></div>
+
+          <div class="lt-btn-row">
+            <button id="lt-reward-continue-from-results-btn" class="btn btn-primary btn-large" type="button">Fortsätt &rarr;</button>
+            <button id="lt-share-btn" class="btn btn-secondary" type="button">Dela ditt resultat</button>
+            <button id="lt-restart-btn" class="btn btn-secondary" type="button">Gör om testet</button>
+          </div>
+          <p class="lt-disclaimer">Resultatet är en uppskattning av din nivå, inte en officiell certifiering.</p>
+        </div>
+
+        <!-- ============ REWARD / PLANNER BONUS (backend for claim-tracking pending — honest placeholder state) ============ -->
+        <div id="lt-screen-reward" class="lt-card lt-reward is-hidden">
+          <span class="lt-sticker lt-sticker-gift" aria-hidden="true">🎁<br>Bonus</span>
+          <p class="eyebrow center"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-mug"/></svg>Bonus upplåst</p>
+          <h2>Du har låst upp en liten fika-bonus!</h2>
+          <p>Som tack för att du gjorde testet får du ett smakprov av vår studieplanner helt gratis, kopplat till din svenska nivå.</p>
+          <div class="lt-reward-visual">
+            <img src="../assets/planner-cover.jpg" alt="Cover of the Min Svenska 12-week Swedish study planner by Fika med Hannah" width="509" height="720">
+          </div>
+          <p class="lt-disclaimer">Vi håller just nu på att koppla ihop bonusen med testresultatet. Lämna din e-post på nästa steg så skickar vi den till dig så fort den är redo.</p>
+          <div class="lt-btn-row">
+            <button id="lt-email-continue-from-reward-btn" class="btn btn-primary btn-large" type="button">Fortsätt &rarr;</button>
+          </div>
+        </div>
+
+        <!-- ============ EMAIL CAPTURE (frontend-only for now — mirrors index.html's signup form) ============ -->
+        <div id="lt-screen-email" class="lt-card lt-email is-hidden">
+          <p class="eyebrow center"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-heart"/></svg>Nästan klart</p>
+          <h2>Vart ska vi skicka det?</h2>
+          <p>Ange din e-post så skickar vi ditt resultat, dina rekommendationer och fika-bonusen.</p>
+
+          <!--
+            FRONTEND-ONLY FORM (same pattern as index.html's newsletter form).
+            Once the Supabase backend is wired up, this should POST to that
+            API instead of just showing a thank-you message.
+          -->
+          <form class="lt-email-form" id="ltEmailForm" novalidate>
+            <label class="sr-only" for="ltEmailInput">E-postadress</label>
+            <input class="signup-input" type="email" id="ltEmailInput" name="email" placeholder="din@epost.se" autocomplete="email" required>
+            <label class="lt-checkbox">
+              <input type="checkbox" id="ltMarketingConsent" name="marketing">
+              Jag vill också få nya svensklektioner, tips och erbjudanden från Fika med Hannah.
+            </label>
+            <button class="btn btn-primary btn-large" type="submit">Skicka mig mitt resultat</button>
+          </form>
+          <p class="lt-email-message" id="ltEmailMessage" role="status" aria-live="polite"></p>
+          <p class="lt-disclaimer">Vi använder din e-post enbart för att skicka det du bett om. Se vår <a href="../privacy-policy.html">Integritetspolicy</a>.</p>
+
+          <div class="lt-btn-row is-hidden" id="ltEmailContinueRow">
+            <button id="lt-continue-continue-from-email-btn" class="btn btn-primary btn-large" type="button">Fortsätt &rarr;</button>
+          </div>
+        </div>
+
+        <!-- ============ CONTINUE LEARNING ============ -->
+        <div id="lt-screen-continue" class="lt-card lt-continue is-hidden">
+          <p class="eyebrow center"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-flower"/></svg>Fortsätt din resa</p>
+          <h2>Fortsätt lära dig svenska med Fika med Hannah</h2>
+          <p>Här är några bra ställen att fortsätta på medan du väntar på din fika-bonus.</p>
+          <div class="lt-continue-links">
+            <a class="btn btn-secondary" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">Se fler lektioner på YouTube</a>
+            <a class="btn btn-secondary" href="../index.html#vocabulary">Bygg ditt ordförråd</a>
+            <a class="btn btn-secondary" href="../index.html">Till startsidan</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div class="divider" aria-hidden="true"><span class="divider-medallion"><svg><use href="#i-flower"/></svg></span></div>
+
+  <!-- ============ FOOTER (same as index.html) ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <svg class="footer-icon" aria-hidden="true"><use href="#i-flower"/></svg>
+        <span class="footer-name">Fika med Hannah</span>
+        <span class="footer-tagline">Lär dig svenska, en fika i taget.</span>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../index.html#planner">Gratis planner</a></li>
+          <li><a href="../index.html#vocabulary">Ordförråd</a></li>
+          <li><a href="mailto:hello@fikamedhannah.com">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-legal">
+        <p>&copy; <span id="year"></span> Fika med Hannah. Alla rättigheter förbehållna.</p>
+        <p><a href="../privacy-policy.html">Integritetspolicy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script type="module" src="../assets/js/level-test/app.js"></script>
+</body>
+</html>

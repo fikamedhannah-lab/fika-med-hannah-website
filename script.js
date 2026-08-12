@@ -82,7 +82,7 @@ function setupSignupForm() {
     const email = document.getElementById("signupEmail").value.trim();
     if (!email) return;
 
-    message.textContent = "Tack! You're on the list — welcome to Fika-brevet.";
+    message.textContent = "Tack! Du står nu på listan — välkommen till Fika-brevet.";
     form.reset();
   });
 }

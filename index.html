@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <title>Fika med Hannah — Learn Swedish, one fika at a time</title>
+  <title>Fika med Hannah — Lär dig svenska, en fika i taget</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fika med Hannah offers cosy, simple Swedish lessons, a printable study planner (free for the first 100), vocabulary help and study tools — learn Swedish, one fika at a time.">
+  <meta name="description" content="Fika med Hannah erbjuder mysiga, enkla svensklektioner, en gratis studieplanner (kommer snart), ordförrådshjälp och studieverktyg — lär dig svenska, en fika i taget.">
   <meta name="theme-color" content="#fdeeec">
 
   <!-- Open Graph / social preview — replace og:image with a real 1200x630 brand image later -->
-  <meta property="og:title" content="Fika med Hannah — Learn Swedish, one fika at a time">
-  <meta property="og:description" content="Cosy Swedish lessons, a study planner (free for the first 100) and vocabulary help from Fika med Hannah.">
+  <meta property="og:title" content="Fika med Hannah — Lär dig svenska, en fika i taget">
+  <meta property="og:description" content="Mysiga svensklektioner, en gratis studieplanner och ordförrådshjälp från Fika med Hannah.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/logo.png">
 
@@ -84,11 +84,12 @@
 
       <nav class="primary-nav" id="primaryNav" aria-label="Primary">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#planner">Study Planner</a></li>
-          <li><a href="#vocabulary">Vocabulary</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a class="nav-cta" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-play"/></svg> YouTube</a></li>
+          <li><a href="#home">Hem</a></li>
+          <li><a data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#vocabulary">Ordförråd</a></li>
+          <li><a href="#level-test">Resurser</a></li>
+          <li><a href="#about">Om mig</a></li>
+          <li><a class="nav-cta" href="#planner">Gratis planner</a></li>
         </ul>
       </nav>
     </div>
@@ -100,24 +101,51 @@
     <section class="hero" id="home">
       <div class="wrap hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-flower"/></svg>Välkommen — welcome</p>
-          <h1>Fika med Hannah</h1>
-          <p class="tagline">Learn Swedish, one fika at a time.</p>
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-flower"/></svg>Välkommen till Fika med Hannah</p>
+          <h1>Lär dig svenska på ett <em>enkelt</em> och <em>mysigt</em> sätt</h1>
+          <p class="tagline">Lär dig svenska, en fika i taget.</p>
           <svg class="tagline-swirl" aria-hidden="true"><use href="#i-swirl"/></svg>
           <p class="hero-text">
-            Fika med Hannah offers simple, friendly Swedish lessons, printable resources,
-            vocabulary help and study tools — made to fit into your day the way a real fika does:
-            warm, unhurried and easy to come back to.
+            På kanalen Fika med Hannah hjälper jag dig att lära dig svenska med naturliga samtal,
+            vardagsord och praktiska tips — precis som att ta en fika med en vän.
           </p>
           <div class="button-row">
-            <a class="btn btn-primary" href="#planner">Get the Study Planner</a>
-            <a class="btn btn-secondary" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
+            <a class="btn btn-primary" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener"><svg aria-hidden="true" width="16" height="16"><use href="#i-play"/></svg>Till YouTube-kanalen</a>
+            <a class="btn btn-secondary" href="#about">Ny här? Börja här</a>
           </div>
         </div>
 
         <div class="hero-visual" aria-hidden="false">
-          <img src="assets/hero-illustration.svg" alt="Illustration of a coffee cup with heart-shaped latte art, a Swedish flag pennant and a little flower sprig" width="560" height="460">
+          <img src="assets/hero-illustration.svg" alt="Illustration av en kaffekopp med hjärtformad mjölkskum, en svensk flaggvimpel och en liten blomkvist" width="560" height="460">
         </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section features">
+      <div class="wrap">
+        <ul class="feature-grid" role="list">
+          <li class="feature-card">
+            <span class="feature-icon"><svg aria-hidden="true"><use href="#i-mug"/></svg></span>
+            <h3>Naturligt &amp; avslappnat</h3>
+            <p>Lär dig genom riktiga samtal och vardagliga situationer.</p>
+          </li>
+          <li class="feature-card">
+            <span class="feature-icon"><svg aria-hidden="true"><use href="#i-pencil"/></svg></span>
+            <h3>Bygg ditt ordförråd</h3>
+            <p>Nya ord, förklaringar och exempel i varje video.</p>
+          </li>
+          <li class="feature-card">
+            <span class="feature-icon"><svg aria-hidden="true"><use href="#i-heart"/></svg></span>
+            <h3>Motivation &amp; tips</h3>
+            <p>Enkla tips som hjälper dig att hålla igång varje dag.</p>
+          </li>
+          <li class="feature-card">
+            <span class="feature-icon"><svg aria-hidden="true"><use href="#i-star"/></svg></span>
+            <h3>För alla nivåer</h3>
+            <p>Från nybörjare till avancerad — du är varmt välkommen!</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -125,18 +153,18 @@
     <section class="section about" id="about">
       <div class="wrap about-inner">
         <div class="about-photo">
-          <img src="assets/logo.png" alt="Fika med Hannah brand mug illustration, held while enjoying a warm fika">
+          <img src="assets/logo.png" alt="Fika med Hannahs varumärkesillustration av en mugg, hållen under en varm fika">
         </div>
         <div class="about-copy">
-          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-heart"/></svg>Hej, I&rsquo;m Hannah</p>
-          <h2>About Fika med Hannah</h2>
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-heart"/></svg>Hej, jag är Hannah</p>
+          <h2>Om Fika med Hannah</h2>
           <p>
-            Fika med Hannah is a cosy corner of the internet for Swedish learners who want lessons
-            that feel like a chat over coffee rather than a classroom lecture. Short videos, gentle
-            vocabulary practice and printable tools help you build a steady, low-pressure study habit —
-            one small fika-sized step at a time.
+            Fika med Hannah är en mysig plats på internet för dig som lär dig svenska och vill ha
+            lektioner som känns som ett samtal över en kopp kaffe snarare än en föreläsning. Korta
+            videor, skonsam ordförrådsträning och utskriftsvänliga verktyg hjälper dig att bygga en
+            stadig, lågmäld studievana — en fika-stor bit i taget.
           </p>
-          <p class="pull-quote">&ldquo;En fika is never just coffee — it&rsquo;s a little pause worth taking, in Swedish or otherwise.&rdquo;</p>
+          <p class="pull-quote">&ldquo;En fika är aldrig bara kaffe — det är en liten paus värd att ta, på svenska eller annars.&rdquo;</p>
         </div>
       </div>
     </section>
@@ -146,21 +174,24 @@
       <div class="wrap">
         <div class="section-head center">
           <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-star"/></svg>Var är du i din resa?</p>
-          <h2>What&rsquo;s your Swedish level?</h2>
-          <p>From your very first ord to fluent conversation — here&rsquo;s roughly what each CEFR level looks like.</p>
+          <h2>Vilken nivå har du i svenska?</h2>
+          <p>Från ditt allra första ord till flytande konversation — här är ungefär vad varje CEFR-nivå innebär.</p>
         </div>
 
         <ul class="level-grid" role="list">
-          <li class="level-card"><span class="level-tag">A1</span><p>Beginner. Greetings, basic phrases and simple everyday words.</p></li>
-          <li class="level-card"><span class="level-tag">A2</span><p>Elementary. Short, simple conversations about familiar topics.</p></li>
-          <li class="level-card"><span class="level-tag">B1</span><p>Intermediate. Handling everyday situations and sharing opinions.</p></li>
-          <li class="level-card"><span class="level-tag">B2</span><p>Upper intermediate. Confident, detailed conversation on most topics.</p></li>
-          <li class="level-card"><span class="level-tag">C1</span><p>Advanced. Fluent, flexible use of Swedish in work and daily life.</p></li>
-          <li class="level-card"><span class="level-tag">C2</span><p>Mastery. Near-native understanding and expression.</p></li>
+          <li class="level-card"><span class="level-tag">A1</span><p>Nybörjare. Hälsningsfraser, enkla uttryck och vardagliga ord.</p></li>
+          <li class="level-card"><span class="level-tag">A2</span><p>Grundläggande. Korta, enkla samtal om välkända ämnen.</p></li>
+          <li class="level-card"><span class="level-tag">B1</span><p>Mellannivå. Hantera vardagssituationer och dela åsikter.</p></li>
+          <li class="level-card"><span class="level-tag">B2</span><p>Övre mellannivå. Säkert, detaljerat samtal om de flesta ämnen.</p></li>
+          <li class="level-card"><span class="level-tag">C1</span><p>Avancerad. Flytande, flexibel svenska i arbete och vardag.</p></li>
+          <li class="level-card"><span class="level-tag">C2</span><p>Mästare. Näst intill modersmålsnivå i förståelse och uttryck.</p></li>
         </ul>
 
-        <div class="center">
-          <a class="btn btn-primary" href="swedish-level-test.html">Take the Swedish Level Test</a>
+        <div class="lt-cta-panel center">
+          <h3>Ta det kompletta svenska nivåtestet</h3>
+          <p>Ta reda på ungefär vilken nivå du ligger på, se vad du bör öva mer på härnäst, och få personliga studietips baserat på ditt resultat.</p>
+          <p class="lt-bonus-note">🎁 Lanseringsbonus: gör testet nu så låser du upp en gratis fika-bonus från vår studieplanner.</p>
+          <a class="btn btn-primary btn-large" href="level-test/">Starta det gratis nivåtestet &rarr;</a>
         </div>
       </div>
     </section>
@@ -170,7 +201,7 @@
     <section class="section planner-feature" id="planner">
       <div class="wrap planner-inner">
         <div class="planner-visual">
-          <span class="price-sticker" aria-hidden="true">119<br>kr</span>
+          <span class="price-sticker" aria-hidden="true">69<br>kr</span>
           <img src="assets/planner-cover.jpg" alt="Cover of the Min Svenska 12-week Swedish study planner by Fika med Hannah" width="509" height="720">
           <div class="planner-gallery">
             <img src="assets/planner-preview-1.jpg" alt="A weekly planning page inside the study planner, with a colour-coded day-by-day study schedule" width="452" height="640">
@@ -178,19 +209,19 @@
           </div>
         </div>
         <div class="planner-copy">
-          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-mug"/></svg>119 kr &middot; free for the first 100</p>
-          <h2>The Fika med Hannah Study Planner</h2>
-          <p>Plan your Swedish, track your vocabulary, build better habits, and stay motivated.</p>
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-mug"/></svg>69 kr &middot; gratis för de första 100 testdeltagarna</p>
+          <h2>Fika med Hannahs studieplanner</h2>
+          <p>Planera dina studier, håll koll på ditt ordförråd, bygg bättre vanor och håll motivationen uppe.</p>
           <ul class="planner-points">
-            <li>A guided 12-week study roadmap</li>
-            <li>Weekly spreads for goals, vocabulary and reflection</li>
-            <li>Printable, cosy and Fika-med-Hannah themed</li>
+            <li>En guidad 12-veckors studieplan</li>
+            <li>Veckovisa sidor för mål, ordförråd och reflektion</li>
+            <li>Utskriftsvänlig och i Fika-med-Hannah-stil</li>
           </ul>
-          <p class="planner-offer">🎁 Normally <strong>119 kr</strong> — free for the first 100 people once it launches.</p>
+          <p class="planner-offer">🎁 Normalt <strong>69 kr</strong> — gratis för de första 100 som gör vårt svenska nivåtest.</p>
 
           <div class="center planner-cta">
-            <a class="btn btn-secondary" href="#signup" aria-describedby="plannerSoon">Get Notified</a>
-            <p class="soon-badge" id="plannerSoon">Coming soon</p>
+            <a class="btn btn-secondary" href="level-test/" aria-describedby="plannerSoon">Gör testet för att låsa upp</a>
+            <p class="soon-badge" id="plannerSoon">Bonusen skickas så fort den är redo</p>
           </div>
         </div>
       </div>
@@ -201,34 +232,34 @@
       <div class="wrap">
         <div class="section-head center">
           <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-pencil"/></svg>Ord för ord</p>
-          <h2>Build your Swedish vocabulary</h2>
+          <h2>Bygg ditt svenska ordförråd</h2>
           <p>
-            Fika med Hannah is building a growing library covering thousands of useful Swedish words —
-            organised into cosy, easy-to-browse categories so you always know what to study next.
+            Fika med Hannah bygger upp ett växande bibliotek som täcker tusentals användbara svenska ord —
+            organiserat i mysiga, lättöverskådliga kategorier så att du alltid vet vad du ska plugga härnäst.
           </p>
         </div>
 
         <ul class="vocab-grid" role="list">
           <li class="vocab-card">
             <img src="assets/icons/icon-everyday.svg" alt="" width="80" height="80">
-            <h3>Everyday Swedish</h3>
-            <p>Greetings, small talk and the phrases you&rsquo;ll reach for every single day.</p>
+            <h3>Vardagssvenska</h3>
+            <p>Hälsningsfraser, small talk och fraser du använder varje dag.</p>
           </li>
           <li class="vocab-card">
             <img src="assets/icons/icon-food.svg" alt="" width="80" height="80">
-            <h3>Food &amp; Kitchen</h3>
-            <p>Fika favourites, groceries and everything you need to order or cook with confidence.</p>
+            <h3>Mat &amp; Kök</h3>
+            <p>Fika-favoriter, matvaror och allt du behöver för att beställa eller laga mat med självförtroende.</p>
           </li>
           <li class="vocab-card">
             <img src="assets/icons/icon-home.svg" alt="" width="80" height="80">
-            <h3>Home &amp; Family</h3>
-            <p>Words for the people and places closest to you — home, family and everyday life.</p>
+            <h3>Hem &amp; Familj</h3>
+            <p>Ord för människorna och platserna som står dig närmast — hem, familj och vardagsliv.</p>
           </li>
         </ul>
 
         <div class="center vocab-cta">
-          <a class="btn btn-secondary" href="#vocabulary" aria-describedby="vocabSoon">Explore Vocabulary</a>
-          <p class="soon-badge" id="vocabSoon">Coming soon</p>
+          <a class="btn btn-secondary" href="#vocabulary" aria-describedby="vocabSoon">Utforska ordförråd</a>
+          <p class="soon-badge" id="vocabSoon">Kommer snart</p>
         </div>
       </div>
     </section>
@@ -239,8 +270,8 @@
       <div class="wrap">
         <div class="section-head center">
           <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-play"/></svg>Nytt varje vecka</p>
-          <h2>The Latest Lesson</h2>
-          <p>New Swedish lessons land regularly on YouTube — here&rsquo;s the most recent one.</p>
+          <h2>Senaste videot</h2>
+          <p>Nya svensklektioner läggs upp regelbundet på YouTube — här är den senaste.</p>
         </div>
 
         <!--
@@ -250,13 +281,13 @@
         -->
         <div class="video-frame" id="videoFrame">
           <div class="video-placeholder" id="videoPlaceholder">
-            <p>🎬 Latest lesson video coming soon</p>
-            <p class="video-placeholder-sub">Set <code>latestVideoId</code> in script.js to embed it here.</p>
+            <p>🎬 Senaste lektionens video kommer snart</p>
+            <p class="video-placeholder-sub">Ställ in <code>latestVideoId</code> i script.js för att bädda in videon här.</p>
           </div>
         </div>
 
         <div class="center">
-          <a class="btn btn-primary" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">Visit Fika med Hannah on YouTube</a>
+          <a class="btn btn-primary" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">Besök Fika med Hannah på YouTube</a>
         </div>
       </div>
     </section>
@@ -266,8 +297,8 @@
       <div class="wrap signup-inner">
         <div class="section-head center">
           <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-heart"/></svg>Håll kontakten</p>
-          <h2>Join Fika-brevet</h2>
-          <p>Get new Swedish lessons, printables and free resources directly in your inbox.</p>
+          <h2>Gå med i Fika-brevet</h2>
+          <p>Få nya svensklektioner, utskrifter och gratis resurser direkt i din inkorg.</p>
         </div>
 
         <!--
@@ -279,12 +310,12 @@
           Until then, submissions just show a friendly thank-you message and go nowhere.
         -->
         <form class="signup-form" id="signupForm" action="#" method="post" novalidate>
-          <label class="sr-only" for="signupEmail">Email address</label>
-          <input class="signup-input" type="email" id="signupEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
-          <button class="btn btn-primary" type="submit">Join the Fika</button>
+          <label class="sr-only" for="signupEmail">E-postadress</label>
+          <input class="signup-input" type="email" id="signupEmail" name="email" placeholder="din@epost.se" autocomplete="email" required>
+          <button class="btn btn-primary" type="submit">Gå med i Fikan</button>
         </form>
         <p class="signup-message" id="signupMessage" role="status" aria-live="polite"></p>
-        <p class="privacy-note">We&rsquo;ll only use your email to send Fika med Hannah updates. Unsubscribe anytime. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+        <p class="privacy-note">Vi använder din e-post enbart för att skicka uppdateringar från Fika med Hannah. Avsluta prenumerationen när som helst. Se vår <a href="privacy-policy.html">Integritetspolicy</a>.</p>
       </div>
     </section>
 
@@ -298,22 +329,23 @@
       <div class="footer-brand">
         <svg class="footer-icon" aria-hidden="true"><use href="#i-flower"/></svg>
         <span class="footer-name">Fika med Hannah</span>
-        <span class="footer-tagline">Learn Swedish, one fika at a time.</span>
+        <span class="footer-tagline">Lär dig svenska, en fika i taget.</span>
       </div>
 
       <nav class="footer-nav" aria-label="Footer">
         <ul>
           <li><a data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="#planner">Study Planner</a></li>
-          <li><a href="#vocabulary">Vocabulary</a></li>
+          <li><a href="#planner">Gratis planner</a></li>
+          <li><a href="#vocabulary">Ordförråd</a></li>
+          <li><a href="#level-test">Resurser</a></li>
           <!-- Placeholder contact — replace with a real inbox address -->
-          <li><a href="mailto:hello@fikamedhannah.com">Contact</a></li>
+          <li><a href="mailto:hello@fikamedhannah.com">Kontakt</a></li>
         </ul>
       </nav>
 
       <div class="footer-legal">
-        <p>&copy; <span id="year"></span> Fika med Hannah. All rights reserved.</p>
-        <p><a href="privacy-policy.html">Privacy Policy</a></p>
+        <p>&copy; <span id="year"></span> Fika med Hannah. Alla rättigheter förbehållna.</p>
+        <p><a href="privacy-policy.html">Integritetspolicy</a></p>
       </div>
     </div>
   </footer>

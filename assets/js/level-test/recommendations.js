@@ -1,9 +1,9 @@
 /* =========================================================
    Fika med Hannah — Swedish Level Test: recommendations config
    ---------------------------------------------------------
-   Editable content only — no logic. Update the URLs/emoji/copy here
-   without touching app.js. Mirrors the `CONFIG` pattern already used
-   in the site's script.js.
+   Editable content only — no logic. Update the URLs/copy here without
+   touching app.js. Mirrors the `CONFIG` pattern already used in the
+   site's script.js. Icons are defined in app.js's SKILL_LABELS, not here.
    ========================================================= */
 
 export const RECOMMENDATIONS_CONFIG = {
@@ -13,28 +13,24 @@ export const RECOMMENDATIONS_CONFIG = {
   categories: {
     vocabulary: {
       label: 'Ordförråd',
-      emoji: '📚',
       description: 'Öva på nya ord varje dag genom att läsa och lyssna på svenska i din vardag.',
       // TODO: replace with a real YouTube video/playlist about Swedish vocabulary.
       youtubeUrl: 'https://www.youtube.com/@FikamedHannah',
     },
     grammar: {
       label: 'Grammatik',
-      emoji: '📐',
       description: 'Repetera verbtempus och ordföljd — små dagliga övningar ger stor effekt över tid.',
       // TODO: replace with a real YouTube video/playlist about Swedish grammar.
       youtubeUrl: 'https://www.youtube.com/@FikamedHannah',
     },
     reading: {
       label: 'Läsförståelse',
-      emoji: '📖',
       description: 'Läs korta svenska texter (nyheter, bloggar) och sammanfatta dem för dig själv.',
       // TODO: replace with a real YouTube video/playlist about Swedish reading.
       youtubeUrl: 'https://www.youtube.com/@FikamedHannah',
     },
     listening: {
       label: 'Lyssnaförståelse',
-      emoji: '🎧',
       description: 'Lyssna på svenska poddar eller videos varje dag, gärna med undertexter till en början.',
       // TODO: replace with a real YouTube video/playlist about Swedish listening.
       youtubeUrl: 'https://www.youtube.com/@FikamedHannah',

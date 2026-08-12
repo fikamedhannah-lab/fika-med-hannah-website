@@ -354,6 +354,31 @@ input:focus-visible {
   .hero-visual { justify-self: end; max-width: none; }
 }
 
+/* ---------- Features ---------- */
+.feature-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+}
+@media (min-width: 700px) { .feature-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.feature-card { padding: 0 6px; }
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  margin: 0 auto 14px;
+  background: var(--blush);
+  border: 1.5px dashed var(--rose-light);
+  border-radius: 50%;
+  color: var(--rose-dark);
+}
+.feature-icon svg { width: 26px; height: 26px; }
+.feature-card h3 { font-size: 1.02rem; margin-bottom: 6px; }
+.feature-card p { font-size: 0.88rem; margin: 0; }
+
 /* ---------- About ---------- */
 .about-inner { display: grid; gap: 32px; align-items: center; }
 .about-photo {
@@ -422,6 +447,29 @@ input:focus-visible {
   font-size: 0.9rem;
 }
 .level-card p { font-size: 0.9rem; margin: 0; color: var(--ink); }
+
+/* CTA panel promoting the level test, sits below the level grid */
+.lt-cta-panel {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 32px 30px;
+  background: var(--paper);
+  border: 1.5px dashed var(--rose-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+.lt-cta-panel h3 { margin-bottom: 10px; }
+.lt-cta-panel p { margin-bottom: 14px; }
+.lt-bonus-note {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 16px;
+  background: var(--sage);
+  border: 1.5px dashed var(--rose-light);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--sage-ink);
+}
 
 /* ---------- Planner feature ---------- */
 .planner-feature {
