@@ -12,10 +12,12 @@
   --lavender: #eceafc;       /* soft alt background */
   --sage: #e3ebd9;           /* sage green background tint */
   --sage-ink: #5c6b4d;       /* sage green text/icon accent */
-  --rose: #b58b7f;           /* muted red / rose accent */
-  --rose-dark: #8f6b60;      /* deep rose, headings & primary buttons */
+  --rose: #b58b7f;           /* muted red / rose accent (script text, hearts, hover pop) */
+  --rose-dark: #21395c;      /* deep navy — headings, primary buttons, nav (matches the planner's cover branding) */
   --rose-light: #dec5bb;     /* soft border / secondary accent */
   --line: #e6d3c9;           /* hairline borders */
+  --sky: #a9c6de;            /* gingham washi-tape check (matches the planner's blue tape) */
+  --sky-light: #e3eef6;      /* gingham washi-tape base */
 
   /* ---- Type ---- */
   --font-heading: 'Fraunces', Georgia, serif;
@@ -432,7 +434,7 @@ input:focus-visible {
 .planner-visual {
   position: relative;
   justify-self: center;
-  max-width: 320px;
+  max-width: 380px;
 }
 .planner-visual::before {
   content: '';
@@ -440,8 +442,13 @@ input:focus-visible {
   top: -14px; right: 26px;
   width: 84px; height: 32px;
   transform: rotate(6deg);
-  background: repeating-linear-gradient(45deg, var(--rose-light), var(--rose-light) 6px, transparent 6px, transparent 12px), var(--blush);
-  opacity: .9;
+  background-color: var(--sky);
+  background-image:
+    linear-gradient(90deg, var(--sky-light) 50%, transparent 50%),
+    linear-gradient(var(--sky-light) 50%, transparent 50%);
+  background-size: 8px 8px;
+  background-blend-mode: screen;
+  opacity: .95;
   border-radius: 3px;
   box-shadow: var(--shadow-softer);
   z-index: 1;
@@ -478,6 +485,22 @@ input:focus-visible {
   transition: transform .3s ease;
 }
 .planner-visual:hover img { transform: rotate(0deg) scale(1.015); }
+.planner-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 22px;
+}
+.planner-gallery img {
+  width: 46%;
+  border-radius: var(--radius-sm);
+  border: 6px solid var(--paper);
+  box-shadow: var(--shadow-softer);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.planner-gallery img:nth-child(1) { transform: rotate(-4deg); }
+.planner-gallery img:nth-child(2) { transform: rotate(3deg); }
+.planner-gallery img:hover { transform: rotate(0deg) scale(1.04); box-shadow: var(--shadow-soft); }
 .planner-points { margin: 18px 0 26px; }
 .planner-points li {
   position: relative;
