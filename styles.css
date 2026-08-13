@@ -282,7 +282,17 @@ input:focus-visible {
   border-bottom: 1px solid var(--line);
 }
 .primary-nav li:last-child a { border-bottom: none; }
-.nav-cta { color: var(--rose-dark); font-weight: 600; }
+.primary-nav a.nav-cta {
+  justify-content: center;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 600;
+  background: var(--rose-dark);
+  border-radius: 999px;
+  padding: 12px 20px;
+  transition: background-color .18s ease, transform .18s ease;
+}
+.primary-nav a.nav-cta:hover { background: var(--rose); color: #fff; transform: translateY(-1px); }
 .nav-cta svg { width: 16px; height: 16px; }
 
 @media (min-width: 780px) {
@@ -306,14 +316,14 @@ input:focus-visible {
     transition: right .2s ease;
   }
   .primary-nav a:not(.nav-cta):hover::after { right: 0; }
-  .nav-cta { border-bottom: 1.5px solid var(--rose-light); border-radius: 0; }
-  .nav-cta:hover { color: var(--rose); border-bottom-color: var(--rose); }
+  .primary-nav a.nav-cta { margin-top: 0; }
 }
 
 /* ---------- Hero ---------- */
 .hero { padding: 60px 0 76px; background: linear-gradient(180deg, var(--lavender), var(--paper) 70%); }
 .hero-inner { display: grid; gap: 48px; }
 .hero-text { max-width: 46ch; color: var(--ink); }
+.hero-meta { margin-top: 14px; font-size: 0.85rem; color: var(--rose); opacity: .85; }
 .tagline {
   font-family: var(--font-script);
   font-size: 1.7rem;
@@ -376,8 +386,10 @@ input:focus-visible {
   color: var(--rose-dark);
 }
 .feature-icon svg { width: 26px; height: 26px; }
+.feature-icon-num { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; }
 .feature-card h3 { font-size: 1.02rem; margin-bottom: 6px; }
 .feature-card p { font-size: 0.88rem; margin: 0; }
+.how-it-works-cta { margin-top: 36px; }
 
 /* ---------- About ---------- */
 .about-inner { display: grid; gap: 32px; align-items: center; }
@@ -576,6 +588,19 @@ input:focus-visible {
 }
 
 /* ---------- Vocabulary ---------- */
+.vocab-stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 10px 18px;
+  background: var(--sage);
+  border: 1.5px dashed var(--rose-light);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  color: var(--sage-ink);
+}
+.vocab-stat-number { flex-shrink: 0; white-space: nowrap; font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--rose-dark); }
 .vocab-grid {
   display: grid;
   gap: 26px;
@@ -651,13 +676,9 @@ input:focus-visible {
   text-align: center;
   color: var(--rose-dark);
 }
+.video-placeholder-icon { width: 40px; height: 40px; margin: 0 auto 12px; color: var(--rose); }
 .video-placeholder p { margin: 0 0 6px; font-size: 1.1rem; }
 .video-placeholder-sub { font-size: 0.85rem; color: var(--rose); }
-.video-placeholder-sub code {
-  background: var(--blush);
-  padding: 2px 6px;
-  border-radius: 6px;
-}
 
 /* ---------- Signup ---------- */
 .signup-inner {
