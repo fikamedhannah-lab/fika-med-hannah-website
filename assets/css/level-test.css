@@ -186,6 +186,64 @@
   .lt-skill-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
 }
 
+/* ---------- Review (post-test question-by-question recap) ---------- */
+.lt-review {
+  margin-bottom: 26px;
+  border: 1.5px dashed var(--rose-light);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  padding: 4px 22px;
+}
+.lt-review summary {
+  cursor: pointer;
+  padding: 14px 0;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--rose-dark);
+  list-style: none;
+}
+.lt-review summary::-webkit-details-marker { display: none; }
+.lt-review summary::after { content: '\25be'; float: right; }
+.lt-review[open] summary::after { content: '\25b4'; }
+.lt-review-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.lt-review-item { border-top: 1.5px dashed var(--rose-light); padding-top: 16px; }
+.lt-review-item:first-child { border-top: none; padding-top: 0; }
+.lt-review-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--rose);
+  opacity: 0.85;
+  margin: 0 0 6px;
+}
+.lt-review-item.is-incorrect .lt-review-meta { color: var(--rose-dark); font-weight: 600; opacity: 1; }
+.lt-review-prompt { font-weight: 600; margin: 0 0 8px; }
+.lt-review-context {
+  background: var(--cream);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  margin: 0 0 10px;
+}
+.lt-review-options { list-style: none; margin: 0 0 8px; padding: 0; display: grid; gap: 6px; }
+.lt-review-options li {
+  padding: 8px 12px;
+  border: 1.5px dashed var(--rose-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+}
+.lt-review-options li.is-correct-answer { border-color: var(--sage-ink); background: var(--sage); font-weight: 600; }
+.lt-review-options li.is-your-answer { border-color: var(--rose-dark); background: var(--blush); }
+.lt-review-explanation { font-size: 0.86rem; opacity: 0.85; margin: 0; }
+
 /* ---------- Bonus teaser (shown inline on the results screen) ---------- */
 .lt-bonus-teaser {
   display: flex;

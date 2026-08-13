@@ -61,11 +61,14 @@ const els = {
   resultsSub: document.getElementById('lt-results-sub'),
   skillGrid: document.getElementById('lt-skill-grid'),
   recommendation: document.getElementById('lt-recommendation'),
+  reviewSummary: document.getElementById('lt-review-summary'),
+  reviewList: document.getElementById('lt-review-list'),
 };
 
 let adaptiveState = null;
 let currentQuestion = null;
 let selectedIndex = null;
+let answeredQuestions = []; // { question, selectedIndex, isCorrect }, in the order asked
 
 function showScreen(name) {
   [els.intro, els.question, els.results, els.email, els.continueScreen].forEach((el) =>
@@ -92,6 +95,7 @@ function init() {
 
 function startTest(resume) {
   adaptiveState = createAdaptiveState(QUESTION_BANK);
+  answeredQuestions = [];
   let resumeQuestionId = null;
 
   if (resume) {
@@ -191,6 +195,7 @@ function selectOption(index, btn) {
 function handleNext() {
   if (selectedIndex === null || !currentQuestion) return;
   const isCorrect = selectedIndex === currentQuestion.correct;
+  answeredQuestions.push({ question: currentQuestion, selectedIndex, isCorrect });
   recordAnswer(adaptiveState, currentQuestion, isCorrect);
   trackEvent('question_answered', { category: currentQuestion.category, correct: isCorrect });
 
@@ -243,6 +248,50 @@ function renderResults(results) {
       <a href="${rec.youtubeUrl}" target="_blank" rel="noopener">Se en video om ${rec.label.toLowerCase()} &rarr;</a>
     </span>
   `;
+
+  renderReview(answeredQuestions);
+}
+
+// Escapes text pulled into innerHTML (question content is site-authored,
+// not user input, but this keeps the review markup defensive/consistent).
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function renderReview(answers) {
+  els.reviewSummary.textContent = `Se alla frågor och rätta svar (${answers.length})`;
+  els.reviewList.innerHTML = answers
+    .map(({ question, selectedIndex: chosenIndex, isCorrect }) => {
+      const meta = SKILL_LABELS[question.category];
+      const contextText = question.passage || question.transcript;
+      const optionsHtml = question.options
+        .map((text, index) => {
+          const classes = ['lt-review-option'];
+          if (index === question.correct) classes.push('is-correct-answer');
+          else if (index === chosenIndex) classes.push('is-your-answer');
+          const tag =
+            index === question.correct
+              ? ' &mdash; rätt svar'
+              : index === chosenIndex
+              ? ' &mdash; ditt svar'
+              : '';
+          return `<li class="${classes.join(' ')}">${escapeHtml(text)}${tag}</li>`;
+        })
+        .join('');
+
+      return `
+        <li class="lt-review-item ${isCorrect ? 'is-correct' : 'is-incorrect'}">
+          <p class="lt-review-meta">${iconSvg(meta.icon, 'eyebrow-icon')}${meta.label} &middot; ${question.level} &middot; ${isCorrect ? 'Rätt' : 'Fel'}</p>
+          <p class="lt-review-prompt">${escapeHtml(question.prompt)}</p>
+          ${contextText ? `<p class="lt-review-context">${escapeHtml(contextText)}</p>` : ''}
+          <ul class="lt-review-options">${optionsHtml}</ul>
+          ${question.explanation ? `<p class="lt-review-explanation">${escapeHtml(question.explanation)}</p>` : ''}
+        </li>
+      `;
+    })
+    .join('');
 }
 
 /*
