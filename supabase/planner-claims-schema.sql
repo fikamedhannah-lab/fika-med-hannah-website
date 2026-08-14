@@ -93,3 +93,37 @@ $$;
 
 revoke all on function public.get_planner_claim_count() from public;
 grant execute on function public.get_planner_claim_count() to anon;
+
+-- =========================================================
+-- Result-email follow-up (sent by the send-level-test-email Edge
+-- Function after a successful claim — see supabase/functions/).
+-- =========================================================
+
+alter table public.planner_claims add column if not exists email_sent boolean not null default false;
+
+-- Atomically flips email_sent false -> true and returns whether *this*
+-- call was the one that flipped it. Guards against: (a) sending the
+-- result email more than once per address, and (b) using this as an open
+-- mail relay — it only succeeds for emails that already have a real claim
+-- row (i.e. went through claim_planner_spot first).
+create or replace function public.try_start_email_send(p_email text)
+returns boolean
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_email text := lower(trim(p_email));
+  v_flipped boolean := false;
+begin
+  update planner_claims
+    set email_sent = true
+    where email = v_email and email_sent = false;
+
+  v_flipped := found;
+  return v_flipped;
+end;
+$$;
+
+revoke all on function public.try_start_email_send(text) from public;
+grant execute on function public.try_start_email_send(text) to anon;

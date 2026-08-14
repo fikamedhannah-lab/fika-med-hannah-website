@@ -18,7 +18,7 @@ import { computeResults } from './scoring-engine.js';
 import { RECOMMENDATIONS_CONFIG, getRecommendationFor } from './recommendations.js';
 import { saveProgress, loadProgress, clearProgress, hasSavedProgress } from './storage.js';
 import { trackEvent } from './analytics.js';
-import { claimPlannerSpot, FREE_CLAIM_LIMIT } from './planner-claims.js';
+import { claimPlannerSpot, FREE_CLAIM_LIMIT, sendResultEmail } from './planner-claims.js';
 
 const SKILL_LABELS = {
   vocabulary: { label: 'Ordförråd', icon: 'i-pencil' },
@@ -331,6 +331,8 @@ async function handleEmailSubmit(event) {
       els.emailMessage.textContent =
         'Tack! Vi skickar ditt resultat och dina rekommendationer till din inkorg.';
     }
+
+    sendResultEmailFor(email, claim);
   } catch (err) {
     console.warn('Could not submit email', err);
     els.emailMessage.textContent = 'Något gick fel. Försök igen om en stund.';
@@ -340,6 +342,31 @@ async function handleEmailSubmit(event) {
   }
 
   els.emailContinueRow.classList.remove('is-hidden');
+}
+
+/*
+  Emails the visitor their result, recommendation and planner link (see
+  supabase/functions/send-level-test-email/). Fire-and-forget: it never
+  blocks or overrides the on-page confirmation above.
+*/
+function sendResultEmailFor(email, claim) {
+  if (!claim || !lastResults) return;
+  const rec = getRecommendationFor(lastResults.weakest);
+  const weakestMeta = SKILL_LABELS[lastResults.weakest];
+  sendResultEmail({
+    email,
+    overallLevel: lastResults.overallLevel,
+    overallDescription: RECOMMENDATIONS_CONFIG.levelDescriptions[lastResults.overallLevel] || '',
+    categories: Object.entries(lastResults.categories).map(([cat, data]) => ({
+      label: SKILL_LABELS[cat].label,
+      level: data.level,
+    })),
+    weakestLabel: weakestMeta.label,
+    recommendationDescription: rec.description,
+    recommendationYoutubeUrl: rec.youtubeUrl,
+    isFree: claim.is_free,
+    claimNumber: claim.claim_number,
+  });
 }
 
 init();

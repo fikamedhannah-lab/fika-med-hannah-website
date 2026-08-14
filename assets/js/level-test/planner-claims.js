@@ -46,3 +46,27 @@ export async function getPlannerClaimCount() {
   if (!isSupabaseConfigured()) return null;
   return callRpc('get_planner_claim_count', {});
 }
+
+/**
+ * Fire-and-forget request to the send-level-test-email Edge Function,
+ * which emails the visitor their result, recommendation and planner link
+ * (see supabase/functions/send-level-test-email/index.ts). No-ops quietly
+ * if Supabase isn't configured or the request fails — the on-page result
+ * and planner link already work regardless of whether this email sends.
+ */
+export async function sendResultEmail(payload) {
+  if (!isSupabaseConfigured()) return;
+  try {
+    await fetch(`${SUPABASE_CONFIG.url}/functions/v1/send-level-test-email`, {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_CONFIG.anonKey,
+        Authorization: `Bearer ${SUPABASE_CONFIG.anonKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+  } catch (err) {
+    console.warn('Could not send result email', err);
+  }
+}
