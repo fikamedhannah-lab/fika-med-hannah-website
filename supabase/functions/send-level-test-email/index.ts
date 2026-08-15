@@ -112,10 +112,10 @@ function buildEmailHtml(p: EmailPayload): string {
 
   const plannerBlock = p.isFree
     ? `
-      <p style="margin:0 0 14px;font-size:15px;">🎉 Du är person #${escapeHtml(p.claimNumber)} av de första 100 &mdash; din studieplanner är gratis!</p>
+      <p style="margin:0 0 14px;font-size:15px;">🎉 Din studieplanner är gratis!</p>
       <a href="${plannerDownloadUrl}" style="display:inline-block;background-color:#21395c;color:#ffffff;font-weight:600;padding:12px 26px;border-radius:999px;text-decoration:none;font-size:15px;">Ladda ner din planner &darr;</a>`
     : `
-      <p style="margin:0 0 14px;font-size:15px;">De första 100 gratisplatserna är redan tagna (du är #${escapeHtml(p.claimNumber)}), men du kan fortfarande få plannern för 69 kr.</p>
+      <p style="margin:0 0 14px;font-size:15px;">De första 100 gratisplatserna är redan tagna, men du kan fortfarande få plannern för 69 kr.</p>
       <a href="${plannerPageUrl}" style="display:inline-block;background-color:#21395c;color:#ffffff;font-weight:600;padding:12px 26px;border-radius:999px;text-decoration:none;font-size:15px;">Läs mer om plannern &rarr;</a>`;
 
   return `<!DOCTYPE html>
