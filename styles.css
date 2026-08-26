@@ -636,6 +636,10 @@ input:focus-visible {
 .vocab-card:hover { transform: translateY(-5px) rotate(0deg); box-shadow: var(--shadow-soft); }
 .vocab-card img { margin: 0 auto 14px; }
 .vocab-card p { font-size: 0.92rem; }
+.vocab-card-icon { width: 80px; height: 80px; margin: 0 auto 14px; color: var(--rose-dark); }
+.vocab-card-label { margin: 0 0 4px; font-size: 0.76rem !important; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--rose-dark); }
+.vocab-card-episode { border-style: solid; border-color: var(--rose-dark); background: var(--lavender); }
+.vocab-card-episode .btn { margin-top: 8px; }
 
 .vocab-cta, .planner-cta { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .soon-badge {
