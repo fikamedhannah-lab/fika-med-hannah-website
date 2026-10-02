@@ -144,11 +144,7 @@ input:focus-visible {
 .doodle-blue { color: var(--blue-ink); transform: rotate(12deg); }
 .doodle-sage { color: var(--sage-ink); }
 @media (max-width: 780px) {
-  .section-doodles { top: 8px; height: 30px; padding-inline: 20px; }
-  .doodle { width: 26px; height: 26px; }
-  .doodle-flower { width: 30px; height: 30px; }
-  .doodle-spark { width: 16px; height: 16px; }
-  .doodle-cluster { gap: 8px; }
+  .section-doodles { display: none; }
 }
 
 /* small decorative squiggle used under the hero tagline */
