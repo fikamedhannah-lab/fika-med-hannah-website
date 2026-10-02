@@ -1,5 +1,5 @@
 /* =========================================================
-   Fika med Hannah — Swedish Level Test: UI controller
+   Fika med Hannah - Swedish Level Test: UI controller
    ---------------------------------------------------------
    Wires question-bank.js + adaptive-engine.js + scoring-engine.js +
    recommendations.js + storage.js + analytics.js to the DOM. Plain
@@ -169,7 +169,7 @@ function setupAudioFallback(question) {
     els.audioEl.play().catch(() => speakFallback(question));
   };
   els.audioEl.onerror = () => {
-    // mp3 not generated yet — fall back to browser speech synthesis so
+    // mp3 not generated yet - fall back to browser speech synthesis so
     // the test still works during development. This speaks the same
     // audio content the mp3 would have, without exposing any answer.
     els.audioBtn.onclick = () => speakFallback(question);
@@ -273,9 +273,9 @@ function renderReview(answers) {
           else if (index === chosenIndex) classes.push('is-your-answer');
           const tag =
             index === question.correct
-              ? ' &mdash; rätt svar'
+              ? ' - rätt svar'
               : index === chosenIndex
-              ? ' &mdash; ditt svar'
+              ? ' - ditt svar'
               : '';
           return `<li class="${classes.join(' ')}">${escapeHtml(text)}${tag}</li>`;
         })
@@ -297,7 +297,7 @@ function renderReview(answers) {
 /*
   Claims a real spot via Supabase (see supabase-config.js). If the
   project isn't configured yet, claimPlannerSpot() returns null and we
-  fall back to a generic thank-you — never a fabricated claim number.
+  fall back to a generic thank-you - never a fabricated claim number.
 */
 async function handleEmailSubmit(event) {
   event.preventDefault();
@@ -323,7 +323,7 @@ async function handleEmailSubmit(event) {
     });
 
     if (claim && claim.is_free) {
-      els.emailMessage.textContent = `🎉 Du är person #${claim.claim_number} av de första ${FREE_CLAIM_LIMIT} — plannern är gratis för dig! Vi skickar ditt resultat, dina rekommendationer och plannern till din inkorg.`;
+      els.emailMessage.textContent = `🎉 Du är person #${claim.claim_number} av de första ${FREE_CLAIM_LIMIT} - plannern är gratis för dig! Vi skickar ditt resultat, dina rekommendationer och plannern till din inkorg.`;
       els.plannerDownloadBtn.classList.remove('is-hidden');
     } else if (claim) {
       els.emailMessage.textContent = `Tack! De första ${FREE_CLAIM_LIMIT} gratisplatserna är redan tagna (du är #${claim.claim_number}), men du kan fortfarande köpa plannern för 69 kr. Vi skickar ditt resultat och dina rekommendationer till din inkorg.`;

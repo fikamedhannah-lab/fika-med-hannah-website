@@ -1,5 +1,5 @@
 /* =========================================================
-   Fika med Hannah — Swedish Level Test (adaptive): styles
+   Fika med Hannah - Swedish Level Test (adaptive): styles
    ---------------------------------------------------------
    Loaded after styles.css. Reuses the site's design tokens and
    component classes (.btn, .eyebrow, .divider, dashed-border card
@@ -15,7 +15,7 @@
   max-width: 620px;
   margin: 0 auto;
   background: var(--paper);
-  border: 1.5px dashed var(--rose-light);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
   padding: 40px 36px;
@@ -36,10 +36,10 @@
   font-size: 0.82rem;
   line-height: 1.2;
   text-align: center;
-  color: #fff;
-  background: var(--rose-dark);
+  color: var(--rose-dark);
+  background: var(--butter);
   border-radius: 50%;
-  border: 2px dashed rgba(255, 255, 255, .6);
+  border: 1px solid #d3bd7d;
   box-shadow: var(--shadow-soft);
   transform: rotate(-9deg);
 }
@@ -68,13 +68,13 @@
   height: 10px;
   border-radius: 999px;
   background: var(--blush);
-  border: 1.5px dashed var(--rose-light);
+  border: 1px solid var(--rose-light);
   overflow: hidden;
   margin-bottom: 20px;
 }
 .lt-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--rose) 0%, var(--rose-dark) 100%);
+  background: var(--sage-ink);
   border-radius: 999px;
   transition: width 0.4s ease;
 }
@@ -82,7 +82,7 @@
 /* ---------- Question screen ---------- */
 .lt-passage, .lt-audio {
   background: var(--cream);
-  border: 1.5px dashed var(--rose-light);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   padding: 16px 18px;
   margin-bottom: 18px;
@@ -108,7 +108,7 @@
   text-align: left;
   width: 100%;
   padding: 14px 18px;
-  border: 1.5px dashed var(--rose-light);
+  border: 1px solid var(--line);
   background: var(--paper);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
@@ -120,7 +120,7 @@
 .lt-option:hover { border-color: var(--rose); transform: translateY(-2px); }
 .lt-option[aria-pressed="true"] {
   border: 2px solid var(--rose-dark);
-  background: var(--lavender);
+  background: var(--sage);
   font-weight: 600;
   transform: none;
 }
@@ -142,15 +142,13 @@
   text-align: center;
   gap: 8px;
   padding: 18px 14px;
-  border: 1.5px dashed var(--rose-light);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--paper);
   box-shadow: var(--shadow-softer);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
-.lt-skill-grid li:nth-child(odd) .lt-skill-row { transform: rotate(-1deg); }
-.lt-skill-grid li:nth-child(even) .lt-skill-row { transform: rotate(1deg); }
-.lt-skill-row:hover { transform: translateY(-4px) rotate(0deg); box-shadow: var(--shadow-soft); }
+.lt-skill-row:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
 
 .lt-skill-icon {
   width: 30px; height: 30px;
@@ -172,7 +170,7 @@
   gap: 16px;
   align-items: flex-start;
   background: var(--sage);
-  border: 1.5px dashed var(--rose-light);
+  border: 1px solid #c5d0b9;
   border-radius: var(--radius-md);
   padding: 20px 22px;
   margin-bottom: 26px;
@@ -189,7 +187,7 @@
 /* ---------- Review (post-test question-by-question recap) ---------- */
 .lt-review {
   margin-bottom: 26px;
-  border: 1.5px dashed var(--rose-light);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--paper);
   padding: 4px 22px;
@@ -213,7 +211,7 @@
   flex-direction: column;
   gap: 20px;
 }
-.lt-review-item { border-top: 1.5px dashed var(--rose-light); padding-top: 16px; }
+.lt-review-item { border-top: 1px solid var(--line); padding-top: 16px; }
 .lt-review-item:first-child { border-top: none; padding-top: 0; }
 .lt-review-meta {
   display: flex;
@@ -236,7 +234,7 @@
 .lt-review-options { list-style: none; margin: 0 0 8px; padding: 0; display: grid; gap: 6px; }
 .lt-review-options li {
   padding: 8px 12px;
-  border: 1.5px dashed var(--rose-light);
+  border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   font-size: 0.9rem;
 }
@@ -250,7 +248,7 @@
   gap: 14px;
   align-items: center;
   background: var(--blush);
-  border: 1.5px dashed var(--rose-light);
+  border: 1px solid var(--rose-light);
   border-radius: var(--radius-md);
   padding: 16px 20px;
   margin-bottom: 26px;

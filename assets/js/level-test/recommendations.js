@@ -1,7 +1,7 @@
 /* =========================================================
-   Fika med Hannah — Swedish Level Test: recommendations config
+   Fika med Hannah - Swedish Level Test: recommendations config
    ---------------------------------------------------------
-   Editable content only — no logic. Update the URLs/copy here without
+   Editable content only - no logic. Update the URLs/copy here without
    touching app.js. Mirrors the `CONFIG` pattern already used in the
    site's script.js. Icons are defined in app.js's SKILL_LABELS, not here.
    ========================================================= */
@@ -19,7 +19,7 @@ export const RECOMMENDATIONS_CONFIG = {
     },
     grammar: {
       label: 'Grammatik',
-      description: 'Repetera verbtempus och ordföljd — små dagliga övningar ger stor effekt över tid.',
+      description: 'Repetera verbtempus och ordföljd - små dagliga övningar ger stor effekt över tid.',
       // TODO: replace with a real YouTube video/playlist about Swedish grammar.
       youtubeUrl: 'https://www.youtube.com/@FikamedHannah',
     },

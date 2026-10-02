@@ -1,5 +1,5 @@
 /* =========================================================
-   Fika med Hannah — Swedish Level Test: analytics hook
+   Fika med Hannah - Swedish Level Test: analytics hook
    ---------------------------------------------------------
    No analytics service is wired into the site today, so this just
    dispatches a CustomEvent on `document` (so any future analytics
@@ -12,7 +12,7 @@ export function trackEvent(name, detail = {}) {
   try {
     document.dispatchEvent(new CustomEvent('fmh:level-test', { detail: { name, ...detail } }));
   } catch (err) {
-    // no-op — CustomEvent should always be available in modern browsers
+    // no-op - CustomEvent should always be available in modern browsers
   }
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     console.debug('[level-test]', name, detail);

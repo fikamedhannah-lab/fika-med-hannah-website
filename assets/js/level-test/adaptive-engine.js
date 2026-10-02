@@ -1,5 +1,5 @@
 /* =========================================================
-   Fika med Hannah — Swedish Level Test: adaptive engine
+   Fika med Hannah - Swedish Level Test: adaptive engine
    ---------------------------------------------------------
    Rule-based (not full IRT) adaptive item selection. Keeps a running
    "difficulty estimate" per category (Vocabulary/Grammar/Reading/
@@ -15,7 +15,7 @@
         estimate converges rather than oscillating forever.
      3. Stopping rule: stop once every category has (a) enough
         answered questions, and (b) a "stable" estimate (hasn't
-        changed CEFR band across the last few answers) — or once the
+        changed CEFR band across the last few answers) - or once the
         test hits MAX_QUESTIONS as a hard ceiling. Categories that
         land at the very top (C2) or bottom (A1) band get a couple of
         extra confirmation questions before the test accepts that
@@ -33,7 +33,7 @@ export const ADAPTIVE_CONFIG = {
   MIN_PER_CATEGORY: 5,
   EXTREME_MIN_PER_CATEGORY: 7, // extra confirmation at A1 or C2 edges
   STABILITY_WINDOW: 3,
-  INITIAL_ESTIMATE: 25, // A2/B1 boundary — neutral starting point
+  INITIAL_ESTIMATE: 25, // A2/B1 boundary - neutral starting point
   INITIAL_STEP: 14,
   MIN_STEP: 3,
   STEP_DECAY: 0.72,
@@ -145,7 +145,7 @@ export function shouldStop(state) {
   return CATEGORIES.every((cat) => {
     const c = state.perCategory[cat];
     const hasUnseen = c.pool.some((id) => !state.askedIds.has(id));
-    if (!hasUnseen) return true; // ran out of items in this category — accept as-is
+    if (!hasUnseen) return true; // ran out of items in this category - accept as-is
     if (c.asked < minRequiredFor(c)) return false;
     return isStable(c);
   });

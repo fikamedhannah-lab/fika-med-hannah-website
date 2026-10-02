@@ -1,7 +1,7 @@
 /* =========================================================
-   Fika med Hannah — Swedish Level Test: question bank
+   Fika med Hannah - Swedish Level Test: question bank
    ---------------------------------------------------------
-   PURE DATA. No UI/engine logic lives here — edit questions
+   PURE DATA. No UI/engine logic lives here - edit questions
    freely without touching adaptive-engine.js, scoring-engine.js
    or app.js.
 
@@ -16,16 +16,16 @@
      prompt      the question/instruction text shown to the user
      passage     optional Swedish reading text (reading questions)
      transcript  optional Swedish sentence spoken in the audio (listening
-                 questions). Never rendered as text in the production UI —
+                 questions). Never rendered as text in the production UI -
                  only used to (a) generate the ElevenLabs audio file and
                  (b) as a browser-speech-synthesis dev fallback if the
                  mp3 hasn't been generated yet.
      audioFile   path to the pre-generated mp3 (listening questions)
      options     array of 4 answer choices, written with the correct
-                 answer at options[0] — a seeded shuffle below re-orders
+                 answer at options[0] - a seeded shuffle below re-orders
                  them once at load time so authors don't need to manage
                  shuffling by hand.
-     correct     index into `options` — set automatically by the shuffle
+     correct     index into `options` - set automatically by the shuffle
                  step at the bottom of this file. Author it as 0.
      explanation short one-line explanation, for optional post-test review
    ========================================================= */

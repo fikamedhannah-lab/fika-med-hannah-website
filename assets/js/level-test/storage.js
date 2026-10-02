@@ -1,5 +1,5 @@
 /* =========================================================
-   Fika med Hannah — Swedish Level Test: local persistence
+   Fika med Hannah - Swedish Level Test: local persistence
    ---------------------------------------------------------
    Lets a user reload the page mid-test and resume where they left
    off, or explicitly restart. Uses localStorage only (no backend).
@@ -29,7 +29,7 @@ export function saveProgress(state, currentQuestionId) {
     };
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
   } catch (err) {
-    // localStorage can fail in private mode / when full — the test
+    // localStorage can fail in private mode / when full - the test
     // still works, it just won't be resumable.
     console.warn('Level test: could not save progress', err);
   }

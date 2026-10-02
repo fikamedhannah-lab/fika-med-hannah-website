@@ -1,10 +1,10 @@
 /* =========================================================
-   Fika med Hannah — send-level-test-email (Supabase Edge Function)
+   Fika med Hannah - send-level-test-email (Supabase Edge Function)
    ---------------------------------------------------------
    Sends the "your result + recommendation + planner" follow-up email
    after someone submits their address on the level-test results page.
    Called from the browser by sendResultEmail() in
-   assets/js/level-test/planner-claims.js — see that file for the
+   assets/js/level-test/planner-claims.js - see that file for the
    request payload shape.
 
    Setup:
@@ -13,7 +13,7 @@
           supabase link --project-ref <your-project-ref>
      2. Run the updated supabase/planner-claims-schema.sql in the
         Supabase dashboard's SQL Editor (adds email_sent +
-        try_start_email_send — safe to re-run, it's idempotent).
+        try_start_email_send - safe to re-run, it's idempotent).
      3. Sign up at https://resend.com (free tier is plenty for this),
         verify a sending domain (or use their onboarding@resend.dev
         sender while testing), then set the secrets:
@@ -26,7 +26,7 @@
 
    Abuse guards: try_start_email_send() only returns true once per email
    AND only for emails that already have a real row in planner_claims
-   (i.e. went through the real claim_planner_spot flow first) — so this
+   (i.e. went through the real claim_planner_spot flow first) - so this
    endpoint can't be used as a generic mail relay to arbitrary addresses,
    and can't be spammed repeatedly for the same address.
    ========================================================= */
@@ -197,7 +197,7 @@ Deno.serve(async (req: Request) => {
   if (!canSend) return json({ skipped: true });
 
   if (!RESEND_API_KEY) {
-    console.warn('RESEND_API_KEY not set — skipping send (configure it to enable real email delivery)');
+    console.warn('RESEND_API_KEY not set - skipping send (configure it to enable real email delivery)');
     return json({ skipped: true, reason: 'email provider not configured' });
   }
 
@@ -211,7 +211,7 @@ Deno.serve(async (req: Request) => {
     body: JSON.stringify({
       from: FROM_EMAIL,
       to: email,
-      subject: `Ditt resultat: ${body.overallLevel || ''} — Fika med Hannah`,
+      subject: `Ditt resultat: ${body.overallLevel || ''} - Fika med Hannah`,
       html,
     }),
   });

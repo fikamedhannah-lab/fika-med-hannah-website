@@ -1,7 +1,7 @@
-# Fika med Hannah — Website
+# Fika med Hannah - Website
 
 A cosy, Scandinavian-inspired homepage for **Fika med Hannah**, a Swedish-learning brand.
-Built with plain **HTML, CSS and JavaScript only** — no frameworks, no backend, no build step —
+Built with plain **HTML, CSS and JavaScript only** - no frameworks, no backend, no build step -
 so it can be hosted for free on GitHub Pages.
 
 ## File structure
@@ -20,14 +20,14 @@ so it can be hosted for free on GitHub Pages.
 
 ## Running it locally
 
-No install or build step is required — it's just static files. Two easy options:
+No install or build step is required - it's just static files. Two easy options:
 
-**Option A — just open it**
+**Option A - just open it**
 Double-click `index.html` (or open it from VS Code with "Open with Live Server" if you have
 that extension). Everything will work except that some browsers restrict `fetch`/module
 features under `file://`; this site doesn't use either, so plain double-click is fine.
 
-**Option B — a tiny local server (recommended)**
+**Option B - a tiny local server (recommended)**
 ```bash
 # from the project folder
 python3 -m http.server 8000
@@ -57,14 +57,14 @@ python3 -m http.server 8000
    This creates a `CNAME` file in your repo automatically (or you can create one yourself
    containing just `fikamedhannah.com` on a single line).
 2. At your domain registrar / DNS provider, add these records:
-   - **Apex domain (`fikamedhannah.com`)** — four `A` records pointing to GitHub Pages' IPs:
+   - **Apex domain (`fikamedhannah.com`)** - four `A` records pointing to GitHub Pages' IPs:
      ```
      185.199.108.153
      185.199.109.153
      185.199.110.153
      185.199.111.153
      ```
-   - **`www` subdomain** (optional but recommended) — a `CNAME` record pointing to
+   - **`www` subdomain** (optional but recommended) - a `CNAME` record pointing to
      `<your-username>.github.io`.
 3. Back in **Settings → Pages**, wait for the DNS check to pass, then tick
    **Enforce HTTPS** once it becomes available.
@@ -76,9 +76,9 @@ python3 -m http.server 8000
 |---|---|---|
 | YouTube channel link | `script.js` → `CONFIG.youtubeChannelUrl` | Replace with your real channel URL. Every "YouTube" button/link on the site reads from this one place. |
 | Level-test button | `script.js` → `CONFIG.levelTestVideoUrl` | Point it at your real "Find Your Swedish Level" video or quiz page. |
-| Latest lesson embed | `script.js` → `CONFIG.latestVideoId` | Paste in the YouTube video ID (the part after `v=` in the URL) to swap the placeholder for a real responsive embed. |
+| Selected lesson embed | `script.js` → `CONFIG.latestVideoId` | Set the selected homepage video's ID (the part after `v=` in the URL). This does not track the latest upload; the separate channel link leads to newer videos. |
 | Study planner PDF | `downloads/fika-med-hannah-study-planner.pdf` | Replace this file with your latest export, keeping the same filename so the "Download the Planner" button keeps working (or update the `href` in `index.html` if you rename it). |
-| Hero illustration | `assets/hero-illustration.svg` | Replace with real Fika med Hannah artwork (same filename, or update the `src` in `index.html`). |
+| Homepage banner | `assets/fika-banner-640.webp`, `assets/fika-banner-1280.webp`, `assets/fika-banner-2172.webp`, `assets/fika-banner.jpg` | Export matching 3:1 images from the original artwork. WebP sizes serve different screens; the native 2172 by 724 JPEG is the fallback. The banner is uncropped and capped at its original width. |
 | Planner cover mockup | `assets/planner-mockup.svg` | Replace with a real photo/mockup of the printed planner. |
 | Vocabulary category icons | `assets/icons/icon-everyday.svg`, `icon-food.svg`, `icon-home.svg` | Swap for your own illustrated icons if you like (keep the ~80×80 proportions). |
 | Logo | `assets/logo.png` | Already your real brand mark; replace if you refresh the logo. |
@@ -86,9 +86,22 @@ python3 -m http.server 8000
 | Contact email | `index.html` footer (`mailto:hello@fikamedhannah.com`) | Replace with your real inbox address. |
 | Privacy policy | `privacy-policy.html` | Replace the placeholder text with a real, reviewed policy before collecting emails. |
 
+## Adding vocabulary episodes
+
+In `index.html`, duplicate an `.episode-card` inside `#episodeList`. Set its unique
+`data-episode` number and `data-topic`, then update the displayed number, story title,
+description, illustration, PDF link, and screen-reader link text. Reuse an existing
+topic spelling to keep it grouped with the other episodes in that topic.
+
+The library automatically features the highest episode number,
+updates episode counts, and displays 12 episodes per page. Search matches
+titles, descriptions, topics, and episode numbers across the whole library, not
+just the current page. Swedish letters can also be searched without accents.
+Without JavaScript, all episode cards and their PDF links remain available.
+
 ## Connecting an email newsletter provider
 
-The "Join Fika-brevet" form is frontend-only for now — submitting it just shows a friendly
+The "Join Fika-brevet" form is frontend-only for now - submitting it just shows a friendly
 thank-you message and goes nowhere. To connect a real provider such as **MailerLite**,
 **Brevo** or **ConvertKit**:
 
@@ -99,17 +112,19 @@ thank-you message and goes nowhere. To connect a real provider such as **MailerL
    - Make sure the email `<input>`'s `name` attribute matches what your provider expects.
 3. In `script.js`, find the `setupSignupForm()` function (marked `EMAIL SIGNUP` in the
    comments) and remove the `event.preventDefault()` line so the form actually submits.
-4. Some providers give you a ready-made `<form>` snippet instead — in that case you can
+4. Some providers give you a ready-made `<form>` snippet instead - in that case you can
    replace the whole `<form>` block with their snippet and keep the surrounding markup/styles.
 
 ## Design notes
 
-- Colors are defined once as CSS variables in `styles.css` (`:root`), matching the existing
-  Fika med Hannah brand palette: soft blush pink, warm cream/beige, muted rose-red and a
-  gentle sage green.
-- Headings use **Fraunces**, body text uses **Poppins**, and small hand-written accents use
-  **Caveat** — loaded from Google Fonts.
-- Layout is mobile-first and fully responsive, with a max content width of ~1160px, rounded
-  cards/buttons, soft borders and very subtle shadows.
+- The cozy Scandinavian palette is defined as CSS variables in `styles.css` (`:root`):
+   warm cream, dusty pink, sage green, soft blue, and small butter-yellow accents.
+   Dark sage and muted rose keep text and controls readable without navy or stark white surfaces.
+- Headings use **Fraunces**, body text uses rounded **Nunito**, and hand-written accents use
+  **Caveat** - loaded from Google Fonts.
+- Layout is mobile-first, with a full-width illustrated banner, illustrated navigation,
+   full-width pastel sections, paper-like episode cards, and a gingham newsletter band.
+- The homepage, adaptive level test, standalone quiz, and privacy page share this direction.
+   The navigation switches to a mobile menu below 1000px to avoid wrapping.
 - The header is sticky but subtle (translucent + blur, thin border, no heavy shadow).
 - Reduced-motion is respected via `prefers-reduced-motion`.

@@ -1,11 +1,11 @@
 -- =========================================================
--- Fika med Hannah — planner claim tracking schema
+-- Fika med Hannah - planner claim tracking schema
 -- ---------------------------------------------------------
 -- Run this once in your Supabase project's SQL Editor
 -- (Dashboard → SQL Editor → New query → paste → Run).
 --
 -- Security model: the anon (public, client-side) role is NOT granted
--- any direct access to the tables below — only EXECUTE on the two
+-- any direct access to the tables below - only EXECUTE on the two
 -- functions at the bottom. Both functions are SECURITY DEFINER so
 -- they can read/write the tables on the anon caller's behalf, but the
 -- functions only expose exactly the typed parameters/columns needed
@@ -96,7 +96,7 @@ grant execute on function public.get_planner_claim_count() to anon;
 
 -- =========================================================
 -- Result-email follow-up (sent by the send-level-test-email Edge
--- Function after a successful claim — see supabase/functions/).
+-- Function after a successful claim - see supabase/functions/).
 -- =========================================================
 
 alter table public.planner_claims add column if not exists email_sent boolean not null default false;
@@ -104,7 +104,7 @@ alter table public.planner_claims add column if not exists email_sent boolean no
 -- Atomically flips email_sent false -> true and returns whether *this*
 -- call was the one that flipped it. Guards against: (a) sending the
 -- result email more than once per address, and (b) using this as an open
--- mail relay — it only succeeds for emails that already have a real claim
+-- mail relay - it only succeeds for emails that already have a real claim
 -- row (i.e. went through claim_planner_spot first).
 create or replace function public.try_start_email_send(p_email text)
 returns boolean

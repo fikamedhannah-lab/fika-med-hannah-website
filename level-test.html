@@ -7,24 +7,23 @@
 <meta name="description" content="Ett 120-frågortest i svenska - grammatik, läsförståelse, hörförståelse och skriftlig förmåga - fördelat på nivåerna A1-C2.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
-  /* Palette matches styles.css on the main site — navy accent from the planner cover branding */
   :root{
-    --ink:#3a2c28;
-    --paper:#fffaf7;
-    --rose:#b58b7f;
-    --rose-dark:#21395c;
-    --rose-light:#dec5bb;
-    --blush:#fdeeec;
-    --lavender:#eceafc;
-    --line:#e6d3c9;
-    --soft:#f6ece7;
+    --ink:#494b41;
+    --paper:#fff9ed;
+    --rose:#945e60;
+    --rose-dark:#43533e;
+    --rose-light:#d9bcb1;
+    --blush:#faf3e5;
+    --lavender:#e6eef0;
+    --line:#dfd5c2;
+    --soft:#edf0e4;
     /* aliases so the rest of the stylesheet maps onto the brand palette above */
-    --teal:var(--rose);
+    --teal:#536449;
     --teal-dark:var(--rose-dark);
     --coral:var(--rose-dark);
-    --gold:var(--rose-light);
+    --gold:#f3e2ad;
   }
 
   *{ box-sizing:border-box; }
@@ -32,13 +31,14 @@
   body{
     margin:0;
     background:var(--blush);
-    font-family:'Poppins', sans-serif;
+    font-family:'Nunito', sans-serif;
     color:var(--ink);
     line-height:1.5;
   }
 
   h1,h2,h3{
     font-family:'Fraunces', serif;
+    letter-spacing:0;
     margin:0 0 8px;
     color:var(--rose-dark);
   }
@@ -69,7 +69,7 @@
     border-radius:14px;
     object-fit:cover;
     flex-shrink:0;
-    box-shadow:0 0 0 2px #fff, 0 0 0 3px var(--rose-light);
+    box-shadow:0 0 0 2px var(--paper), 0 0 0 3px var(--line);
   }
   .brand-logo .word{
     font-family:'Fraunces', serif;
@@ -87,18 +87,18 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    background:var(--rose-dark);
-    color:#fff;
+    background:var(--soft);
+    color:var(--ink);
     padding:48px 20px 70px;
     text-align:center;
   }
   .hero .eyebrow{
     font-family:'Caveat', cursive;
     font-size:22px;
-    color:var(--lavender);
-    letter-spacing:.5px;
+    color:var(--rose);
+    letter-spacing:0;
   }
-  .hero h1{ color:#fff; font-size:36px; margin-bottom:14px; }
+  .hero h1{ color:var(--rose-dark); font-size:36px; margin-bottom:14px; }
   .hero p{ max-width:540px; margin:0 auto; opacity:.9; font-size:15.5px; }
   .hero .meta-row{
     display:flex;
@@ -108,8 +108,8 @@
     margin-top:18px;
   }
   .hero .meta-row span{
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.3);
+    background:var(--paper);
+    border:1px solid #cad5be;
     padding:5px 12px;
     border-radius:30px;
     font-size:12.5px;
@@ -123,17 +123,17 @@
     padding:14px 30px;
     border-radius:40px;
     text-decoration:none;
-    box-shadow:0 6px 16px rgba(0,0,0,.25);
+    box-shadow:0 3px 0 #c7d1b9;
   }
 
   /* ---------- CARD ---------- */
   .card{
     background:var(--paper);
-    border:1.5px solid var(--teal);
+    border:1px solid var(--line);
     border-radius:14px;
     padding:28px 26px;
     margin-top:-40px;
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    box-shadow:0 8px 24px rgba(78,83,59,.07);
   }
 
   /* ---------- LEVEL STEPPER ---------- */
@@ -203,7 +203,7 @@
   }
   label.opt:hover{ border-color:var(--teal); }
   label.opt input{ margin-top:3px; accent-color:var(--teal); }
-  label.opt.selected{ border-color:var(--teal); background:#e6f1ef; }
+  label.opt.selected{ border-color:var(--teal); background:#e2e8d8; }
 
   .listen-row{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
   .listen-btn{
@@ -245,7 +245,7 @@
   .progress-fill{
     height:100%;
     width:0%;
-    background:var(--gold);
+    background:var(--teal);
     transition:width .2s ease;
   }
   .progress-label{ font-size:12.5px; color:var(--teal-dark); font-weight:600; }
@@ -255,7 +255,7 @@
     margin-top:20px;
     background:var(--teal);
     color:#fff;
-    font-family:'Poppins';
+    font-family:'Nunito', sans-serif;
     font-weight:600;
     font-size:16px;
     border:none;
@@ -405,7 +405,7 @@
 
   </div>
 
-  <footer>© Fika med Hannah — svenska, en fika i taget.</footer>
+  <footer>© Fika med Hannah - svenska, en fika i taget.</footer>
 
 <script>
   // Skill labels shown as tags above each question.

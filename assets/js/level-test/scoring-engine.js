@@ -1,12 +1,12 @@
 /* =========================================================
-   Fika med Hannah — Swedish Level Test: scoring engine
+   Fika med Hannah - Swedish Level Test: scoring engine
    ---------------------------------------------------------
    Turns the adaptive engine's final state into a CEFR result.
-   Not a raw "% correct" score — each category's level comes from
+   Not a raw "% correct" score - each category's level comes from
    where its difficulty *estimate* converged (a harder question
    answered correctly moves the estimate up more than an easy one;
    missing an easy question moves it down more than missing a hard
-   one — see adaptive-engine.js `recordAnswer`).
+   one - see adaptive-engine.js `recordAnswer`).
 
    The overall level is a weighted combination that leans toward the
    weakest category, since real-world CEFR placement is usually

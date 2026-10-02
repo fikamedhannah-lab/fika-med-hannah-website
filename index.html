@@ -2,13 +2,13 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <title>Fika med Hannah — Lär dig svenska, en fika i taget</title>
+  <title>Fika med Hannah - Lär dig svenska, en fika i taget</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gör Fika med Hannahs gratis svenska nivåtest (A1–C2), få personliga rekommendationer och lås upp en gratis studieplanner — lär dig svenska, en fika i taget.">
+  <meta name="description" content="Gör Fika med Hannahs gratis svenska nivåtest (A1–C2), få personliga rekommendationer och lås upp en gratis studieplanner - lär dig svenska, en fika i taget.">
   <meta name="theme-color" content="#fdeeec">
 
-  <!-- Open Graph / social preview — replace og:image with a real 1200x630 brand image later -->
-  <meta property="og:title" content="Fika med Hannah — Testa din svenska nivå, gratis">
+  <!-- Open Graph / social preview - replace og:image with a real 1200x630 brand image later -->
+  <meta property="og:title" content="Fika med Hannah - Testa din svenska nivå, gratis">
   <meta property="og:description" content="Gör det gratis svenska nivåtestet (A1–C2) och lås upp en gratis studieplanner från Fika med Hannah.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/logo.png">
@@ -16,10 +16,10 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="assets/logo.png">
 
-  <!-- Google Fonts: Fraunces (headings) + Poppins (body) + Caveat (hand-written accents) — matches the existing Fika med Hannah brand materials -->
+  <!-- Google Fonts: Fraunces, Nunito and hand-written Caveat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -72,7 +72,7 @@
   <!-- ============ HEADER / NAV ============ -->
   <header class="site-header" id="siteHeader">
     <div class="wrap header-inner">
-      <a class="brand" href="#home" aria-label="Fika med Hannah — home">
+      <a class="brand" href="#home" aria-label="Fika med Hannah - home">
         <img class="brand-mark" src="assets/logo.png" alt="" width="40" height="40">
         <span class="brand-name">Fika <em>med</em> Hannah</span>
       </a>
@@ -98,36 +98,47 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="home">
+      <picture class="hero-banner">
+        <source type="image/webp" srcset="assets/fika-banner-640.webp 640w, assets/fika-banner-1280.webp 1280w, assets/fika-banner-2172.webp 2172w" sizes="(min-width: 2172px) 2172px, 100vw">
+        <img src="assets/fika-banner.jpg" alt="Fika med Hannah. Svenska på ett naturligt sätt. En illustrerad studieplats med kaffe, böcker och utsikt över Stockholm." width="2172" height="724" fetchpriority="high" loading="eager">
+      </picture>
       <div class="wrap hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-flower"/></svg>Välkommen till Fika med Hannah</p>
-          <h1>Vilken nivå har din svenska? <em>Ta reda på det, gratis.</em></h1>
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-flower"/></svg>En liten paus. Ett nytt svenskt ord.</p>
+          <h1 class="sr-only">Fika med Hannah</h1>
           <p class="tagline">Lär dig svenska, en fika i taget.</p>
           <svg class="tagline-swirl" aria-hidden="true"><use href="#i-swirl"/></svg>
           <p class="hero-text">
-            Gör vårt gratis adaptiva nivåtest (A1–C2) och få en tydlig bild av var du står idag —
-            plus personliga rekommendationer för vad du bör öva på härnäst.
+            Hitta din svenska nivå med vårt gratis test (A1–C2). Få personliga tips
+            och ta nästa steg i din egen takt.
           </p>
           <div class="button-row">
             <a class="btn btn-primary btn-large" href="level-test/"><svg aria-hidden="true" width="16" height="16"><use href="#i-star"/></svg>Testa din svenska nivå &rarr;</a>
-            <a class="btn btn-secondary" href="#about">Möt Hannah</a>
           </div>
-          <p class="hero-meta">Gratis · Cirka 15–20 minuter · Inget konto krävs</p>
+          <p class="hero-meta">Gratis · 15–20 minuter · Inget konto krävs</p>
         </div>
 
-        <div class="hero-visual" aria-hidden="false">
-          <img src="assets/hero-illustration.svg" alt="Illustration av en kaffekopp med hjärtformad mjölkskum, en svensk flaggvimpel och en liten blomkvist" width="560" height="460">
-        </div>
       </div>
     </section>
 
+    <nav class="learning-paths" aria-label="Din svenskaresa">
+      <div class="wrap">
+        <a href="level-test/"><img src="assets/icons/icon-everyday.svg" alt="" width="42" height="42"><span>Hitta din nivå</span><span aria-hidden="true">&rarr;</span></a>
+        <a href="#vocabulary"><img src="assets/icons/icon-food.svg" alt="" width="42" height="42"><span>Upptäck berättelser</span><span aria-hidden="true">&rarr;</span></a>
+        <a href="#planner"><img src="assets/icons/icon-home.svg" alt="" width="42" height="42"><span>Din studieplanner</span><span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+
     <!-- ============ HOW IT WORKS ============ -->
-    <section class="section features" id="how-it-works">
+    <section class="section features section-doodled" id="how-it-works">
+      <div class="section-doodles" aria-hidden="true">
+        <span class="doodle-cluster"><svg class="doodle doodle-flower"><use href="#i-flower"/></svg><svg class="doodle doodle-spark"><use href="#i-star"/></svg></span>
+      </div>
       <div class="wrap">
         <div class="section-head center">
           <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-star"/></svg>Så funkar det</p>
           <h2>Din resa mot bättre svenska</h2>
-          <p>Fyra enkla steg — från ditt första test till en stadig studierutin.</p>
+          <p>Fyra enkla steg - från ditt första test till en stadig studierutin.</p>
         </div>
         <ul class="feature-grid" role="list">
           <li class="feature-card">
@@ -143,7 +154,7 @@
           <li class="feature-card">
             <span class="feature-icon feature-icon-num">3</span>
             <h3>Lås upp plannern</h3>
-            <p>Fira resultatet med vår studieplanner — gratis för de första 100 testdeltagarna.</p>
+            <p>Fira resultatet med vår studieplanner - gratis för de första 100 testdeltagarna.</p>
           </li>
           <li class="feature-card">
             <span class="feature-icon feature-icon-num">4</span>
@@ -158,10 +169,17 @@
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section class="section about" id="about">
+    <section class="section about section-doodled" id="about">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-sage"><use href="#i-mug"/></svg>
+        <span class="doodle-cluster"><svg class="doodle doodle-spark"><use href="#i-star"/></svg><svg class="doodle doodle-heart"><use href="#i-heart"/></svg></span>
+      </div>
       <div class="wrap about-inner">
         <div class="about-photo">
-          <img src="assets/logo.png" alt="Fika med Hannahs varumärkesillustration av en mugg, hållen under en varm fika">
+          <picture>
+            <source type="image/webp" srcset="assets/hannah-portrait-320.webp 320w, assets/hannah-portrait-640.webp 640w, assets/hannah-portrait.webp 1312w" sizes="(min-width: 780px) 280px, (min-width: 340px) 300px, calc(100vw - 40px)">
+            <img src="assets/hannah-portrait.jpg" alt="Illustrerat porträtt av Hannah i en rosa tröja, med händerna under hakan." width="1312" height="1199" loading="lazy" decoding="async">
+          </picture>
         </div>
         <div class="about-copy">
           <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-heart"/></svg>Hej, jag heter Hannah</p>
@@ -169,24 +187,28 @@
           <p>
             Jag startade Fika med Hannah för att jag själv vet hur det känns att fastna i grammatikböcker
             utan att våga prata. Här får du istället korta, verklighetsnära lektioner, vardagsord du
-            faktiskt kommer att använda, och studieverktyg som gör att du orkar fortsätta — vecka efter vecka.
+            faktiskt kommer att använda, och studieverktyg som gör att du orkar fortsätta - vecka efter vecka.
           </p>
           <p>
             Nivåtestet, ordförrådsbiblioteket och studieplannern hänger ihop: tillsammans ger de dig en
             tydlig, lugn väg framåt, oavsett var du befinner dig just nu.
           </p>
-          <p class="pull-quote">&ldquo;En fika är aldrig bara kaffe — det är en liten paus värd att ta, på svenska eller annars.&rdquo;</p>
+          <p class="pull-quote">&ldquo;En fika är aldrig bara kaffe - det är en liten paus värd att ta, på svenska eller annars.&rdquo;</p>
         </div>
       </div>
     </section>
 
     <!-- ============ SWEDISH LEVEL TEST ============ -->
-    <section class="section level-test alt-bg" id="level-test">
+    <section class="section level-test alt-bg section-doodled" id="level-test">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-spark"><use href="#i-star"/></svg>
+        <svg class="doodle doodle-flower"><use href="#i-flower"/></svg>
+      </div>
       <div class="wrap">
         <div class="section-head center">
           <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-star"/></svg>Var är du i din resa?</p>
           <h2>Vilken nivå har du i svenska?</h2>
-          <p>Från ditt första ord till flytande konversation — så här skiljer sig de sex europeiska CEFR-nivåerna åt.</p>
+          <p>Från ditt första ord till flytande konversation - så här skiljer sig de sex europeiska CEFR-nivåerna åt.</p>
         </div>
 
         <ul class="level-grid" role="list">
@@ -201,7 +223,7 @@
         <div class="lt-cta-panel center">
           <h3>Gör det gratis nivåtestet</h3>
           <p>Svara på adaptiva frågor om ordförråd, grammatik, läsförståelse och lyssnaförståelse. Du får ditt resultat direkt, plus konkreta tips om vad du bör öva på härnäst.</p>
-          <p class="lt-bonus-note">🎁 Gör testet klart så låser du upp vår studieplanner — gratis för de första 100 deltagarna (ordinarie pris 69 kr).</p>
+          <p class="lt-bonus-note">🎁 Gör testet klart så låser du upp vår studieplanner - gratis för de första 100 deltagarna (ordinarie pris 69 kr).</p>
           <a class="btn btn-primary btn-large" href="level-test/">Starta nivåtestet &rarr;</a>
         </div>
       </div>
@@ -209,7 +231,11 @@
 
     <!-- ============ STUDY PLANNER (paid, first 100 downloads free) ============ -->
     <div class="divider" aria-hidden="true"><span class="divider-medallion"><svg><use href="#i-mug"/></svg></span></div>
-    <section class="section planner-feature" id="planner">
+    <section class="section planner-feature section-doodled" id="planner">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-heart"><use href="#i-heart"/></svg>
+        <span class="doodle-cluster"><svg class="doodle doodle-spark"><use href="#i-star"/></svg><svg class="doodle doodle-sage"><use href="#i-mug"/></svg></span>
+      </div>
       <div class="wrap planner-inner">
         <div class="planner-visual">
           <span class="price-sticker" aria-hidden="true">69<br>kr</span>
@@ -221,14 +247,14 @@
         </div>
         <div class="planner-copy">
           <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-mug"/></svg>Din belöning för att testa dig</p>
-          <h2>Studieplannern — gratis när du gjort nivåtestet</h2>
-          <p>Gör nivåtestet, och du låser upp en hel 12-veckors studieplanner som hjälper dig omsätta resultatet i en riktig studievana — inte bara en siffra.</p>
+          <h2>Studieplannern - gratis när du gjort nivåtestet</h2>
+          <p>Gör nivåtestet, och du låser upp en hel 12-veckors studieplanner som hjälper dig omsätta resultatet i en riktig studievana - inte bara en siffra.</p>
           <ul class="planner-points">
             <li>En guidad 12-veckors studieplan</li>
             <li>Veckovisa sidor för mål, ordförråd och reflektion</li>
             <li>Utskriftsvänlig och i Fika-med-Hannah-stil</li>
           </ul>
-          <p class="planner-offer">🎁 Ordinarie pris <strong>69 kr</strong> — helt gratis för de första 100 som gör vårt svenska nivåtest.</p>
+          <p class="planner-offer">🎁 Ordinarie pris <strong>69 kr</strong> - helt gratis för de första 100 som gör vårt svenska nivåtest.</p>
 
           <div class="center planner-cta">
             <a class="btn btn-primary" href="level-test/" aria-describedby="plannerClaimCount">Gör testet &amp; lås upp plannern &rarr;</a>
@@ -239,91 +265,114 @@
     </section>
 
     <!-- ============ VOCABULARY ============ -->
-    <section class="section vocabulary alt-bg" id="vocabulary">
+    <section class="section vocabulary alt-bg section-doodled" id="vocabulary">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-spark"><use href="#i-star"/></svg>
+        <svg class="doodle doodle-flower"><use href="#i-flower"/></svg>
+      </div>
       <div class="wrap">
-        <div class="section-head center">
-          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-pencil"/></svg>Ord för ord</p>
-          <h2>Ett växande bibliotek på väg mot 6 000 ord</h2>
-          <p>
-            Fika med Hannah bygger stegvis upp ett komplett ordförrådsbibliotek — med målet att täcka
-            6 000 av de mest användbara svenska orden, sorterade i mysiga, lättöverskådliga kategorier
-            så att du alltid vet vad du ska öva på härnäst.
-          </p>
-          <p class="vocab-stat"><span class="vocab-stat-number">6 000</span> ord är målet för vårt växande bibliotek — ett långsiktigt projekt vi bygger vidare på varje vecka.</p>
+        <div class="vocab-heading">
+          <div class="section-head">
+            <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-pencil"/></svg>6000-ordsserien</p>
+            <h2>Små berättelser.<br><em>Ett större ordförråd.</em></h2>
+            <p>Upptäck svenska ord i vardagens berättelser. Välj ett tema, hitta en berättelse och ta nästa steg mot 6 000 ord.</p>
+          </div>
+          <p class="vocab-goal"><strong>6 000</strong><span>ord att upptäcka,<br>en berättelse i taget</span></p>
         </div>
 
-        <ul class="vocab-grid" role="list">
-          <li class="vocab-card">
-            <img src="assets/icons/icon-everyday.svg" alt="" width="80" height="80">
-            <h3>Vardagssvenska</h3>
-            <p>Hälsningsfraser, small talk och fraser du använder varje dag.</p>
+        <div class="vocab-featured">
+          <img src="assets/icons/icon-everyday.svg" alt="" width="112" height="112">
+          <div class="vocab-featured-copy">
+            <p class="vocab-kicker">Senaste berättelsen <span aria-hidden="true">/</span> <span id="featuredEpisodeNumber">Avsnitt 3</span></p>
+            <h3 id="featuredEpisodeTitle">En helt vanlig dag på jobbet</h3>
+            <p id="featuredEpisodeTopic">Arbetsliv och teknik</p>
+          </div>
+          <a class="btn btn-primary" id="featuredEpisodeLink" href="downloads/word-series-episode-3.pdf" target="_blank" rel="noopener">Läs berättelsen <span aria-hidden="true">&rarr;</span><span class="sr-only"> (PDF, öppnas i ny flik)</span></a>
+        </div>
+
+        <div class="vocab-library-heading">
+          <h3 id="episodeLibraryHeading">Alla berättelser</h3>
+          <span class="vocab-library-count" id="episodeTotal">3 avsnitt</span>
+        </div>
+        <form class="vocab-toolbar" id="episodeFilters" role="search" aria-label="Sök i avsnitten" hidden>
+          <label class="vocab-search" for="episodeSearch">
+            <span class="sr-only">Sök berättelse eller avsnittsnummer</span>
+            <input id="episodeSearch" type="search" placeholder="Sök berättelse eller avsnitt…" autocomplete="off" aria-controls="episodeList">
+          </label>
+          <label class="vocab-select" for="episodeSort"><span>Sortera</span><select id="episodeSort" aria-controls="episodeList"><option value="newest">Nyaste först</option><option value="oldest">Äldsta först</option></select></label>
+        </form>
+
+        <ul class="episode-grid" id="episodeList" aria-labelledby="episodeLibraryHeading" role="list">
+          <li class="episode-card" data-episode="1" data-topic="Mat &amp; kök">
+            <div class="episode-card-top"><span class="episode-number">Avsnitt <strong>01</strong></span><img src="assets/icons/icon-food.svg" alt="" width="56" height="56" loading="lazy"></div>
+            <span class="episode-topic">Mat &amp; kök</span>
+            <h3>Middagen som nästan slutade i katastrof</h3>
+            <p>Köket och matlagning</p>
+            <a class="episode-link" href="downloads/word-series-episode-1.pdf" target="_blank" rel="noopener"><span>Läs berättelsen <span class="sr-only">Middagen som nästan slutade i katastrof (öppnas i ny flik)</span></span><span class="episode-link-format">PDF <span aria-hidden="true">&rarr;</span></span></a>
           </li>
-          <li class="vocab-card">
-            <img src="assets/icons/icon-food.svg" alt="" width="80" height="80">
-            <h3>Mat &amp; Kök</h3>
-            <p>Fika-favoriter, matvaror och allt du behöver för att beställa eller laga mat med självförtroende.</p>
+          <li class="episode-card" data-episode="2" data-topic="Väder &amp; årstider">
+            <div class="episode-card-top"><span class="episode-number">Avsnitt <strong>02</strong></span><img src="assets/icons/icon-home.svg" alt="" width="56" height="56" loading="lazy"></div>
+            <span class="episode-topic">Väder &amp; årstider</span>
+            <h3>När sommaren blir höst</h3>
+            <p>Väder, årstider och kläder</p>
+            <a class="episode-link" href="downloads/word-series-episode-2.pdf" target="_blank" rel="noopener"><span>Läs berättelsen <span class="sr-only">När sommaren blir höst (öppnas i ny flik)</span></span><span class="episode-link-format">PDF <span aria-hidden="true">&rarr;</span></span></a>
           </li>
-          <li class="vocab-card">
-            <img src="assets/icons/icon-home.svg" alt="" width="80" height="80">
-            <h3>Hem &amp; Familj</h3>
-            <p>Ord för människorna och platserna som står dig närmast — hem, familj och vardagsliv.</p>
-          </li>
-          <li class="vocab-card vocab-card-episode">
-            <svg class="vocab-card-icon" aria-hidden="true"><use href="#i-pencil"/></svg>
-            <p class="vocab-card-label">6000-ordsserien</p>
-            <h3>Avsnitt 1</h3>
-            <p>Dagens berättelse: Middagen som nästan slutade i katastrof. Tema: köket och matlagning.</p>
-            <a class="btn btn-secondary" href="downloads/word-series-episode-1.pdf" target="_blank" rel="noopener">Öppna avsnittet <span aria-hidden="true">&rarr;</span></a>
-          </li>
-          <li class="vocab-card vocab-card-episode">
-            <svg class="vocab-card-icon" aria-hidden="true"><use href="#i-pencil"/></svg>
-            <p class="vocab-card-label">6000-ordsserien</p>
-            <h3>Avsnitt 2</h3>
-            <p>Dagens berättelse: När sommaren blir höst. Tema: väder, årstider och kläder.</p>
-            <a class="btn btn-secondary" href="downloads/word-series-episode-2.pdf" target="_blank" rel="noopener">Öppna avsnittet <span aria-hidden="true">&rarr;</span></a>
-          </li>
-          <li class="vocab-card vocab-card-episode">
-            <svg class="vocab-card-icon" aria-hidden="true"><use href="#i-pencil"/></svg>
-            <p class="vocab-card-label">6000-ordsserien</p>
-            <h3>Avsnitt 3</h3>
-            <p>Dagens berättelse: En helt vanlig dag på jobbet. Tema: arbetsliv och teknik.</p>
-            <a class="btn btn-secondary" href="downloads/word-series-episode-3.pdf" target="_blank" rel="noopener">Öppna avsnittet <span aria-hidden="true">&rarr;</span></a>
+          <li class="episode-card" data-episode="3" data-topic="Arbetsliv &amp; teknik">
+            <div class="episode-card-top"><span class="episode-number">Avsnitt <strong>03</strong></span><img src="assets/icons/icon-everyday.svg" alt="" width="56" height="56" loading="lazy"></div>
+            <span class="episode-topic">Arbetsliv &amp; teknik</span>
+            <h3>En helt vanlig dag på jobbet</h3>
+            <p>Arbetsliv och teknik</p>
+            <a class="episode-link" href="downloads/word-series-episode-3.pdf" target="_blank" rel="noopener"><span>Läs berättelsen <span class="sr-only">En helt vanlig dag på jobbet (öppnas i ny flik)</span></span><span class="episode-link-format">PDF <span aria-hidden="true">&rarr;</span></span></a>
           </li>
         </ul>
-
-        <div class="center vocab-cta">
-          <p class="soon-badge">Avsnitt 4 kommer snart</p>
+        <div class="vocab-empty" id="episodeEmpty" hidden><h3>Ingen berättelse hittades</h3><p>Prova ett annat sökord.</p><button class="btn btn-secondary" id="episodeReset" type="button">Visa alla berättelser</button></div>
+        <div class="vocab-library-footer">
+          <p id="episodeResults" role="status" aria-live="polite" aria-atomic="true">3 avsnitt</p>
+          <nav class="episode-pagination" id="episodePagination" aria-label="Avsnittssidor" hidden>
+            <button type="button" id="episodePrevious" aria-label="Föregående sida" title="Föregående sida">&larr;</button>
+            <span id="episodePage">Sida 1 av 1</span>
+            <button type="button" id="episodeNext" aria-label="Nästa sida" title="Nästa sida">&rarr;</button>
+          </nav>
         </div>
+        <p class="vocab-next">Fler berättelser är på väg <span aria-hidden="true">&middot;</span> Avsnitt 4 kommer snart</p>
       </div>
     </section>
 
-    <!-- ============ LATEST LESSON ============ -->
+    <!-- ============ SELECTED LESSON ============ -->
     <div class="divider" aria-hidden="true"><span class="divider-medallion"><svg><use href="#i-play"/></svg></span></div>
-    <section class="section latest-lesson" id="latest-lesson">
+    <section class="section latest-lesson section-doodled" id="latest-lesson">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-blue"><use href="#i-mug"/></svg>
+        <span class="doodle-cluster"><svg class="doodle doodle-spark"><use href="#i-star"/></svg><svg class="doodle doodle-heart"><use href="#i-heart"/></svg></span>
+      </div>
       <div class="wrap">
         <div class="section-head center">
-          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-play"/></svg>Nytt varje vecka</p>
-          <h2>Senaste videot</h2>
-          <p>Nya svensklektioner läggs upp varje vecka på YouTube-kanalen.</p>
+          <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-play"/></svg>En fika med svenska</p>
+          <h2>En svensklektion med Hannah</h2>
+          <p>Se en lektion här och hitta de senaste videorna på vår YouTube-kanal.</p>
         </div>
 
         <!-- Responsive YouTube embed; swap in a real video ID via CONFIG.latestVideoId in script.js -->
         <div class="video-frame" id="videoFrame">
           <div class="video-placeholder" id="videoPlaceholder">
             <svg class="video-placeholder-icon" aria-hidden="true"><use href="#i-play"/></svg>
-            <p>Nya lektioner varje vecka</p>
-            <p class="video-placeholder-sub">Den senaste videon dyker snart upp här.</p>
+            <p>En svensklektion med Hannah</p>
+            <a class="btn btn-secondary" href="https://www.youtube.com/watch?v=R2MUF9MsUOE" target="_blank" rel="noopener">Se lektionen på YouTube</a>
           </div>
         </div>
 
         <div class="center">
-          <a class="btn btn-primary" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">Se senaste videon på YouTube</a>
+          <a class="btn btn-primary" data-config-href="youtubeChannelUrl" href="https://www.youtube.com/@fikamedhannah" target="_blank" rel="noopener">Se de senaste videorna på YouTube</a>
         </div>
       </div>
     </section>
 
     <!-- ============ EMAIL SIGNUP ============ -->
-    <section class="section signup alt-bg" id="signup">
+    <section class="section signup alt-bg section-doodled" id="signup">
+      <div class="section-doodles" aria-hidden="true">
+        <span class="doodle-cluster"><svg class="doodle doodle-flower"><use href="#i-flower"/></svg><svg class="doodle doodle-spark"><use href="#i-star"/></svg></span>
+        <svg class="doodle doodle-heart"><use href="#i-heart"/></svg>
+      </div>
       <div class="wrap signup-inner">
         <div class="section-head center">
           <p class="eyebrow"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-heart"/></svg>Håll kontakten</p>
@@ -368,7 +417,7 @@
           <li><a href="#planner">Planner</a></li>
           <li><a href="#vocabulary">Ordförråd</a></li>
           <li><a data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">YouTube</a></li>
-          <!-- Placeholder contact — replace with a real inbox address -->
+          <!-- Placeholder contact - replace with a real inbox address -->
           <li><a href="mailto:hello@fikamedhannah.com">Kontakt</a></li>
         </ul>
       </nav>
