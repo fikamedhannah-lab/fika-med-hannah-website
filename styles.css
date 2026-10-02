@@ -120,33 +120,6 @@ input:focus-visible {
 }
 .eyebrow-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--rose); }
 
-.section-doodled { position: relative; }
-.section-doodles {
-  position: absolute;
-  top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: var(--max-width);
-  height: 44px;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  pointer-events: none;
-  user-select: none;
-}
-.doodle-cluster { display: flex; align-items: center; gap: 12px; }
-.doodle { display: block; width: 36px; height: 36px; flex-shrink: 0; color: var(--rose); opacity: .6; transform: rotate(-12deg); }
-.doodle-flower { width: 44px; height: 44px; color: #b58075; transform: rotate(14deg); }
-.doodle-heart { transform: rotate(12deg); }
-.doodle-spark { width: 22px; height: 22px; color: #b48a36; transform: rotate(8deg); }
-.doodle-blue { color: var(--blue-ink); transform: rotate(12deg); }
-.doodle-sage { color: var(--sage-ink); }
-@media (max-width: 780px) {
-  .section-doodles { display: none; }
-}
-
 /* small decorative squiggle used under the hero tagline */
 .tagline-swirl { display: block; width: 150px; height: 12px; color: var(--rose-light); margin: -6px 0 18px; }
 
