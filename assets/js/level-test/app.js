@@ -18,7 +18,7 @@ import { computeResults } from './scoring-engine.js';
 import { RECOMMENDATIONS_CONFIG, getRecommendationFor } from './recommendations.js';
 import { saveProgress, loadProgress, clearProgress, hasSavedProgress } from './storage.js';
 import { trackEvent } from './analytics.js';
-import { claimPlannerSpot, FREE_CLAIM_LIMIT, sendResultEmail } from './planner-claims.js';
+import { PLANNER_AVAILABLE, claimPlannerSpot, FREE_CLAIM_LIMIT, sendResultEmail } from './planner-claims.js?v=planner-paused-20261003';
 
 const SKILL_LABELS = {
   vocabulary: { label: 'Ordförråd', icon: 'i-pencil' },
@@ -48,7 +48,6 @@ const els = {
   emailInput: document.getElementById('ltEmailInput'),
   marketingConsent: document.getElementById('ltMarketingConsent'),
   emailMessage: document.getElementById('ltEmailMessage'),
-  plannerDownloadBtn: document.getElementById('ltPlannerDownloadBtn'),
   progressFill: document.getElementById('lt-progress-fill'),
   categoryTag: document.getElementById('lt-category-tag'),
   passage: document.getElementById('lt-passage'),
@@ -88,7 +87,11 @@ function init() {
     clearProgress();
     window.location.reload();
   });
-  els.resultsContinueBtn.addEventListener('click', () => showScreen('email'));
+  els.resultsContinueBtn.addEventListener('click', () => showScreen(PLANNER_AVAILABLE ? 'email' : 'continueScreen'));
+  if (!PLANNER_AVAILABLE) {
+    els.resultsContinueBtn.textContent = 'Fortsätt lära dig';
+    els.emailForm.classList.add('is-hidden');
+  }
   els.emailContinueBtn.addEventListener('click', () => showScreen('continueScreen'));
   els.emailForm.addEventListener('submit', handleEmailSubmit);
 }
@@ -301,6 +304,11 @@ function renderReview(answers) {
 */
 async function handleEmailSubmit(event) {
   event.preventDefault();
+  if (!PLANNER_AVAILABLE) {
+    els.emailMessage.textContent = 'Gratisexemplaren av studieplannern är slut. Betalversionen kommer snart.';
+    els.emailContinueRow.classList.remove('is-hidden');
+    return;
+  }
   const email = els.emailInput.value.trim();
   if (!email) return;
 
@@ -324,7 +332,6 @@ async function handleEmailSubmit(event) {
 
     if (claim && claim.is_free) {
       els.emailMessage.textContent = `🎉 Du är person #${claim.claim_number} av de första ${FREE_CLAIM_LIMIT} - plannern är gratis för dig! Vi skickar ditt resultat, dina rekommendationer och plannern till din inkorg.`;
-      els.plannerDownloadBtn.classList.remove('is-hidden');
     } else if (claim) {
       els.emailMessage.textContent = `Tack! De första ${FREE_CLAIM_LIMIT} gratisplatserna är redan tagna (du är #${claim.claim_number}), men du kan fortfarande köpa plannern för 69 kr. Vi skickar ditt resultat och dina rekommendationer till din inkorg.`;
     } else {

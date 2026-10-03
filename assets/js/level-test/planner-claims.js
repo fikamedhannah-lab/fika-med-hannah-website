@@ -10,6 +10,7 @@
 import { SUPABASE_CONFIG, isSupabaseConfigured } from './supabase-config.js';
 
 export const FREE_CLAIM_LIMIT = 100;
+export const PLANNER_AVAILABLE = false;
 
 async function callRpc(fnName, body) {
   const res = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/rpc/${fnName}`, {
@@ -32,7 +33,7 @@ async function callRpc(fnName, body) {
  * generic thank-you instead of a fabricated claim number.
  */
 export async function claimPlannerSpot(email, overallLevel, marketingConsent) {
-  if (!isSupabaseConfigured()) return null;
+  if (!PLANNER_AVAILABLE || !isSupabaseConfigured()) return null;
   const [row] = await callRpc('claim_planner_spot', {
     p_email: email,
     p_overall_level: overallLevel,
@@ -43,7 +44,7 @@ export async function claimPlannerSpot(email, overallLevel, marketingConsent) {
 
 /** Read-only current claim count, for showing a live "X of 100 left" badge. */
 export async function getPlannerClaimCount() {
-  if (!isSupabaseConfigured()) return null;
+  if (!PLANNER_AVAILABLE || !isSupabaseConfigured()) return null;
   return callRpc('get_planner_claim_count', {});
 }
 
@@ -55,7 +56,7 @@ export async function getPlannerClaimCount() {
  * and planner link already work regardless of whether this email sends.
  */
 export async function sendResultEmail(payload) {
-  if (!isSupabaseConfigured()) return;
+  if (!PLANNER_AVAILABLE || !isSupabaseConfigured()) return;
   try {
     await fetch(`${SUPABASE_CONFIG.url}/functions/v1/send-level-test-email`, {
       method: 'POST',

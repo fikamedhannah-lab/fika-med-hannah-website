@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles.css?v=21315a2e">
   <link rel="stylesheet" href="../assets/css/level-test.css">
 </head>
 <body>
@@ -113,7 +113,7 @@
             <div><span>~30–40</span>Frågor</div>
             <div><span>4</span>Färdigheter</div>
           </div>
-          <p class="lt-bonus-note">🎁 Gör testet klart så låser du upp en gratis fika-bonus från vår studieplanner.</p>
+          <p class="lt-bonus-note">Studieplannerns gratisexemplar är slut. Betalversionen kommer snart.</p>
           <div class="lt-btn-row">
             <button id="lt-start-btn" class="btn btn-primary btn-large" type="button">Starta testet</button>
             <button id="lt-resume-btn" class="btn btn-secondary is-hidden" type="button">Fortsätt där du slutade</button>
@@ -159,8 +159,7 @@
           </details>
 
           <div class="lt-bonus-teaser">
-            <span aria-hidden="true">🎁</span>
-            <p>Lämna din e-post på nästa steg för att få resultatet i din inkorg och se om du är en av de första 100 som får studieplanner helt gratis.</p>
+            <p>Studieplannerns gratisexemplar är slut. Betalversionen kommer snart.</p>
           </div>
 
           <div class="lt-btn-row">
@@ -170,11 +169,11 @@
           <p class="lt-disclaimer">Resultatet är en uppskattning av din nivå, inte en officiell certifiering.</p>
         </div>
 
-        <!-- ============ EMAIL CAPTURE (claims a real first-100 spot via Supabase once configured) ============ -->
+        <!-- ============ EMAIL CAPTURE ============ -->
         <div id="lt-screen-email" class="lt-card lt-email is-hidden">
           <p class="eyebrow center"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-heart"/></svg>Nästan klart</p>
-          <h2>Vart ska vi skicka det?</h2>
-          <p>Ange din e-post så skickar vi ditt resultat, dina rekommendationer och (om du är en av de första 100) plannern gratis.</p>
+          <h2>Studieplannern är pausad</h2>
+          <p>Alla gratisexemplar är slut. Betalversionen kommer snart. Du kan se ditt testresultat och dina rekommendationer direkt på resultatsidan.</p>
 
           <form class="lt-email-form" id="ltEmailForm" novalidate>
             <label class="sr-only" for="ltEmailInput">E-postadress</label>
@@ -186,7 +185,6 @@
             <button class="btn btn-primary btn-large" type="submit">Skicka mig mitt resultat</button>
           </form>
           <p class="lt-email-message" id="ltEmailMessage" role="status" aria-live="polite"></p>
-          <a class="btn btn-primary btn-large is-hidden" id="ltPlannerDownloadBtn" href="../downloads/fika-med-hannah-study-planner.pdf" download>Ladda ner din gratis planner &darr;</a>
           <p class="lt-disclaimer">Vi använder din e-post enbart för att skicka det du bett om. Se vår <a href="../privacy-policy.html">Integritetspolicy</a>.</p>
 
           <div class="lt-btn-row is-hidden" id="ltEmailContinueRow">
@@ -198,7 +196,7 @@
         <div id="lt-screen-continue" class="lt-card lt-continue is-hidden">
           <p class="eyebrow center"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-flower"/></svg>Fortsätt din resa</p>
           <h2>Fortsätt lära dig svenska med Fika med Hannah</h2>
-          <p>Här är några bra ställen att fortsätta på medan du väntar på din fika-bonus.</p>
+          <p>Här är några bra ställen att fortsätta öva på i din egen takt.</p>
           <div class="lt-continue-links">
             <a class="btn btn-secondary" data-config-href="youtubeChannelUrl" href="#" target="_blank" rel="noopener">Se fler lektioner på YouTube</a>
             <a class="btn btn-secondary" href="../index.html#vocabulary">Bygg ditt ordförråd</a>
@@ -238,6 +236,6 @@
   </footer>
 
   <script src="../script.js"></script>
-  <script type="module" src="../assets/js/level-test/app.js"></script>
+  <script type="module" src="../assets/js/level-test/app.js?v=planner-paused-20261003"></script>
 </body>
 </html>

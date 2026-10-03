@@ -77,7 +77,7 @@ python3 -m http.server 8000
 | YouTube channel link | `script.js` → `CONFIG.youtubeChannelUrl` | Replace with your real channel URL. Every "YouTube" button/link on the site reads from this one place. |
 | Level-test button | `script.js` → `CONFIG.levelTestVideoUrl` | Point it at your real "Find Your Swedish Level" video or quiz page. |
 | Selected lesson embed | `script.js` → `CONFIG.latestVideoId` | Set the selected homepage video's ID (the part after `v=` in the URL). This does not track the latest upload; the separate channel link leads to newer videos. |
-| Study planner PDF | `downloads/fika-med-hannah-study-planner.pdf` | Replace this file with your latest export, keeping the same filename so the "Download the Planner" button keeps working (or update the `href` in `index.html` if you rename it). |
+| Study planner PDF | `downloads/fika-med-hannah-study-planner.pdf` | Archived free planner. New claims and download controls are disabled while the paid version is coming soon; existing direct URLs are unchanged. |
 | Homepage banner | `assets/fika-banner-640.webp`, `assets/fika-banner-1280.webp`, `assets/fika-banner-2172.webp`, `assets/fika-banner.jpg` | Export matching 3:1 images from the original artwork. WebP sizes serve different screens; the native 2172 by 724 JPEG is the fallback. The banner is uncropped and capped at its original width. |
 | Planner cover mockup | `assets/planner-mockup.svg` | Replace with a real photo/mockup of the printed planner. |
 | Vocabulary category icons | `assets/icons/icon-everyday.svg`, `icon-food.svg`, `icon-home.svg` | Swap for your own illustrated icons if you like (keep the ~80×80 proportions). |
@@ -85,6 +85,19 @@ python3 -m http.server 8000
 | Email newsletter provider | `index.html` → `#signupForm`, `script.js` → `setupSignupForm()` | See "Connecting an email newsletter provider" below. |
 | Contact email | `index.html` footer (`mailto:hello@fikamedhannah.com`) | Replace with your real inbox address. |
 | Privacy policy | `privacy-policy.html` | Replace the placeholder text with a real, reviewed policy before collecting emails. |
+
+## Planner availability
+
+The free planner allocation is finished and the paid version is coming soon.
+`PLANNER_AVAILABLE` is `false` in `assets/js/level-test/planner-claims.js`, preventing
+new client-side claims, availability polling, and planner email requests. The homepage
+has no acquisition button, and the level test has no planner download link.
+
+The test still displays results and recommendations. Its claim-dependent email step
+is bypassed while the planner is paused, so visitors continue directly to learning links.
+Review the availability messages, download links, and versioned script URLs before
+reopening. This website change does not revoke existing direct PDF URLs or change
+the deployed Supabase functions for clients running an older copy of the site.
 
 ## Adding vocabulary episodes
 
@@ -128,3 +141,7 @@ thank-you message and goes nowhere. To connect a real provider such as **MailerL
    The navigation switches to a mobile menu below 1000px to avoid wrapping.
 - The header is sticky but subtle (translucent + blur, thin border, no heavy shadow).
 - Reduced-motion is respected via `prefers-reduced-motion`.
+- The shared stylesheet URL includes a `?v=` cache version. After changing `styles.css`,
+  update that value in `index.html`, `level-test/index.html`, and `privacy-policy.html`
+  to the first eight characters of the stylesheet's SHA-256 hash. This prevents returning
+  visitors from combining new HTML with cached styles from an older design.
